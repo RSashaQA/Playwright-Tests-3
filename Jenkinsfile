@@ -1,7 +1,3 @@
-script {
-        unstable 'unstable'
-}
-
 pipeline {
   agent any
   stages {
@@ -17,7 +13,6 @@ pipeline {
       }
     }
     stage('test') {
-      failFast false
       steps {
         sh '''
           npx playwright test --list
@@ -25,7 +20,8 @@ pipeline {
         '''
         } 
       }
-     stage('reports') {
+    }
+    stage('reports') {
       steps {
         script {
             allure([
@@ -35,8 +31,7 @@ pipeline {
                     reportBuildPolicy: 'ALWAYS',
                     results: [[path: 'target/allure-results']]
             ])
-        }
-      }
-    }
-  }
+                 }
+             }
+         }
 }
