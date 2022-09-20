@@ -19,15 +19,11 @@ pipeline {
     }
     stage('test') {
       steps {
-        try {
         sh '''
           npx playwright test --list
           npx playwright test EPG20test.spec.js --reporter=line,experimental-allure-playwright --workers 4
         '''
-        echo 'Succeeded!'
-        } catch (err) {
-        echo "Failed"
-    }
+        } 
       }
     }
     stage('reports') {
@@ -42,6 +38,5 @@ pipeline {
             ])
     }
     }
-}
 }
 }
