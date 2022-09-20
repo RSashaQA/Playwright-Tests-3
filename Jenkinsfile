@@ -5,6 +5,7 @@ pipeline {
       steps {
         sh '''
           npm i -D @playwright/test
+          npm i -D allure-commandline
           npx playwright install
         '''
       }
