@@ -5,8 +5,9 @@ pipeline {
       steps {
         sh '''
           npm i -D @playwright/test
-          npm i -D allure-commandline
           npx playwright install
+          npm i -D experimental-allure-playwright
+          npm i -D allure-commandline          
         '''
       }
     }
@@ -19,7 +20,7 @@ pipeline {
       steps {
         sh '''
           npx playwright test --list
-          npx playwright test
+          npx playwright test --reporter=line,experimental-allure-playwright
         '''
       }
     }
