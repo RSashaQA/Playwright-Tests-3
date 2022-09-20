@@ -20,10 +20,9 @@ pipeline {
         '''
         } 
       }
-    }
-    stages {
-    stage('reports') {
-      steps {
+  }
+    post {
+      always{
         script {
             allure([
                     includeProperties: false,
@@ -35,5 +34,4 @@ pipeline {
                  }
              }
          }
-}
 }
