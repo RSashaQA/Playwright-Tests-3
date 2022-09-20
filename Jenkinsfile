@@ -1,3 +1,7 @@
+script {
+        unstable 'unstable'
+}
+
 pipeline {
   agent any
   stages {
