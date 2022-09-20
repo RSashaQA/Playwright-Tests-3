@@ -21,7 +21,7 @@ pipeline {
       steps {
         sh '''
           npx playwright test --list
-          npx playwright test --reporter=line,experimental-allure-playwright
+          npx playwright test --reporter=line,experimental-allure-playwright --workers 4
         '''
       }
     }
