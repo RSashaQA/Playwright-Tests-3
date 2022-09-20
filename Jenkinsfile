@@ -26,9 +26,10 @@ pipeline {
         } 
       }
     }
-    stage('reports') {
-    steps {
-    script {
+    stages {
+      stage('reports') {
+        steps {
+        script {
             allure([
                     includeProperties: false,
                     jdk: '',
@@ -38,5 +39,6 @@ pipeline {
             ])
     }
     }
+}
 }
 }
