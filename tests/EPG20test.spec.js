@@ -4,7 +4,7 @@ test.setTimeout(120000)
 
 test('проверка наличия ЕПГ на первом и втором мультиплексах', async ({ page }) => {
 
-    await page.goto('https://limehd.tv/channel/1kanal');
+    await page.goto('https://limehd.tv/channel/1kanal11');
 
     //проверяем, что нет текста об отстутствии ЕПГ
     await page.waitForSelector('h2:has-text("Телепрограмма отсутствует")', { state: 'hidden', timeout: 1000 })
