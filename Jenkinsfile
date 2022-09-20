@@ -12,11 +12,6 @@ pipeline {
         '''
       }
     }
-    stage('help') {
-      steps {
-        sh 'npx playwright test --help'
-      }
-    }
     stage('test') {
       steps {
         sh '''
@@ -25,10 +20,8 @@ pipeline {
         '''
         } 
       }
-    }
-    stages {
-      stage('reports') {
-        steps {
+     stage('reports') {
+      steps {
         script {
             allure([
                     includeProperties: false,
@@ -37,8 +30,8 @@ pipeline {
                     reportBuildPolicy: 'ALWAYS',
                     results: [[path: 'target/allure-results']]
             ])
+        }
+      }
     }
-    }
-}
-}
+  }
 }
