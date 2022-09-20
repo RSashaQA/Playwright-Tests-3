@@ -17,6 +17,7 @@ pipeline {
       }
     }
     stage('test') {
+      failFast false
       steps {
         sh '''
           npx playwright test --list
