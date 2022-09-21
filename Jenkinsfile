@@ -16,7 +16,7 @@ pipeline {
       steps {
         sh '''
           npx playwright test --list
-          npx playwright test EPG20test.spec.js --reporter=line,experimental-allure-playwright --workers 4
+          npx playwright test EPG20test.spec.js --project=chromium --reporter=line,experimental-allure-playwright --workers 4
         '''
         } 
       }
