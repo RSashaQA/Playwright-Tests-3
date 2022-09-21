@@ -13,22 +13,22 @@ pipeline {
         '''
       }
     }
-    stage('account manage') {
-      steps {
-      sh '''
-        curl --location --request POST 'https://pl.iptv2021.com/api/v4/login' \
-        --header 'User-Agent: {"platform":"web","app":"limehd.tv"}' \
-        --header 'Cookie: advanced-frontend=83ef94f5f9d0c5d316d8634c85ef3cb7' \
-        --form 'email="testdeleteme@test.test"' \
-        --form 'password="qqqqqq"'
-      '''
-      sh '''
-      curl --location --request GET 'https://pl.iptv2021.com/api/v1/account-delete' \
-      --header 'User-Agent: {"platform":"web","app":"limehd.tv"}' \
-      --header 'Cookie: advanced-frontend=83ef94f5f9d0c5d316d8634c85ef3cb7'
-      '''
-      }
-    }
+    // stage('account manage') {
+    //   steps {
+    //   sh '''
+    //     curl --location --request POST 'https://pl.iptv2021.com/api/v4/login' \
+    //     --header 'User-Agent: {"platform":"web","app":"limehd.tv"}' \
+    //     --header 'Cookie: advanced-frontend=83ef94f5f9d0c5d316d8634c85ef3cb7' \
+    //     --form 'email="testdeleteme@test.test"' \
+    //     --form 'password="qqqqqq"'
+    //   '''
+    //   sh '''
+    //   curl --location --request GET 'https://pl.iptv2021.com/api/v1/account-delete' \
+    //   --header 'User-Agent: {"platform":"web","app":"limehd.tv"}' \
+    //   --header 'Cookie: advanced-frontend=83ef94f5f9d0c5d316d8634c85ef3cb7'
+    //   '''
+    //   }
+    // }
     stage('test') {
       steps {
         sh '''
