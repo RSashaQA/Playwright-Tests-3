@@ -22,13 +22,13 @@ test('авторизаяция, плохой сценарий', async ({ page })
     //в поле e-mail вводим не валидное значение и нажимаем войти
     await page.locator('[placeholder="Введите e-mail"]').fill('testdeletemelimehd.tv');
     await page.locator('text=Войти').click();
-    try {
+    // try {
         //проверяем наличие ошибок у полей e-mail и пароль
         const badEmailLogin = await page.innerText('.login__form > .form__container > form > .form__label:nth-child(1) > .input__error');
         expect(badEmailLogin).toBe('Введите корректный e-mail');
         const badPasswordLogin = await page.innerText('.login__form > .form__container > form > .form__label:nth-child(2) > .input__error');
         expect(badPasswordLogin).toBe('Введите пароль');
-    } catch (err) { console.log('bug https://limehd.atlassian.net/browse/PW-292') }
+    // } catch (err) { console.log('bug https://limehd.atlassian.net/browse/PW-292') }
 })
 
 test('авторизаяция, неверный email или пароль', async ({ page }) => {
