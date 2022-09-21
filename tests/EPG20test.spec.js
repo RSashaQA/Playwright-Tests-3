@@ -8,7 +8,7 @@ test('проверка наличия ЕПГ на Первом канале', as
 
     await page.goto('https://limehd.tv/channel/1kanal');
     
-    await page.waitForSelector('#__layout > div > div.default__layout > div > div.stream__item > div.stream__title-container > h11', { timeout: 5000 })
+    await page.waitForSelector('#__layout > div > div.default__layout > div > div.stream__item > div.stream__title-container > h1', { timeout: 5000 })
     let channelName = await page.$eval('#__layout > div > div.default__layout > div > div.stream__item > div.stream__title-container > h1', el => el.innerText);
 
     //проверяем, что нет текста об отстутствии ЕПГ
