@@ -21,7 +21,7 @@ pipeline {
         } 
       }
   }
-    post {
+    post('allure report'){
       always{
         script {
             allure([
@@ -32,6 +32,8 @@ pipeline {
                     results: [[path: 'target/allure-results']]
             ])
                  }
+              archiveArtifacts(artifacts: 'EPG/*EPG*.png', followSymlinks: false)
+              sh 'rm -rf *.png'
              }
          }
 }
