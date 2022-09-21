@@ -18,35 +18,35 @@ test('Тест переключение между категориями кан
     await page.waitForSelector('text=Россия 1');
     await page.waitForTimeout(1000);
 
-    await page.locator('text=Региональные').click();
+    await page.locator('text=Региональные').first().click();
     await page.waitForSelector('text=360 Новости');  
     await page.waitForTimeout(1000);
 
-    await page.locator('text=Развлечения').click();
+    await page.locator('text=Развлечения').first().click();
     await page.waitForSelector('text=Пятница!');
     await page.waitForTimeout(1000);
 
-    await page.locator('text=Спорт').click();
+    await page.locator('text=Спорт').first().click();
     await page.waitForSelector('text=Матч! Боец');
     await page.waitForTimeout(1000);
 
-    await page.locator('text=Детям').click();
+    await page.locator('text=Детям').first().click();
     await page.waitForSelector('text=Карусель');
     await page.waitForTimeout(1000);
 
-    await page.locator('text=Музыка').click();
+    await page.locator('text=Музыка').first().click();
     await page.waitForSelector('text=Муз-тв');
     await page.waitForTimeout(1000);
 
-    await page.locator('text=Новости >> nth=0').click();
+    await page.locator('text=Новости >> nth=0').first().click();
     await page.waitForSelector('text=Rt');
     await page.waitForTimeout(1000);
 
-    await page.locator('text=Познавательные').click();
+    await page.locator('text=Познавательные').first().click();
     await page.waitForSelector('text=Егэ');
     await page.waitForTimeout(1000);
 
-    await page.locator('text=Фильмы').click();
+    await page.locator('text=Фильмы').first().click();
     await page.waitForSelector('text=Киноужас');
 });
 
