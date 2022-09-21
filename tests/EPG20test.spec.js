@@ -8,7 +8,7 @@ test('проверка наличия ЕПГ на Первом канале', as
 
     await page.goto('https://limehd.tv/channel/1kanal');
     
-    await page.waitForSelector('#__layout > div > div.default__layout > div > div.stream__item > div.stream__title-container > h1', { timeout: 5000 })
+    await page.waitForSelector('#__layout > div > div.default__layout > div > div.stream__item > div.stream__title-container > h11', { timeout: 5000 })
     let channelName = await page.$eval('#__layout > div > div.default__layout > div > div.stream__item > div.stream__title-container > h1', el => el.innerText);
 
     //проверяем, что нет текста об отстутствии ЕПГ
@@ -20,7 +20,7 @@ test('проверка наличия ЕПГ на Первом канале', as
     //нажимаем на "Телепрограмма, проверяем наличие хотябы 1 телепрограммы"
     await page.click('.page-main > .stream__item > .stream__title-container > .stream__button-container > .stream__button')
     await page.waitForSelector('.main__content > .main__wrapper > .epg__list > li:nth-child(1) > .epg__item')
-    await page.screenshot({ path: 'EGP/EPG ' + channelName + ' ' + browserName + '.png' })
+    //await page.screenshot({ path: 'EGP/EPG ' + channelName + ' ' + browserName + '.png' })
     await page.locator('text=Закрыть').click();
 })
 
@@ -41,7 +41,7 @@ test('проверка наличия ЕПГ на Россия 1', async ({ page
     //нажимаем на "Телепрограмма, проверяем наличие хотябы 1 телепрограммы"
     await page.click('.page-main > .stream__item > .stream__title-container > .stream__button-container > .stream__button')
     await page.waitForSelector('.main__content > .main__wrapper > .epg__list > li:nth-child(1) > .epg__item')
-    await page.screenshot({ path: 'EGP/EPG ' + channelName + ' ' + browserName + '.png' })
+    //await page.screenshot({ path: 'EGP/EPG ' + channelName + ' ' + browserName + '.png' })
     await page.locator('text=Закрыть').click();
 })
 
@@ -61,7 +61,7 @@ test('проверка наличия ЕПГ на Матч!', async ({ page, bro
     //нажимаем на "Телепрограмма, проверяем наличие хотябы 1 телепрограммы"
     await page.click('.page-main > .stream__item > .stream__title-container > .stream__button-container > .stream__button')
     await page.waitForSelector('.main__content > .main__wrapper > .epg__list > li:nth-child(1) > .epg__item')
-    await page.screenshot({ path: 'EGP/EPG ' + channelName + ' ' + browserName + '.png' })
+    //await page.screenshot({ path: 'EGP/EPG ' + channelName + ' ' + browserName + '.png' })
     await page.locator('text=Закрыть').click();
 })
 
@@ -81,7 +81,7 @@ test('проверка наличия ЕПГ на НТВ', async ({ page, browse
     //нажимаем на "Телепрограмма, проверяем наличие хотябы 1 телепрограммы"
     await page.click('.page-main > .stream__item > .stream__title-container > .stream__button-container > .stream__button')
     await page.waitForSelector('.main__content > .main__wrapper > .epg__list > li:nth-child(1) > .epg__item')
-    await page.screenshot({ path: 'EGP/EPG ' + channelName + ' ' + browserName + '.png' })
+    //await page.screenshot({ path: 'EGP/EPG ' + channelName + ' ' + browserName + '.png' })
     await page.locator('text=Закрыть').click();
 })
 
@@ -101,7 +101,7 @@ test('проверка наличия ЕПГ на 5 канале', async ({ page
     //нажимаем на "Телепрограмма, проверяем наличие хотябы 1 телепрограммы"
     await page.click('.page-main > .stream__item > .stream__title-container > .stream__button-container > .stream__button')
     await page.waitForSelector('.main__content > .main__wrapper > .epg__list > li:nth-child(1) > .epg__item')
-    await page.screenshot({ path: 'EGP/EPG ' + channelName + ' ' + browserName + '.png' })
+    //await page.screenshot({ path: 'EGP/EPG ' + channelName + ' ' + browserName + '.png' })
     await page.locator('text=Закрыть').click();
 })
 
@@ -121,7 +121,7 @@ test('проверка наличия ЕПГ на Россия К', async ({ pag
     //нажимаем на "Телепрограмма, проверяем наличие хотябы 1 телепрограммы"
     await page.click('.page-main > .stream__item > .stream__title-container > .stream__button-container > .stream__button')
     await page.waitForSelector('.main__content > .main__wrapper > .epg__list > li:nth-child(1) > .epg__item')
-    await page.screenshot({ path: 'EGP/EPG ' + channelName + ' ' + browserName + '.png' })
+    //await page.screenshot({ path: 'EGP/EPG ' + channelName + ' ' + browserName + '.png' })
     await page.locator('text=Закрыть').click();
 })
 
@@ -141,7 +141,7 @@ test('проверка наличия ЕПГ на Россия 24', async ({ pag
     //нажимаем на "Телепрограмма, проверяем наличие хотябы 1 телепрограммы"
     await page.click('.page-main > .stream__item > .stream__title-container > .stream__button-container > .stream__button')
     await page.waitForSelector('.main__content > .main__wrapper > .epg__list > li:nth-child(1) > .epg__item')
-    await page.screenshot({ path: 'EGP/EPG ' + channelName + ' ' + browserName + '.png' })
+    //await page.screenshot({ path: 'EGP/EPG ' + channelName + ' ' + browserName + '.png' })
     await page.locator('text=Закрыть').click();
 })
 
@@ -161,7 +161,7 @@ test('проверка наличия ЕПГ на Карусель', async ({ pa
     //нажимаем на "Телепрограмма, проверяем наличие хотябы 1 телепрограммы"
     await page.click('.page-main > .stream__item > .stream__title-container > .stream__button-container > .stream__button')
     await page.waitForSelector('.main__content > .main__wrapper > .epg__list > li:nth-child(1) > .epg__item')
-    await page.screenshot({ path: 'EGP/EPG ' + channelName + ' ' + browserName + '.png' })
+    //await page.screenshot({ path: 'EGP/EPG ' + channelName + ' ' + browserName + '.png' })
     await page.locator('text=Закрыть').click();
 })
 
@@ -181,7 +181,7 @@ test('проверка наличия ЕПГ на ОТР', async ({ page, browse
     //нажимаем на "Телепрограмма, проверяем наличие хотябы 1 телепрограммы"
     await page.click('.page-main > .stream__item > .stream__title-container > .stream__button-container > .stream__button')
     await page.waitForSelector('.main__content > .main__wrapper > .epg__list > li:nth-child(1) > .epg__item')
-    await page.screenshot({ path: 'EGP/EPG ' + channelName + ' ' + browserName + '.png' })
+    //await page.screenshot({ path: 'EGP/EPG ' + channelName + ' ' + browserName + '.png' })
     await page.locator('text=Закрыть').click();
 })
 
@@ -201,7 +201,7 @@ test('проверка наличия ЕПГ на ТВЦ', async ({ page, browse
     //нажимаем на "Телепрограмма, проверяем наличие хотябы 1 телепрограммы"
     await page.click('.page-main > .stream__item > .stream__title-container > .stream__button-container > .stream__button')
     await page.waitForSelector('.main__content > .main__wrapper > .epg__list > li:nth-child(1) > .epg__item')
-    await page.screenshot({ path: 'EGP/EPG ' + channelName + ' ' + browserName + '.png' })
+    //await page.screenshot({ path: 'EGP/EPG ' + channelName + ' ' + browserName + '.png' })
     await page.locator('text=Закрыть').click();
 })
 
@@ -221,7 +221,7 @@ test('проверка наличия ЕПГ на РЕН ТВ', async ({ page, b
     //нажимаем на "Телепрограмма, проверяем наличие хотябы 1 телепрограммы"
     await page.click('.page-main > .stream__item > .stream__title-container > .stream__button-container > .stream__button')
     await page.waitForSelector('.main__content > .main__wrapper > .epg__list > li:nth-child(1) > .epg__item')
-    await page.screenshot({ path: 'EGP/EPG ' + channelName + ' ' + browserName + '.png' })
+    //await page.screenshot({ path: 'EGP/EPG ' + channelName + ' ' + browserName + '.png' })
     await page.locator('text=Закрыть').click();
 })
 
@@ -241,7 +241,7 @@ test('проверка наличия ЕПГ на Спас', async ({ page, brow
     //нажимаем на "Телепрограмма, проверяем наличие хотябы 1 телепрограммы"
     await page.click('.page-main > .stream__item > .stream__title-container > .stream__button-container > .stream__button')
     await page.waitForSelector('.main__content > .main__wrapper > .epg__list > li:nth-child(1) > .epg__item')
-    await page.screenshot({ path: 'EGP/EPG ' + channelName + ' ' + browserName + '.png' })
+    //await page.screenshot({ path: 'EGP/EPG ' + channelName + ' ' + browserName + '.png' })
     await page.locator('text=Закрыть').click();
 })
 
@@ -261,7 +261,7 @@ test('проверка наличия ЕПГ на СТС', async ({ page, browse
     //нажимаем на "Телепрограмма, проверяем наличие хотябы 1 телепрограммы"
     await page.click('.page-main > .stream__item > .stream__title-container > .stream__button-container > .stream__button')
     await page.waitForSelector('.main__content > .main__wrapper > .epg__list > li:nth-child(1) > .epg__item')
-    await page.screenshot({ path: 'EGP/EPG ' + channelName + ' ' + browserName + '.png' })
+    //await page.screenshot({ path: 'EGP/EPG ' + channelName + ' ' + browserName + '.png' })
     await page.locator('text=Закрыть').click();
 })
 
@@ -281,7 +281,7 @@ test('проверка наличия ЕПГ на Домашний', async ({ pa
     //нажимаем на "Телепрограмма, проверяем наличие хотябы 1 телепрограммы"
     await page.click('.page-main > .stream__item > .stream__title-container > .stream__button-container > .stream__button')
     await page.waitForSelector('.main__content > .main__wrapper > .epg__list > li:nth-child(1) > .epg__item')
-    await page.screenshot({ path: 'EGP/EPG ' + channelName + ' ' + browserName + '.png' })
+    //await page.screenshot({ path: 'EGP/EPG ' + channelName + ' ' + browserName + '.png' })
     await page.locator('text=Закрыть').click();
 })
 
@@ -301,7 +301,7 @@ test('проверка наличия ЕПГ на ТВ-3', async ({ page, browse
     //нажимаем на "Телепрограмма, проверяем наличие хотябы 1 телепрограммы"
     await page.click('.page-main > .stream__item > .stream__title-container > .stream__button-container > .stream__button')
     await page.waitForSelector('.main__content > .main__wrapper > .epg__list > li:nth-child(1) > .epg__item')
-    await page.screenshot({ path: 'EGP/EPG ' + channelName + ' ' + browserName + '.png' })
+    //await page.screenshot({ path: 'EGP/EPG ' + channelName + ' ' + browserName + '.png' })
     await page.locator('text=Закрыть').click();
 })
 
@@ -321,7 +321,7 @@ test('проверка наличия ЕПГ на Пятница', async ({ page
     //нажимаем на "Телепрограмма, проверяем наличие хотябы 1 телепрограммы"
     await page.click('.page-main > .stream__item > .stream__title-container > .stream__button-container > .stream__button')
     await page.waitForSelector('.main__content > .main__wrapper > .epg__list > li:nth-child(1) > .epg__item')
-    await page.screenshot({ path: 'EGP/EPG ' + channelName + ' ' + browserName + '.png' })
+    //await page.screenshot({ path: 'EGP/EPG ' + channelName + ' ' + browserName + '.png' })
     await page.locator('text=Закрыть').click();
 })
 
@@ -341,7 +341,7 @@ test('проверка наличия ЕПГ на Звезда', async ({ page, 
     //нажимаем на "Телепрограмма, проверяем наличие хотябы 1 телепрограммы"
     await page.click('.page-main > .stream__item > .stream__title-container > .stream__button-container > .stream__button')
     await page.waitForSelector('.main__content > .main__wrapper > .epg__list > li:nth-child(1) > .epg__item')
-    await page.screenshot({ path: 'EGP/EPG ' + channelName + ' ' + browserName + '.png' })
+    //await page.screenshot({ path: 'EGP/EPG ' + channelName + ' ' + browserName + '.png' })
     await page.locator('text=Закрыть').click();
 })
 
@@ -361,7 +361,7 @@ test('проверка наличия ЕПГ на МИР', async ({ page, browse
     //нажимаем на "Телепрограмма, проверяем наличие хотябы 1 телепрограммы"
     await page.click('.page-main > .stream__item > .stream__title-container > .stream__button-container > .stream__button')
     await page.waitForSelector('.main__content > .main__wrapper > .epg__list > li:nth-child(1) > .epg__item')
-    await page.screenshot({ path: 'EGP/EPG ' + channelName + ' ' + browserName + '.png' })
+    //await page.screenshot({ path: 'EGP/EPG ' + channelName + ' ' + browserName + '.png' })
     await page.locator('text=Закрыть').click();
 })
 
@@ -381,7 +381,7 @@ test('проверка наличия ЕПГ на ТНТ', async ({ page, browse
     //нажимаем на "Телепрограмма, проверяем наличие хотябы 1 телепрограммы"
     await page.click('.page-main > .stream__item > .stream__title-container > .stream__button-container > .stream__button')
     await page.waitForSelector('.main__content > .main__wrapper > .epg__list > li:nth-child(1) > .epg__item')
-    await page.screenshot({ path: 'EGP/EPG ' + channelName + ' ' + browserName + '.png' })
+    //await page.screenshot({ path: 'EGP/EPG ' + channelName + ' ' + browserName + '.png' })
     await page.locator('text=Закрыть').click();
 })
 
@@ -401,7 +401,7 @@ test('проверка наличия ЕПГ на МУЗ-ТВ', async ({ page, b
     //нажимаем на "Телепрограмма, проверяем наличие хотябы 1 телепрограммы"
     await page.click('.page-main > .stream__item > .stream__title-container > .stream__button-container > .stream__button')
     await page.waitForSelector('.main__content > .main__wrapper > .epg__list > li:nth-child(1) > .epg__item')
-    await page.screenshot({ path: 'EGP/EPG ' + channelName + ' ' + browserName + '.png' })
+    //await page.screenshot({ path: 'EGP/EPG ' + channelName + ' ' + browserName + '.png' })
     await page.locator('text=Закрыть').click();
 })
 
@@ -421,6 +421,6 @@ test('проверка наличия ЕПГ на МИР-24', async ({ page, bro
     //нажимаем на "Телепрограмма, проверяем наличие хотябы 1 телепрограммы"
     await page.click('.page-main > .stream__item > .stream__title-container > .stream__button-container > .stream__button')
     await page.waitForSelector('.main__content > .main__wrapper > .epg__list > li:nth-child(1) > .epg__item')
-    await page.screenshot({ path: 'EGP/EPG ' + channelName + ' ' + browserName + '.png' })
+    //await page.screenshot({ path: 'EGP/EPG ' + channelName + ' ' + browserName + '.png' })
     await page.locator('text=Закрыть').click();
 })

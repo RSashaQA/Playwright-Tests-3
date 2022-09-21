@@ -32,7 +32,7 @@ pipeline {
                     results: [[path: 'target/allure-results']]
             ])
                  }
-              archiveArtifacts(artifacts: 'EPG/*EPG*.png', followSymlinks: false)
+              archiveArtifacts(artifacts: '*EPG*.png', followSymlinks: false)
               sh 'rm -rf *.png'
              }
          }
