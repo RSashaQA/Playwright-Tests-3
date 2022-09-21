@@ -16,8 +16,7 @@ pipeline {
     stage('test') {
       steps {
         sh '''
-          npx playwright test --list
-          npx playwright test EPG20test --reporter=line,experimental-allure-playwright --workers 8
+          npx playwright test --reporter=line,experimental-allure-playwright --workers 8
         '''
         } 
       }
@@ -32,9 +31,7 @@ pipeline {
                     reportBuildPolicy: 'ALWAYS',
                     results: [[path: 'target/allure-results']]
             ])
-                 }
-              archiveArtifacts(artifacts: '*EPG*.png', followSymlinks: false)
-              sh 'rm -rf *.png'
+      }
     }
   }
 }
