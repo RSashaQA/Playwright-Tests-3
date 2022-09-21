@@ -4,6 +4,7 @@ pipeline {
     stage('prepare playwright') {
       steps {
         sh '''
+          rm -rf $WORKSPACE/target/allure-results
           npm i -D @playwright/test
           npx playwright install
           npm i -D experimental-allure-playwright
@@ -16,7 +17,7 @@ pipeline {
       steps {
         sh '''
           npx playwright test --list
-          npx playwright test --reporter=line,experimental-allure-playwright --workers 4
+          npx playwright test EG20test --reporter=line,experimental-allure-playwright --workers 8
         '''
         } 
       }
