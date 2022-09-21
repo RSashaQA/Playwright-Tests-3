@@ -1,7 +1,7 @@
 pipeline {
   agent any
   stages {
-    stage('install playwright') {
+    stage('prepare playwright') {
       steps {
         sh '''
           npm i -D @playwright/test
@@ -16,7 +16,7 @@ pipeline {
       steps {
         sh '''
           npx playwright test --list
-          npx playwright test EPG20test.spec.js --project=chromium --reporter=line,experimental-allure-playwright --workers 4
+          npx playwright test --reporter=line,experimental-allure-playwright --workers 4
         '''
         } 
       }
@@ -34,6 +34,6 @@ pipeline {
                  }
               archiveArtifacts(artifacts: '*EPG*.png', followSymlinks: false)
               sh 'rm -rf *.png'
-             }
-         }
+    }
+  }
 }
