@@ -32,7 +32,7 @@ pipeline {
     stage('test') {
       steps {
         sh '''
-          npx playwright test login2check.spec.js --reporter=line,experimental-allure-playwright --workers 8
+          npx playwright test --reporter=line,experimental-allure-playwright --workers 8
         '''
         } 
       }
@@ -45,7 +45,7 @@ pipeline {
                     jdk: '',
                     properties: [],
                     reportBuildPolicy: 'ALWAYS',
-                    results: [[path: 'target/allure-results']]
+                    results: [[path: '$WORKSPACE/allure-results']]
             ])
       }
     }
