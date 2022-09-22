@@ -2,7 +2,7 @@ const { test, expect } = require('@playwright/test');
 
 test.setTimeout(120000)
 
-test('Тест двойной авторизации в разные аккаунты', async ({ page }) => {
+test('Тест авторизации в разные аккаунты', async ({ page }) => {
 
 const userName1 = "STPLIME999@gmail.com"
 const userName2 = "TEST777@gmail.com"

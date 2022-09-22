@@ -1,6 +1,6 @@
 const { test, expect } = require('@playwright/test');
 
-test('Тест смена вкладнок, ТВ-каналы, Кино, Подписки', async ({ page }) => {
+test('Тест смена вкладок, ТВ-каналы, Кино, Подписки', async ({ page }) => {
 
     await page.goto('https://limehd.tv/')
 
