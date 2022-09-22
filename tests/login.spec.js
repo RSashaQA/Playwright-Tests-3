@@ -25,9 +25,9 @@ test('авторизаяция, плохой сценарий', async ({ page })
     // try {
         //проверяем наличие ошибок у полей e-mail и пароль
         const badEmailLogin = await page.innerText('.login__form > .form__container > form > .form__label:nth-child(1) > .input__error');
-        expect(badEmailLogin).toBe('Введите корректный e-mail');
+        expect(badEmailLogin).toBe(' Введите корректный e-mail');
         const badPasswordLogin = await page.innerText('.login__form > .form__container > form > .form__label:nth-child(2) > .input__error');
-        expect(badPasswordLogin).toBe('Введите пароль');
+        expect(badPasswordLogin).toBe(' Введите пароль');
     // } catch (err) { console.log('bug https://limehd.atlassian.net/browse/PW-292') }
 })
 
