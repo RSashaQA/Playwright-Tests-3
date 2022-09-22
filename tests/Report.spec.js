@@ -12,7 +12,7 @@ test('Регистрация тестового аккаунта', async ({ page
     await page.locator('text=Зарегистрироваться').click();
 });
 
-test('Trouble report check', async ({ page }) => {
+test('Сообщить о проблеме', async ({ page }) => {
 
     await page.goto('https://limehd.tv/login')
 
