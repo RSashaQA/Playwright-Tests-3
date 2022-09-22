@@ -78,7 +78,7 @@ test('Сообщить о проблеме', async ({ page }) => {
 
     //вводим текст в поле "Опишите вашу проблему", проверяем, что ошибка "Обязательное поле" пропала
     await page.locator('textarea').fill('123');
-    await page.waitForSelector('text=Обязательное поле', { state: 'hidden', timeout: 100 });
+    await page.waitForSelector('text=Обязательное поле', { timeout: 100 });
 
     //вводим в поле "E-mail" невалидную почту, пытаемся отправить сообщение об ошибке
     await page.locator('textarea').fill('123');
