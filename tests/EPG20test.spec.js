@@ -12,10 +12,10 @@ test('проверка наличия ЕПГ на Первом канале', as
     //let channelName = await page.$eval('#__layout > div > div.default__layout > div > div.stream__item > div.stream__title-container > h1', el => el.innerText);
 
     //проверяем, что нет текста об отстутствии ЕПГ
-    await page.waitForSelector('h2:has-text("Телепрограмма отсутствует")', { state: 'hidden', timeout: 2000 })
+    await page.waitForSelector('h2:has-text("Телепрограмма отсутствует")', { state: 'hidden', timeout: 5000 })
 
     //проверяем, что есть время начала и окончания телепрограммы
-    await page.waitForSelector('.page-main > .stream__item > .stream__current-program > .current-program__title-container > .current-program__time', { state: 'visible', timeout: 2000 })
+    await page.waitForSelector('.page-main > .stream__item > .stream__current-program > .current-program__title-container > .current-program__time', { state: 'visible', timeout: 5000 })
 
     //нажимаем на "Телепрограмма, проверяем наличие хотябы 1 телепрограммы"
     //await page.click('.page-main > .stream__item > .stream__title-container > .stream__button-container > .stream__button')
@@ -33,10 +33,10 @@ test('проверка наличия ЕПГ на Россия 1', async ({ page
     //let channelName = await page.$eval('#__layout > div > div.default__layout > div > div.stream__item > div.stream__title-container > h1', el => el.innerText);
 
     //проверяем, что нет текста об отстутствии ЕПГ
-    await page.waitForSelector('h2:has-text("Телепрограмма отсутствует")', { state: 'hidden', timeout: 2000 })
+    await page.waitForSelector('h2:has-text("Телепрограмма отсутствует")', { state: 'hidden', timeout: 5000 })
 
     //проверяем, что есть время начала и окончания телепрограммы
-    await page.waitForSelector('.page-main > .stream__item > .stream__current-program > .current-program__title-container > .current-program__time', { state: 'visible', timeout: 2000 })
+    await page.waitForSelector('.page-main > .stream__item > .stream__current-program > .current-program__title-container > .current-program__time', { state: 'visible', timeout: 5000 })
 
     //нажимаем на "Телепрограмма, проверяем наличие хотябы 1 телепрограммы"
     //await page.click('.page-main > .stream__item > .stream__title-container > .stream__button-container > .stream__button')
@@ -53,10 +53,10 @@ test('проверка наличия ЕПГ на Матч!', async ({ page, bro
     //let channelName = await page.$eval('#__layout > div > div.default__layout > div > div.stream__item > div.stream__title-container > p', el => el.innerText);
 
     //проверяем, что нет текста об отстутствии ЕПГ
-    await page.waitForSelector('h2:has-text("Телепрограмма отсутствует")', { state: 'hidden', timeout: 2000 })
+    await page.waitForSelector('h2:has-text("Телепрограмма отсутствует")', { state: 'hidden', timeout: 5000 })
 
     //проверяем, что есть время начала и окончания телепрограммы
-    await page.waitForSelector('.page-main > .stream__item > .stream__current-program > .current-program__title-container > .current-program__time', { state: 'visible', timeout: 2000 })
+    await page.waitForSelector('.page-main > .stream__item > .stream__current-program > .current-program__title-container > .current-program__time', { state: 'visible', timeout: 5000 })
 
     //нажимаем на "Телепрограмма, проверяем наличие хотябы 1 телепрограммы"
     //await page.click('.page-main > .stream__item > .stream__title-container > .stream__button-container > .stream__button')
@@ -73,10 +73,10 @@ test('проверка наличия ЕПГ на НТВ', async ({ page, browse
     //let channelName = await page.$eval('#__layout > div > div.default__layout > div > div.stream__item > div.stream__title-container > p', el => el.innerText);
 
     //проверяем, что нет текста об отстутствии ЕПГ
-    await page.waitForSelector('h2:has-text("Телепрограмма отсутствует")', { state: 'hidden', timeout: 2000 })
+    await page.waitForSelector('h2:has-text("Телепрограмма отсутствует")', { state: 'hidden', timeout: 5000 })
 
     //проверяем, что есть время начала и окончания телепрограммы
-    await page.waitForSelector('.page-main > .stream__item > .stream__current-program > .current-program__title-container > .current-program__time', { state: 'visible', timeout: 2000 })
+    await page.waitForSelector('.page-main > .stream__item > .stream__current-program > .current-program__title-container > .current-program__time', { state: 'visible', timeout: 5000 })
 
     //нажимаем на "Телепрограмма, проверяем наличие хотябы 1 телепрограммы"
     //await page.click('.page-main > .stream__item > .stream__title-container > .stream__button-container > .stream__button')
@@ -93,10 +93,10 @@ test('проверка наличия ЕПГ на 5 канале', async ({ page
     //let channelName = await page.$eval('#__layout > div > div.default__layout > div > div.stream__item > div.stream__title-container > p', el => el.innerText);
 
     //проверяем, что нет текста об отстутствии ЕПГ
-    await page.waitForSelector('h2:has-text("Телепрограмма отсутствует")', { state: 'hidden', timeout: 2000 })
+    await page.waitForSelector('h2:has-text("Телепрограмма отсутствует")', { state: 'hidden', timeout: 5000 })
 
     //проверяем, что есть время начала и окончания телепрограммы
-    await page.waitForSelector('.page-main > .stream__item > .stream__current-program > .current-program__title-container > .current-program__time', { state: 'visible', timeout: 2000 })
+    await page.waitForSelector('.page-main > .stream__item > .stream__current-program > .current-program__title-container > .current-program__time', { state: 'visible', timeout: 5000 })
 
     //нажимаем на "Телепрограмма, проверяем наличие хотябы 1 телепрограммы"
     //await page.click('.page-main > .stream__item > .stream__title-container > .stream__button-container > .stream__button')
@@ -113,10 +113,10 @@ test('проверка наличия ЕПГ на Россия К', async ({ pag
     //let channelName = await page.$eval('#__layout > div > div.default__layout > div > div.stream__item > div.stream__title-container > h1', el => el.innerText);
 
     //проверяем, что нет текста об отстутствии ЕПГ
-    await page.waitForSelector('h2:has-text("Телепрограмма отсутствует")', { state: 'hidden', timeout: 2000 })
+    await page.waitForSelector('h2:has-text("Телепрограмма отсутствует")', { state: 'hidden', timeout: 5000 })
 
     //проверяем, что есть время начала и окончания телепрограммы
-    await page.waitForSelector('.page-main > .stream__item > .stream__current-program > .current-program__title-container > .current-program__time', { state: 'visible', timeout: 2000 })
+    await page.waitForSelector('.page-main > .stream__item > .stream__current-program > .current-program__title-container > .current-program__time', { state: 'visible', timeout: 5000 })
 
     //нажимаем на "Телепрограмма, проверяем наличие хотябы 1 телепрограммы"
     //await page.click('.page-main > .stream__item > .stream__title-container > .stream__button-container > .stream__button')
@@ -133,10 +133,10 @@ test('проверка наличия ЕПГ на Россия 24', async ({ pag
     //let channelName = await page.$eval('#__layout > div > div.default__layout > div > div.stream__item > div.stream__title-container > h1', el => el.innerText);
 
     //проверяем, что нет текста об отстутствии ЕПГ
-    await page.waitForSelector('h2:has-text("Телепрограмма отсутствует")', { state: 'hidden', timeout: 2000 })
+    await page.waitForSelector('h2:has-text("Телепрограмма отсутствует")', { state: 'hidden', timeout: 5000 })
 
     //проверяем, что есть время начала и окончания телепрограммы
-    await page.waitForSelector('.page-main > .stream__item > .stream__current-program > .current-program__title-container > .current-program__time', { state: 'visible', timeout: 2000 })
+    await page.waitForSelector('.page-main > .stream__item > .stream__current-program > .current-program__title-container > .current-program__time', { state: 'visible', timeout: 5000 })
 
     //нажимаем на "Телепрограмма, проверяем наличие хотябы 1 телепрограммы"
     //await page.click('.page-main > .stream__item > .stream__title-container > .stream__button-container > .stream__button')
@@ -153,10 +153,10 @@ test('проверка наличия ЕПГ на Карусель', async ({ pa
     //let channelName = await page.$eval('#__layout > div > div.default__layout > div > div.stream__item > div.stream__title-container > p', el => el.innerText);
 
     //проверяем, что нет текста об отстутствии ЕПГ
-    await page.waitForSelector('h2:has-text("Телепрограмма отсутствует")', { state: 'hidden', timeout: 2000 })
+    await page.waitForSelector('h2:has-text("Телепрограмма отсутствует")', { state: 'hidden', timeout: 5000 })
 
     //проверяем, что есть время начала и окончания телепрограммы
-    await page.waitForSelector('.page-main > .stream__item > .stream__current-program > .current-program__title-container > .current-program__time', { state: 'visible', timeout: 2000 })
+    await page.waitForSelector('.page-main > .stream__item > .stream__current-program > .current-program__title-container > .current-program__time', { state: 'visible', timeout: 5000 })
 
     //нажимаем на "Телепрограмма, проверяем наличие хотябы 1 телепрограммы"
     //await page.click('.page-main > .stream__item > .stream__title-container > .stream__button-container > .stream__button')
@@ -173,10 +173,10 @@ test('проверка наличия ЕПГ на ОТР', async ({ page, browse
     //let channelName = await page.$eval('#__layout > div > div.default__layout > div > div.stream__item > div.stream__title-container > p', el => el.innerText);
 
     //проверяем, что нет текста об отстутствии ЕПГ
-    await page.waitForSelector('h2:has-text("Телепрограмма отсутствует")', { state: 'hidden', timeout: 2000 })
+    await page.waitForSelector('h2:has-text("Телепрограмма отсутствует")', { state: 'hidden', timeout: 5000 })
 
     //проверяем, что есть время начала и окончания телепрограммы
-    await page.waitForSelector('.page-main > .stream__item > .stream__current-program > .current-program__title-container > .current-program__time', { state: 'visible', timeout: 2000 })
+    await page.waitForSelector('.page-main > .stream__item > .stream__current-program > .current-program__title-container > .current-program__time', { state: 'visible', timeout: 5000 })
 
     //нажимаем на "Телепрограмма, проверяем наличие хотябы 1 телепрограммы"
     //await page.click('.page-main > .stream__item > .stream__title-container > .stream__button-container > .stream__button')
@@ -193,10 +193,10 @@ test('проверка наличия ЕПГ на ТВЦ', async ({ page, browse
     //let channelName = await page.$eval('#__layout > div > div.default__layout > div > div.stream__item > div.stream__title-container > p', el => el.innerText);
 
     //проверяем, что нет текста об отстутствии ЕПГ
-    await page.waitForSelector('h2:has-text("Телепрограмма отсутствует")', { state: 'hidden', timeout: 2000 })
+    await page.waitForSelector('h2:has-text("Телепрограмма отсутствует")', { state: 'hidden', timeout: 5000 })
 
     //проверяем, что есть время начала и окончания телепрограммы
-    await page.waitForSelector('.page-main > .stream__item > .stream__current-program > .current-program__title-container > .current-program__time', { state: 'visible', timeout: 2000 })
+    await page.waitForSelector('.page-main > .stream__item > .stream__current-program > .current-program__title-container > .current-program__time', { state: 'visible', timeout: 5000 })
 
     //нажимаем на "Телепрограмма, проверяем наличие хотябы 1 телепрограммы"
     //await page.click('.page-main > .stream__item > .stream__title-container > .stream__button-container > .stream__button')
@@ -213,10 +213,10 @@ test('проверка наличия ЕПГ на РЕН ТВ', async ({ page, b
     //let channelName = await page.$eval('#__layout > div > div.default__layout > div > div.stream__item > div.stream__title-container > h1', el => el.innerText);
 
     //проверяем, что нет текста об отстутствии ЕПГ
-    await page.waitForSelector('h2:has-text("Телепрограмма отсутствует")', { state: 'hidden', timeout: 2000 })
+    await page.waitForSelector('h2:has-text("Телепрограмма отсутствует")', { state: 'hidden', timeout: 5000 })
 
     //проверяем, что есть время начала и окончания телепрограммы
-    await page.waitForSelector('.page-main > .stream__item > .stream__current-program > .current-program__title-container > .current-program__time', { state: 'visible', timeout: 2000 })
+    await page.waitForSelector('.page-main > .stream__item > .stream__current-program > .current-program__title-container > .current-program__time', { state: 'visible', timeout: 5000 })
 
     //нажимаем на "Телепрограмма, проверяем наличие хотябы 1 телепрограммы"
     //await page.click('.page-main > .stream__item > .stream__title-container > .stream__button-container > .stream__button')
@@ -233,10 +233,10 @@ test('проверка наличия ЕПГ на Спас', async ({ page, brow
     //let channelName = await page.$eval('#__layout > div > div.default__layout > div > div.stream__item > div.stream__title-container > h1', el => el.innerText);
 
     //проверяем, что нет текста об отстутствии ЕПГ
-    await page.waitForSelector('h2:has-text("Телепрограмма отсутствует")', { state: 'hidden', timeout: 2000 })
+    await page.waitForSelector('h2:has-text("Телепрограмма отсутствует")', { state: 'hidden', timeout: 5000 })
 
     //проверяем, что есть время начала и окончания телепрограммы
-    await page.waitForSelector('.page-main > .stream__item > .stream__current-program > .current-program__title-container > .current-program__time', { state: 'visible', timeout: 2000 })
+    await page.waitForSelector('.page-main > .stream__item > .stream__current-program > .current-program__title-container > .current-program__time', { state: 'visible', timeout: 5000 })
 
     //нажимаем на "Телепрограмма, проверяем наличие хотябы 1 телепрограммы"
     //await page.click('.page-main > .stream__item > .stream__title-container > .stream__button-container > .stream__button')
@@ -253,10 +253,10 @@ test('проверка наличия ЕПГ на СТС', async ({ page, browse
     //let channelName = await page.$eval('#__layout > div > div.default__layout > div > div.stream__item > div.stream__title-container > h1', el => el.innerText);
 
     //проверяем, что нет текста об отстутствии ЕПГ
-    await page.waitForSelector('h2:has-text("Телепрограмма отсутствует")', { state: 'hidden', timeout: 2000 })
+    await page.waitForSelector('h2:has-text("Телепрограмма отсутствует")', { state: 'hidden', timeout: 5000 })
 
     //проверяем, что есть время начала и окончания телепрограммы
-    await page.waitForSelector('.page-main > .stream__item > .stream__current-program > .current-program__title-container > .current-program__time', { state: 'visible', timeout: 2000 })
+    await page.waitForSelector('.page-main > .stream__item > .stream__current-program > .current-program__title-container > .current-program__time', { state: 'visible', timeout: 5000 })
 
     //нажимаем на "Телепрограмма, проверяем наличие хотябы 1 телепрограммы"
     //await page.click('.page-main > .stream__item > .stream__title-container > .stream__button-container > .stream__button')
@@ -273,10 +273,10 @@ test('проверка наличия ЕПГ на Домашний', async ({ pa
     //let channelName = await page.$eval('#__layout > div > div.default__layout > div > div.stream__item > div.stream__title-container > h1', el => el.innerText);
 
     //проверяем, что нет текста об отстутствии ЕПГ
-    await page.waitForSelector('h2:has-text("Телепрограмма отсутствует")', { state: 'hidden', timeout: 2000 })
+    await page.waitForSelector('h2:has-text("Телепрограмма отсутствует")', { state: 'hidden', timeout: 5000 })
 
     //проверяем, что есть время начала и окончания телепрограммы
-    await page.waitForSelector('.page-main > .stream__item > .stream__current-program > .current-program__title-container > .current-program__time', { state: 'visible', timeout: 2000 })
+    await page.waitForSelector('.page-main > .stream__item > .stream__current-program > .current-program__title-container > .current-program__time', { state: 'visible', timeout: 5000 })
 
     //нажимаем на "Телепрограмма, проверяем наличие хотябы 1 телепрограммы"
     //await page.click('.page-main > .stream__item > .stream__title-container > .stream__button-container > .stream__button')
@@ -293,10 +293,10 @@ test('проверка наличия ЕПГ на ТВ-3', async ({ page, browse
     //let channelName = await page.$eval('#__layout > div > div.default__layout > div > div.stream__item > div.stream__title-container > h1', el => el.innerText);
 
     //проверяем, что нет текста об отстутствии ЕПГ
-    await page.waitForSelector('h2:has-text("Телепрограмма отсутствует")', { state: 'hidden', timeout: 2000 })
+    await page.waitForSelector('h2:has-text("Телепрограмма отсутствует")', { state: 'hidden', timeout: 5000 })
 
     //проверяем, что есть время начала и окончания телепрограммы
-    await page.waitForSelector('.page-main > .stream__item > .stream__current-program > .current-program__title-container > .current-program__time', { state: 'visible', timeout: 2000 })
+    await page.waitForSelector('.page-main > .stream__item > .stream__current-program > .current-program__title-container > .current-program__time', { state: 'visible', timeout: 5000 })
 
     //нажимаем на "Телепрограмма, проверяем наличие хотябы 1 телепрограммы"
     //await page.click('.page-main > .stream__item > .stream__title-container > .stream__button-container > .stream__button')
@@ -313,10 +313,10 @@ test('проверка наличия ЕПГ на Пятница', async ({ page
     //let channelName = await page.$eval('#__layout > div > div.default__layout > div > div.stream__item > div.stream__title-container > h1', el => el.innerText);
 
     //проверяем, что нет текста об отстутствии ЕПГ
-    await page.waitForSelector('h2:has-text("Телепрограмма отсутствует")', { state: 'hidden', timeout: 2000 })
+    await page.waitForSelector('h2:has-text("Телепрограмма отсутствует")', { state: 'hidden', timeout: 5000 })
 
     //проверяем, что есть время начала и окончания телепрограммы
-    await page.waitForSelector('.page-main > .stream__item > .stream__current-program > .current-program__title-container > .current-program__time', { state: 'visible', timeout: 2000 })
+    await page.waitForSelector('.page-main > .stream__item > .stream__current-program > .current-program__title-container > .current-program__time', { state: 'visible', timeout: 5000 })
 
     //нажимаем на "Телепрограмма, проверяем наличие хотябы 1 телепрограммы"
     //await page.click('.page-main > .stream__item > .stream__title-container > .stream__button-container > .stream__button')
@@ -333,10 +333,10 @@ test('проверка наличия ЕПГ на Звезда', async ({ page, 
     //let channelName = await page.$eval('#__layout > div > div.default__layout > div > div.stream__item > div.stream__title-container > h1', el => el.innerText);
 
     //проверяем, что нет текста об отстутствии ЕПГ
-    await page.waitForSelector('h2:has-text("Телепрограмма отсутствует")', { state: 'hidden', timeout: 2000 })
+    await page.waitForSelector('h2:has-text("Телепрограмма отсутствует")', { state: 'hidden', timeout: 5000 })
 
     //проверяем, что есть время начала и окончания телепрограммы
-    await page.waitForSelector('.page-main > .stream__item > .stream__current-program > .current-program__title-container > .current-program__time', { state: 'visible', timeout: 2000 })
+    await page.waitForSelector('.page-main > .stream__item > .stream__current-program > .current-program__title-container > .current-program__time', { state: 'visible', timeout: 5000 })
 
     //нажимаем на "Телепрограмма, проверяем наличие хотябы 1 телепрограммы"
     //await page.click('.page-main > .stream__item > .stream__title-container > .stream__button-container > .stream__button')
@@ -353,10 +353,10 @@ test('проверка наличия ЕПГ на МИР', async ({ page, browse
     //let channelName = await page.$eval('#__layout > div > div.default__layout > div > div.stream__item > div.stream__title-container > h1', el => el.innerText);
 
     //проверяем, что нет текста об отстутствии ЕПГ
-    await page.waitForSelector('h2:has-text("Телепрограмма отсутствует")', { state: 'hidden', timeout: 2000 })
+    await page.waitForSelector('h2:has-text("Телепрограмма отсутствует")', { state: 'hidden', timeout: 5000 })
 
     //проверяем, что есть время начала и окончания телепрограммы
-    await page.waitForSelector('.page-main > .stream__item > .stream__current-program > .current-program__title-container > .current-program__time', { state: 'visible', timeout: 2000 })
+    await page.waitForSelector('.page-main > .stream__item > .stream__current-program > .current-program__title-container > .current-program__time', { state: 'visible', timeout: 5000 })
 
     //нажимаем на "Телепрограмма, проверяем наличие хотябы 1 телепрограммы"
     //await page.click('.page-main > .stream__item > .stream__title-container > .stream__button-container > .stream__button')
@@ -373,10 +373,10 @@ test('проверка наличия ЕПГ на ТНТ', async ({ page, browse
     //let channelName = await page.$eval('#__layout > div > div.default__layout > div > div.stream__item > div.stream__title-container > h1', el => el.innerText);
 
     //проверяем, что нет текста об отстутствии ЕПГ
-    await page.waitForSelector('h2:has-text("Телепрограмма отсутствует")', { state: 'hidden', timeout: 2000 })
+    await page.waitForSelector('h2:has-text("Телепрограмма отсутствует")', { state: 'hidden', timeout: 5000 })
 
     //проверяем, что есть время начала и окончания телепрограммы
-    await page.waitForSelector('.page-main > .stream__item > .stream__current-program > .current-program__title-container > .current-program__time', { state: 'visible', timeout: 2000 })
+    await page.waitForSelector('.page-main > .stream__item > .stream__current-program > .current-program__title-container > .current-program__time', { state: 'visible', timeout: 5000 })
 
     //нажимаем на "Телепрограмма, проверяем наличие хотябы 1 телепрограммы"
     //await page.click('.page-main > .stream__item > .stream__title-container > .stream__button-container > .stream__button')
@@ -393,10 +393,10 @@ test('проверка наличия ЕПГ на МУЗ-ТВ', async ({ page, b
     //let channelName = await page.$eval('#__layout > div > div.default__layout > div > div.stream__item > div.stream__title-container > h1', el => el.innerText);
 
     //проверяем, что нет текста об отстутствии ЕПГ
-    await page.waitForSelector('h2:has-text("Телепрограмма отсутствует")', { state: 'hidden', timeout: 2000 })
+    await page.waitForSelector('h2:has-text("Телепрограмма отсутствует")', { state: 'hidden', timeout: 5000 })
 
     //проверяем, что есть время начала и окончания телепрограммы
-    await page.waitForSelector('.page-main > .stream__item > .stream__current-program > .current-program__title-container > .current-program__time', { state: 'visible', timeout: 2000 })
+    await page.waitForSelector('.page-main > .stream__item > .stream__current-program > .current-program__title-container > .current-program__time', { state: 'visible', timeout: 5000 })
 
     //нажимаем на "Телепрограмма, проверяем наличие хотябы 1 телепрограммы"
     //await page.click('.page-main > .stream__item > .stream__title-container > .stream__button-container > .stream__button')
@@ -413,10 +413,10 @@ test('проверка наличия ЕПГ на МИР-24', async ({ page, bro
     //let channelName = await page.$eval('#__layout > div > div.default__layout > div > div.stream__item > div.stream__title-container > h1', el => el.innerText);
 
     //проверяем, что нет текста об отстутствии ЕПГ
-    await page.waitForSelector('h2:has-text("Телепрограмма отсутствует")', { state: 'hidden', timeout: 2000 })
+    await page.waitForSelector('h2:has-text("Телепрограмма отсутствует")', { state: 'hidden', timeout: 5000 })
 
     //проверяем, что есть время начала и окончания телепрограммы
-    await page.waitForSelector('.page-main > .stream__item > .stream__current-program > .current-program__title-container > .current-program__time', { state: 'visible', timeout: 2000 })
+    await page.waitForSelector('.page-main > .stream__item > .stream__current-program > .current-program__title-container > .current-program__time', { state: 'visible', timeout: 5000 })
 
     //нажимаем на "Телепрограмма, проверяем наличие хотябы 1 телепрограммы"
     //await page.click('.page-main > .stream__item > .stream__title-container > .stream__button-container > .stream__button')
