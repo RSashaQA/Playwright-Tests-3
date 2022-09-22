@@ -32,7 +32,7 @@ pipeline {
     stage('test') {
       steps {
         sh '''
-          npx playwright test password2 --reporter=line,experimental-allure-playwright --workers 8
+          npx playwright test --reporter=line,experimental-allure-playwright --workers 8
         '''
         } 
       }
