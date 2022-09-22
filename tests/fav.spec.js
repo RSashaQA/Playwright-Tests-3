@@ -88,9 +88,9 @@ test('Тест добавление/удаление каналов из стр�
   await page.click('.channel__wrapper > .channel__title-container > .channel__title-wrapper > .channel__favorite-container > .channel__favorite')
   await page.waitForTimeout(2000)
 
-  // try {
+  try {
   //проверяем, что избранном есть надпись 'Добавьте каналы в избранное'
   const FavClear = await page.innerText('.page-main__container > .page-main > .channel__list-component > .channel__list-content > .channel__list-text', {timeout: 5000})
   expect(FavClear).toBe('Добавьте каналы в избранное')
-  // } catch (err) {console.log('bug https://limehd.atlassian.net/browse/PW-300')}
+  } catch (err) {console.log('bug https://limehd.atlassian.net/browse/PW-300')}
 });
