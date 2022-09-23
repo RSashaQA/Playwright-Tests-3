@@ -15,7 +15,8 @@ $accs = [
     ],
 ];
 foreach ($accs as $acc) {
-    curl_setopt($ch, CURLOPT_URL, $_POST['https://pl.iptv2021.com/api/v1/login']);
+    curl_setopt($ch, CURLOPT_URL, ['https://pl.iptv2021.com/api/v1/login']);
+    curl_setopt($ch, CURLOPT_POST, 1);
     curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
     curl_setopt($ch, CURLOPT_POSTFIELDS, $acc);
 
