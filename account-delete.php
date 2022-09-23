@@ -1,9 +1,9 @@
 <?php
-$ch = curl_init();
-$headers = [
-    "User-Agent" => '{"sdk":25,"version_name":"4.4.0","version_code":647,"platform":"android","device_id":"123123123","name":"YOUR_DEVICE_NAME","app":"com.infolink.limeiptv"} '
-];
-$server = "https://pl.iptv2021.com";
+
+$headers = array(
+    'user-agent: "sdk":25,"version_name":"4.4.0","version_code":647,"platform":"android","device_id":"123123123","name":"YOUR_DEVICE_NAME","app":"com.infolink.limeiptv"} '
+);
+
 $accs = [
     [
         'email' => 'testdeleteme@test.test',
@@ -15,10 +15,16 @@ $accs = [
     ],
 ];
 foreach ($accs as $acc) {
-    curl_setopt($ch, CURLOPT_URL, ['https://pl.iptv2021.com/api/v1/login']);
+    $ch = curl_init('https://pl.iptv2021.com');
     curl_setopt($ch, CURLOPT_POST, 1);
-    curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
-    curl_setopt($ch, CURLOPT_POSTFIELDS, $acc);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($acc, '', '&'));
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+    curl_setopt($ch, CURLOPT_HEADER, $headers);
+    $html = curl_exec($ch);
+    curl_close($ch);	
+     
+    echo $html;
 
     if ($server_output == "OK") {
         print "Login successful\n";
