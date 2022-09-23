@@ -13,7 +13,7 @@ $accs = [
     ],
 ];
 foreach ($accs as $acc) {
-    $ch = curl_init('https://pl.iptv2021.com');
+    $ch = curl_init('https://pl.iptv2021.com/api/v4/login');
     curl_setopt($ch, CURLOPT_POST, 1);
     curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($acc, '', '&'));
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
