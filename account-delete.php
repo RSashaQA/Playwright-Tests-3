@@ -6,7 +6,8 @@ $headers = [
 
 $server = "https://pl.iptv2021.com";
 
-$ch = curl_init();
+$curl = curl_init();
+
 $response = curl_exec($curl);
 
 $accs = [
