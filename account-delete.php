@@ -14,9 +14,13 @@ $response = curl_exec($curl);
 
 $accs = [
     [
-        "email" => "testdeleteme@test.test",
-        "pass"  => "qqqqqq",
-    ]
+        'email' => 'testdeleteme@test.test',
+        'pass'  => 'qqqqqq',
+    ],
+    [
+        'email' => 'sdkfsdgklj2@mail.com',
+        'pass'  => 'sdfhsdklj',
+    ],
 ];
 
 foreach ($accs as $acc) {
@@ -35,10 +39,10 @@ foreach ($accs as $acc) {
           'User-Agent: {"sdk":25,"version_name":"4.4.0","version_code":647,"platform":"android","device_id":"123123123","name":"YOUR_DEVICE_NAME","app":"com.infolink.limeiptv"} '
         )));
       
-    if ($response["success"]) {
-        print "Login successful\n";
-        print_r($response);
-        print "\n";
+    // if ($response["success"]) {
+    //     print "Login successful\n";
+    //     print_r($response);
+    //     print "\n";
 
         curl_setopt_array($curl, array(
             CURLOPT_URL => 'https://pl.iptv2021.com/api/v1/account-delete',
@@ -60,4 +64,3 @@ foreach ($accs as $acc) {
     }
     curl_close($curl);
     echo $response;
-}
