@@ -22,7 +22,7 @@ $accs = [
 foreach ($accs as $acc) {
 
     curl_setopt_array($curl, array(
-        CURLOPT_URL => ("$server/api/v1/login"),
+        CURLOPT_URL => 'https://pl.iptv2021.com/api/v1//api/v1/login',
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_ENCODING => '',
         CURLOPT_MAXREDIRS => 10,
@@ -41,7 +41,7 @@ foreach ($accs as $acc) {
         print "\n";
 
         curl_setopt_array($curl, array(
-            CURLOPT_URL => ("$server/api/v1/account-delete"),
+            CURLOPT_URL => 'https://pl.iptv2021.com/api/v1/account-delete',
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,
