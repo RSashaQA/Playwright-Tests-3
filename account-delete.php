@@ -1,7 +1,8 @@
 <?php
 
-$headers = array('user-agent: {"sdk":25,"version_name":"1.2.1","version_code":123,"platform":"android","device_id":"YOUR_DEVICE_ID","name":"YOUR_DEVICE_NAME","app":"tv.limehd.stb"}');
-
+$headers = array([
+    "User-Agent" => '{"sdk":25,"version_name":"4.4.0","version_code":647,"platform":"android","device_id":"123123123","name":"YOUR_DEVICE_NAME","app":"com.infolink.limeiptv"} '
+]);
 $accs = [
     [
         'email' => 'testdeleteme@test.test',
