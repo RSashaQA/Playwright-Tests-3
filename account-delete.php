@@ -1,8 +1,6 @@
 <?php
 
-$headers = array(
-    'user-agent: "sdk":25,"version_name":"4.4.0","version_code":647,"platform":"android","device_id":"123123123","name":"YOUR_DEVICE_NAME","app":"com.infolink.limeiptv"} '
-);
+$headers = array('user-agent: "app":"com.infolink.limeiptv"');
 
 $accs = [
     [
