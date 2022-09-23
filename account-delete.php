@@ -22,7 +22,7 @@ $accs = [
 foreach ($accs as $acc) {
 
     curl_setopt_array($curl, array(
-        CURLOPT_URL => 'https://pl.iptv2021.com/api/v1//api/v1/login',
+        CURLOPT_URL => 'https://pl.iptv2021.com/api/v4/login',
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_ENCODING => '',
         CURLOPT_MAXREDIRS => 10,
@@ -30,10 +30,10 @@ foreach ($accs as $acc) {
         CURLOPT_FOLLOWLOCATION => true,
         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
         CURLOPT_CUSTOMREQUEST => 'POST',
-        CURLOPT_POSTFIELDS => array($acc),
+        CURLOPT_POSTFIELDS => array('email' => 'testdeleteme@test.test','password' => 'qqqqqq'),
         CURLOPT_HTTPHEADER => array(
-            'User-Agent: {"sdk":25,"version_name":"4.4.0","version_code":647,"platform":"android","device_id":"123123123","name":"YOUR_DEVICE_NAME","app":"com.infolink.limeiptv"} '
-        )));
+          'User-Agent: {"sdk":25,"version_name":"4.4.0","version_code":647,"platform":"android","device_id":"123123123","name":"YOUR_DEVICE_NAME","app":"com.infolink.limeiptv"} '
+        ),
       
     if ($response["success"] && isset($response["token"])) {
         print "Login successful\n";
