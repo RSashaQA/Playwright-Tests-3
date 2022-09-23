@@ -31,7 +31,7 @@ foreach ($accs as $acc) {
         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
         CURLOPT_CUSTOMREQUEST => 'POST',
         CURLOPT_POSTFIELDS => array($acc),
-        CURLOPT_HTTPHEADER => array($headers),
+        CURLOPT_HTTPHEADER => ($headers),
     ));
       
     if ($response["success"] && isset($response["token"])) {
