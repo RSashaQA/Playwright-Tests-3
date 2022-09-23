@@ -31,7 +31,7 @@ foreach ($accs as $acc) {
         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
         CURLOPT_CUSTOMREQUEST => 'POST',
         CURLOPT_POSTFIELDS => array($acc),
-        CURLOPT_HTTPHEADER => ($string_headers),
+        CURLOPT_HTTPHEADER => $headers,
     ));
       
     if ($response["success"] && isset($response["token"])) {
@@ -48,7 +48,7 @@ foreach ($accs as $acc) {
             CURLOPT_FOLLOWLOCATION => true,
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
             CURLOPT_CUSTOMREQUEST => 'GET',
-            CURLOPT_HTTPHEADER => array_merge(array($string_headers, ["X-Token" => $response["token"]]))
+            CURLOPT_HTTPHEADER => array_merge(array($headers, ["X-Token" => $response["token"]]))
           ));
 
         if ($response["success"]) {
