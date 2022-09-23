@@ -26,10 +26,10 @@ foreach ($accs as $acc) {
      
     echo $html;
 
-    if ($server_output == "OK") {
-        print "Login successful\n";
-        print_r($response);
-        print "\n";
+    // if ($server_output == "OK") {
+    //     print "Login successful\n";
+    //     print_r($response);
+    //     print "\n";
 
         // $response = \common\helpers\Curl::init("$server/api/v1/account-delete", [], "GET", "json", array_merge($headers, ["X-Token" => $response["token"]]));
 
@@ -39,7 +39,6 @@ foreach ($accs as $acc) {
         //     print "\n";
         //}
     }
-}
 
 // <?php
 // //
