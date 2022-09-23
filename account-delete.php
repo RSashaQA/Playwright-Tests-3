@@ -30,7 +30,7 @@ foreach ($accs as $acc) {
         CURLOPT_FOLLOWLOCATION => true,
         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
         CURLOPT_CUSTOMREQUEST => 'POST',
-        CURLOPT_POSTFIELDS => array('email' => 'testdeleteme@test.test','password' => 'qqqqqq'),
+        CURLOPT_POSTFIELDS => array($acc),
         CURLOPT_HTTPHEADER => array(
           'User-Agent: {"sdk":25,"version_name":"4.4.0","version_code":647,"platform":"android","device_id":"123123123","name":"YOUR_DEVICE_NAME","app":"com.infolink.limeiptv"} '
         )));
