@@ -7,33 +7,55 @@ $headers = [
 $server = "https://pl.iptv2021.com";
 
 $ch = curl_init();
+$response = curl_exec($curl);
 
 $accs = [
     [
         "email" => "testdeleteme@test.test",
         "pass"  => "qqqqqq",
-    ],
-    [
-        "email" => "sdkfsdgklj2@mail.com",
-        "pass"  => "sdfhsdklj",
-    ],
+    ]
 ];
 
+
+
 foreach ($accs as $acc) {
-    $response = $ch("$server/api/v1/login", $acc, "POST", "json", $headers);
-    if ($ch() == 200 && $response && $response["success"] && isset($response["token"])) {
+
+    curl_setopt_array($curl, array(
+        CURLOPT_URL => ("$server/api/v1/login"),
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_ENCODING => '',
+        CURLOPT_MAXREDIRS => 10,
+        CURLOPT_TIMEOUT => 0,
+        CURLOPT_FOLLOWLOCATION => true,
+        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+        CURLOPT_CUSTOMREQUEST => 'POST',
+        CURLOPT_POSTFIELDS => array($acc),
+        CURLOPT_HTTPHEADER => array($headers),
+    ));
+      
+    if ($response["success"] && isset($response["token"])) {
         print "Login successful\n";
         print_r($response);
         print "\n";
 
-        $response = $ch("$server/api/v1/account-delete", [], "GET", "json", array_merge($headers, ["X-Token" => $response["token"]]));
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => ("$server/api/v1/account-delete"),
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => '',
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => 'GET',
+            CURLOPT_HTTPHEADER => array_merge($headers, ["X-Token" => $response["token"]])
+          ));
 
-        if ($ch() == 200 && $response) {
+        if ($response) {
             print "Account deleting successful\n";
             print_r($response);
             print "\n";
         }
     }
+    curl_close($curl);
+    echo $response;
 }
-
-curl_close($ch);
