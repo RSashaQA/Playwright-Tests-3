@@ -6,6 +6,8 @@ $headers = [
 
 $server = "https://pl.iptv2021.com";
 
+$ch = curl_init();
+
 $accs = [
     [
         "email" => "testdeleteme@test.test",
@@ -18,18 +20,20 @@ $accs = [
 ];
 
 foreach ($accs as $acc) {
-    $response = \common\helpers\Curl::init("$server/api/v1/login", $acc, "POST", "json", $headers);
-    if (\common\helpers\Curl::code() == 200 && $response && $response["success"] && isset($response["token"])) {
+    $response = $ch("$server/api/v1/login", $acc, "POST", "json", $headers);
+    if ($ch() == 200 && $response && $response["success"] && isset($response["token"])) {
         print "Login successful\n";
         print_r($response);
         print "\n";
 
-        $response = \common\helpers\Curl::init("$server/api/v1/account-delete", [], "GET", "json", array_merge($headers, ["X-Token" => $response["token"]]));
+        $response = $ch("$server/api/v1/account-delete", [], "GET", "json", array_merge($headers, ["X-Token" => $response["token"]]));
 
-        if (\common\helpers\Curl::code() == 200 && $response) {
+        if ($ch() == 200 && $response) {
             print "Account deleting successful\n";
             print_r($response);
             print "\n";
         }
     }
 }
+
+curl_close($ch);
