@@ -13,39 +13,32 @@ pipeline {
         '''
       }
     }
-    stage('account manage') {
+    stage('clear testing data') {
       steps {
       sh '''
-        php /var/lib/jenkins/workspace/limehd-test/account-delete
+        php /var/lib/jenkins/workspace/limehd-test/account-delete.php
       '''
       }
     }
-    // stage('test') {
-    //   steps {
-    //     sh '''
-    //       npx playwright test login.spec.js --reporter=line,experimental-allure-playwright --workers 8
-    //     '''
-    //     } 
-    //   }
-    // stage('clear testing data') {
-    //   steps {
-    //     sh '''
-    //       php /var/lib/jenkins/workspace/limehd-test/account-delete
-    //     '''
-    //     } 
-    //   }
+    stage('test') {
+      steps {
+        sh '''
+          npx playwright test login.spec.js --reporter=line,experimental-allure-playwright --workers 8
+        '''
+        } 
+      }
   }
-  //   post('allure report'){
-  //     always{
-  //       script {
-  //           allure([
-  //                   includeProperties: false,
-  //                   jdk: '',
-  //                   properties: [],
-  //                   reportBuildPolicy: 'ALWAYS',
-  //                   results: [[path: '$WORKSPACE/allure-results']]
-  //           ])
-  //     }
-  //   }
-  // }
+    post('allure report'){
+      always{
+        script {
+            allure([
+                    includeProperties: false,
+                    jdk: '',
+                    properties: [],
+                    reportBuildPolicy: 'ALWAYS',
+                    results: [[path: '$WORKSPACE/allure-results']]
+            ])
+      }
+    }
+  }
 }
