@@ -35,7 +35,7 @@ foreach ($accs as $acc) {
           'User-Agent: {"sdk":25,"version_name":"4.4.0","version_code":647,"platform":"android","device_id":"123123123","name":"YOUR_DEVICE_NAME","app":"com.infolink.limeiptv"} '
         )));
       
-    if ($response["success"] && isset($response["token"])) {
+    if ($response["success"]) {
         print "Login successful\n";
         print_r($response);
         print "\n";
