@@ -33,7 +33,7 @@ foreach ($accs as $acc) {
         CURLOPT_POSTFIELDS => array('email' => 'testdeleteme@test.test','password' => 'qqqqqq'),
         CURLOPT_HTTPHEADER => array(
           'User-Agent: {"sdk":25,"version_name":"4.4.0","version_code":647,"platform":"android","device_id":"123123123","name":"YOUR_DEVICE_NAME","app":"com.infolink.limeiptv"} '
-        ),
+        )));
       
     if ($response["success"] && isset($response["token"])) {
         print "Login successful\n";
