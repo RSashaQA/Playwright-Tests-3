@@ -32,7 +32,22 @@ pipeline {
     stage('test') {
       steps {
         sh '''
-          npx playwright test --reporter=line,experimental-allure-playwright --workers 8
+          npx playwright test login.spec.js --reporter=line,experimental-allure-playwright --workers 8
+        '''
+        } 
+      }
+    stage('clear testing data') {
+      steps {
+        sh '''
+curl --location --request POST 'https://pl.iptv2021.com/api/v4/login' \
+--header 'User-Agent: {"sdk":25,"version_name":"4.4.0","version_code":647,"platform":"android","device_id":"123123123","name":"YOUR_DEVICE_NAME","app":"com.infolink.limeiptv"} ' \
+--header 'Cookie: _id_auto_l=5c2648659ac9a5c76f8456adc28345f393fc61af8e5b9b75067cd4dff0194fdea%3A2%3A%7Bi%3A0%3Bs%3A10%3A%22_id_auto_l%22%3Bi%3A1%3Bs%3A22%3A%22%5B654305%2Cfalse%2C2592000%5D%22%3B%7D; advanced-frontend=b7a307b7b6424e1823919acc71bc00a9' \
+--form 'email="testdeleteme@test.test"' \
+--form 'password="qqqqqq"'
+
+curl --location --request GET 'https://pl.iptv2021.com/api/v1/account-delete' \
+--header 'User-Agent: {"sdk":25,"version_name":"4.4.0","version_code":647,"platform":"android","device_id":"123123123","name":"YOUR_DEVICE_NAME","app":"com.infolink.limeiptv"} ' \
+--header 'Cookie: _id_auto_l=5c2648659ac9a5c76f8456adc28345f393fc61af8e5b9b75067cd4dff0194fdea%3A2%3A%7Bi%3A0%3Bs%3A10%3A%22_id_auto_l%22%3Bi%3A1%3Bs%3A22%3A%22%5B654305%2Cfalse%2C2592000%5D%22%3B%7D; advanced-frontend=b7a307b7b6424e1823919acc71bc00a9'
         '''
         } 
       }
@@ -51,3 +66,4 @@ pipeline {
     }
   }
 }
+
