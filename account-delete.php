@@ -1,6 +1,6 @@
 <?php
 
-$headers = array('user-agent: "app":"com.infolink.limeiptv"');
+$headers = array('user-agent: {"sdk":25,"version_name":"1.2.1","version_code":123,"platform":"android","device_id":"YOUR_DEVICE_ID","name":"YOUR_DEVICE_NAME","app":"tv.limehd.stb"}');
 
 $accs = [
     [

@@ -4,12 +4,13 @@ pipeline {
     stage('prepare workspace') {
       steps {
         sh '''
-          rm -rf $WORKSPACE/allure-results
-          npm i -D @playwright/test
-          npx playwright install
-          npm i -D experimental-allure-playwright
-          npm i -D allure-commandline
-          npm i -D fs-extra
+        php /var/lib/jenkins/workspace/limehd-test/account-delete.php
+          // rm -rf $WORKSPACE/allure-results
+          // npm i -D @playwright/test
+          // npx playwright install
+          // npm i -D experimental-allure-playwright
+          // npm i -D allure-commandline
+          // npm i -D fs-extra
         '''
       }
     }
@@ -32,14 +33,14 @@ pipeline {
     stage('test') {
       steps {
         sh '''
-          npx playwright test login.spec.js --reporter=line,experimental-allure-playwright --workers 8
+          //npx playwright test login.spec.js --reporter=line,experimental-allure-playwright --workers 8
         '''
         } 
       }
     stage('clear testing data') {
       steps {
         sh '''
-php /var/lib/jenkins/workspace/limehd-test/account-delete.php
+//php /var/lib/jenkins/workspace/limehd-test/account-delete.php
         '''
         } 
       }
