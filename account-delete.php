@@ -1,16 +1,10 @@
 <?php
 
 $headers = [
-    'User-Agent: {"sdk":25,"version_name":"4.4.0","version_code":647,"platform":"android","device_id":"123123123","name":"YOUR_DEVICE_NAME","app":"com.infolink.limeiptv"} '
+    "User-Agent" => '{"sdk":25,"version_name":"4.4.0","version_code":647,"platform":"android","device_id":"123123123","name":"YOUR_DEVICE_NAME","app":"com.infolink.limeiptv"} ';
 ];
 
-$string_headers = implode($headers);
-
 $server = "https://pl.iptv2021.com";
-
-$curl = curl_init();
-
-$response = curl_exec($curl);
 
 $accs = [
     [
@@ -24,43 +18,18 @@ $accs = [
 ];
 
 foreach ($accs as $acc) {
+    $response = \common\helpers\Curl::init("$server/api/v1/login", $acc, "POST", "json", $headers);
+    if (\common\helpers\Curl::code() == 200 && $response && $response["success"] && isset($response["token"])) {
+        print "Login successful\n";
+        print_r($response);
+        print "\n";
 
-    curl_setopt_array($curl, array(
-        CURLOPT_URL => 'https://pl.iptv2021.com/api/v4/login',
-        CURLOPT_RETURNTRANSFER => true,
-        CURLOPT_ENCODING => '',
-        CURLOPT_MAXREDIRS => 10,
-        CURLOPT_TIMEOUT => 0,
-        CURLOPT_FOLLOWLOCATION => true,
-        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-        CURLOPT_CUSTOMREQUEST => 'POST',
-        CURLOPT_POSTFIELDS => array($acc),
-        CURLOPT_HTTPHEADER => array(
-          'User-Agent: {"sdk":25,"version_name":"4.4.0","version_code":647,"platform":"android","device_id":"123123123","name":"YOUR_DEVICE_NAME","app":"com.infolink.limeiptv"} '
-        )));
-      
-    // if ($response["success"]) {
-    //     print "Login successful\n";
-    //     print_r($response);
-    //     print "\n";
+        $response = \common\helpers\Curl::init("$server/api/v1/account-delete", [], "GET", "json", array_merge($headers, ["X-Token" => $response["token"]]));
 
-        curl_setopt_array($curl, array(
-            CURLOPT_URL => 'https://pl.iptv2021.com/api/v1/account-delete',
-            CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_ENCODING => '',
-            CURLOPT_MAXREDIRS => 10,
-            CURLOPT_TIMEOUT => 0,
-            CURLOPT_FOLLOWLOCATION => true,
-            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-            CURLOPT_CUSTOMREQUEST => 'GET',
-            CURLOPT_HTTPHEADER => array_merge(array($headers, ["X-Token" => $response["token"]]))
-          ));
-
-        if ($response["success"]) {
+        if (\common\helpers\Curl::code() == 200 && $response) {
             print "Account deleting successful\n";
             print_r($response);
             print "\n";
         }
     }
-    curl_close($curl);
-    echo $response;
+}
