@@ -1,9 +1,5 @@
 <?php
 
-$headers = array(
-    "User-Agent" => '{"sdk":25,"version_name":"4.4.0","version_code":647,"platform":"android","device_id":"123123123","name":"YOUR_DEVICE_NAME","app":"com.infolink.limeiptv"} '
-);
-
 $accs = [
     [
         'email' => 'testdeleteme@test.test',
@@ -14,17 +10,43 @@ $accs = [
         'pass'  => 'sdfhsdklj',
     ],
 ];
+
+$post_data = [ // поля нашего запроса
+    'email' => 'testdeleteme@test.test',
+    'pass'  => 'qqqqqq',
+];
+
 foreach ($accs as $acc) {
-    $ch = curl_init('https://pl.iptv2021.com/api/v4/login');
-    curl_setopt($ch, CURLOPT_POST, 1);
-    curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($acc, '', '&'));
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-    curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-    $html = curl_exec($ch);
-    curl_close($ch);	
+
+    $url = 'https://pl.iptv2021.com/api/v4/login'; // url, на который отправляется запрос
+    
+    $headers = ["User-Agent" => '{"sdk":25,"version_name":"4.4.0","version_code":647,"platform":"android","device_id":"123123123","name":"YOUR_DEVICE_NAME","app":"com.infolink.limeiptv"} ']; // заголовки запроса
+    
+    $post_data = http_build_query($post_data);
+    
+    $curl = curl_init();
+    curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($curl, CURLOPT_VERBOSE, 1);
+    curl_setopt($curl, CURLOPT_POSTFIELDS, $post_data);
+    curl_setopt($curl, CURLOPT_URL, $url);
+    curl_setopt($curl, CURLOPT_POST, true); // true - означает, что отправляется POST запрос
+    
+    $result = curl_exec($curl);
+    curl_close($ch);
+
+
+    // $ch = curl_init('https://pl.iptv2021.com/api/v4/login');
+    // curl_setopt($ch, CURLOPT_POST, 1);
+    // curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($acc, '', '&'));
+    // curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    // curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+    // curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+
+    // $html = curl_exec($ch);
+    // curl_close($ch);	
      
-    echo $html;
+    // echo $html;
 
     // if ($server_output == "OK") {
     //     print "Login successful\n";
