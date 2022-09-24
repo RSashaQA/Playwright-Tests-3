@@ -1,7 +1,7 @@
 <?php
 
 $headers = array(
-    "User-Agent: {\x22platform\x22:\x22android\x22,\x22app\x22:\x22com.infolink.limeiptv\x22,\x22version_name\x22:\x224.8.5\x22,\x22version_code\x22:688,\x22sdk\x22:\x2230\x22,\x22name\x22:\x22veux_p_global%2B2201116PG\x22,\x22device_id\x22:\x22205867b5b0e8f991\x22}"
+    "User-Agent" => "{\x22platform\x22:\x22android\x22,\x22app\x22:\x22com.infolink.limeiptv\x22,\x22version_name\x22:\x224.8.5\x22,\x22version_code\x22:688,\x22sdk\x22:\x2230\x22,\x22name\x22:\x22veux_p_global%2B2201116PG\x22,\x22device_id\x22:\x22205867b5b0e8f991\x22}"
 );
 $accs = [
     [
