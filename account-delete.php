@@ -19,15 +19,15 @@ $accs = [
 ];
 
 foreach ($accs as $acc) {
-    $response = Curl_init("$server/api/v1/login", $acc, "POST", "json", $headers);
-    if ('CurlHandle' == 200 && $response && $response["success"] && isset($response["token"])) {
+    $response = \user\bin\Curl::init("$server/api/v1/login", $acc, "POST", "json", $headers);
+    if (\user\bin\Curl::code() == 200 && $response && $response["success"] && isset($response["token"])) {
         print "Login successful\n";
         print_r($response);
         print "\n";
 
-        $response = Curl_init("$server/api/v1/account-delete", [], "GET", "json", array_merge($headers, ["X-Token" => $response["token"]]));
+        $response = \user\bin\Curl::init("$server/api/v1/account-delete", [], "GET", "json", array_merge($headers, ["X-Token" => $response["token"]]));
 
-        if (curl_getinfo() == 200 && $response) {
+        if (\user\bin\Curl::code() == 200 && $response) {
             print "Account deleting successful\n";
             print_r($response);
             print "\n";
