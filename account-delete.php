@@ -1,5 +1,7 @@
 <?php
 
+$headers = ["User-Agent" => '{"sdk":25,"version_name":"4.4.0","version_code":647,"platform":"android","device_id":"123123123","name":"YOUR_DEVICE_NAME","app":"com.infolink.limeiptv"} ']; // заголовки запроса
+
 $accs = [
     [
         'email' => 'testdeleteme@test.test',
@@ -20,8 +22,6 @@ foreach ($accs as $acc) {
 
     $url = 'https://pl.iptv2021.com/api/v4/login'; // url, на который отправляется запрос
     
-    $headers = ["User-Agent" => '{"sdk":25,"version_name":"4.4.0","version_code":647,"platform":"android","device_id":"123123123","name":"YOUR_DEVICE_NAME","app":"com.infolink.limeiptv"} ']; // заголовки запроса
-    
     $post_data = http_build_query($post_data);
     
     $curl = curl_init();
@@ -33,7 +33,7 @@ foreach ($accs as $acc) {
     curl_setopt($curl, CURLOPT_POST, true); // true - означает, что отправляется POST запрос
     
     $result = curl_exec($curl);
-    curl_close($ch);
+
 
 
     // $ch = curl_init('https://pl.iptv2021.com/api/v4/login');
