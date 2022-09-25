@@ -28,7 +28,7 @@ foreach ($accs as $acc) {
       curl_setopt($ch, CURLOPT_HEADER, $headers);
       $html = curl_exec($ch);
       curl_close($ch);
-    echo $html;
+    var_dump($html);
 
     // $response = \user\bin\Curl::init("$server/api/v1/login", $acc, "POST", "json", $headers);
     // if (\user\bin\Curl::code() == 200 && $response && $response["success"] && isset($response["token"])) {
