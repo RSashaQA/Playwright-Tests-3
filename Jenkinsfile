@@ -25,8 +25,8 @@ pipeline {
         sh '''
         php /var/lib/jenkins/workspace/limehd-test/account-delete.php
         '''
+        }
       }
-    }
   }
     post('allure report'){
       always{
