@@ -8,7 +8,7 @@ $server = "https://pl.iptv2021.com";
 $accs = [
     [
         'email' => 'testdeleteme@test.test',
-        'password'  => 'wwwwww',
+        'password'  => 'qqqqqq',
     ],
     [
       'email' => 'testdeleteme@test.test',
