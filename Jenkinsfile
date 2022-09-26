@@ -6,13 +6,14 @@ pipeline {
         sh '''
           rm -rf $WORKSPACE/allure-results
           npm i -D fs-extra
+          npm i -D allure-commandline
         '''
       }
     }
     stage('test') {
       steps {
         sh '''
-        npx playwright test --workers 8 
+        npx playwright login.spec.js test --workers 8 
         '''
         } 
       }
