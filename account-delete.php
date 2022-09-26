@@ -5,10 +5,7 @@ $useragent = '{"sdk":25,"version_name":"4.4.0","version_code":647,"platform":"an
 $server = "https://pl.iptv2021.com";
 
 $accs = [
-    [
-        'email' => 'testdeleteme@test.test',
-        'password'  => 'qqqqqq',
-    ],
+
     [
         'email' => 'testdeletemewebkitfav@test.test',
         'password'  => 'qqqqqq',
@@ -19,6 +16,10 @@ $accs = [
     ],
     [
         'email' => 'testdeletemefirefoxfav@test.test',
+        'password'  => 'qqqqqq',
+    ],
+    [
+        'email' => 'testdeleteme@test.test',
         'password'  => 'qqqqqq',
     ],
     // [
