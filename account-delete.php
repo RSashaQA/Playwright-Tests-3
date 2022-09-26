@@ -50,8 +50,8 @@ foreach ($accs as $acc) {
     curl_setopt($ch, CURLOPT_HEADER, 1);
     curl_setopt($ch, CURLOPT_USERAGENT, $useragent);
     $html = curl_exec($ch);
-    print_r($html);
-    // if ($html !== false) {
+    if ($data['token']== null) {
+        print_r($html);
     //     $ch_info = curl_getinfo($ch);
     //     $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
     //     $header = substr($html, 0, $ch_info['header_size']);
