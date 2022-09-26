@@ -62,7 +62,7 @@ foreach ($accs as $acc) {
     }
     curl_close($ch);
 
-    if ($http_code == 200 && ) {
+    if ($http_code == 200) {
         $ch_delete = curl_init($server . '/api/v1/account-delete');
         curl_setopt($ch_delete, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch_delete, CURLOPT_SSL_VERIFYPEER, false);

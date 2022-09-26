@@ -1,5 +1,5 @@
 const { test, expect, webkit, chromium, firefox } = require('@playwright/test');
-const { promises } = require('fs-extra');
+//const { promises } = require('fs-extra');
 
 const userNameFavWebkit = ('testdeletemewebkitfav@test.test') 
 const userNameFavChromium = ('testdeletemechromiumfav@test.test') 
@@ -31,23 +31,24 @@ test('Тест добавление/удаление каналов из стр�
         console.log('bug https://limehd.atlassian.net/browse/PW-347');
 
         await page.waitForSelector('text=t');
+
         await page.locator('text=ТВ-каналы').click();
     
         //добавляем НТВ в избранные, через страницу канала
         await page.locator('text=НТВ').click();
-        await page.waitForSelector('.page-main > .stream__item > .stream__title-container > .stream__favorite-container > .stream__favorite')
-        await page.click('.page-main > .stream__item > .stream__title-container > .stream__favorite-container > .stream__favorite')
-        await page.waitForTimeout(2000)
+        await page.waitForTimeout(2000);
+        await page.locator('.page-main > .stream__item > .stream__title-container > .stream__favorite-container > .stream__favorite').click();
+        await page.waitForTimeout(2000);
         await page.locator('text=Все телеканалы').click();
-        await page.waitForTimeout(2000)
+        await page.waitForTimeout(2000);
     
-        //добавляем ДОМАШНИЙ в избранные, через страницу канала
-        await page.locator('text=ДОМАШНИЙ').click();
+        //добавляем ТВ ЦЕНТР в избранные, через страницу канала
+        await page.locator('text=ТВ ЦЕНТР - Москва').click();
         await page.waitForSelector('.page-main > .stream__item > .stream__title-container > .stream__favorite-container > .stream__favorite')
         await page.click('.page-main > .stream__item > .stream__title-container > .stream__favorite-container > .stream__favorite')
         await page.waitForTimeout(2000)
 
-        await page.locator('header >> text=s').click({clickCount:2});
+        await page.locator('header >> text=t').click({clickCount:2});
         await page.locator('text=Выйти из аккаунта').first().click();
 // };
 
@@ -73,7 +74,7 @@ test('Тест добавление/удаление каналов из стр�
 
         //проверяем, что каналы в избранном
         await page.locator('text=Избранные').click();
-        await page.isVisible('text=НТВ', 'text=ДОМАШНИЙ')
+        await page.waitForSelector('text=НТВ', 'text=ТВ ЦЕНТР');
 
         //удаляем НТВ и ДОМАШНИЙ из избранных, через страницу канала
         await page.waitForSelector('.channel__item-container:nth-child(2) > .channel-container > .channel__item > .channel__wrapper > .channel__title-container > .channel__title-wrapper > .channel__favorite-container > .channel__favorite')
@@ -111,5 +112,4 @@ test('Тест добавление/удаление каналов из стр�
         await page.locator('text=Избранные').click();
         await page.waitForTimeout(3000)
         await page.isHidden('text=НТВ', 'text=ДОМАШНИЙ');
-        await page.close()  
     });
