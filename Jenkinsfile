@@ -22,7 +22,7 @@ pipeline {
     stage('test') {
       steps {
         sh '''
-        npx playwright test favAllBrowsers.spec.js --workers 8 --reporter=line,experimental-allure-playwright
+        npx playwright test --workers 4 --reporter=line,experimental-allure-playwright
         '''
         } 
       }
