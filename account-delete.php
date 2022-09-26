@@ -52,7 +52,7 @@ foreach ($accs as $acc) {
     $html = curl_exec($ch);
     $data = json_decode($html, true);
     $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-    if ($data['token'] === null) {
+    if ($http_code !== 200) {
         print_r($html);
         //     $ch_info = curl_getinfo($ch);
         //     
@@ -61,7 +61,7 @@ foreach ($accs as $acc) {
     }
     curl_close($ch);
 
-    if ($data['token'] !== null) {
+    if ($http_code == 200 && ) {
         $ch_delete = curl_init($server . '/api/v1/account-delete');
         curl_setopt($ch_delete, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch_delete, CURLOPT_SSL_VERIFYPEER, false);
