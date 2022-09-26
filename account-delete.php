@@ -50,13 +50,13 @@ foreach ($accs as $acc) {
     curl_setopt($ch, CURLOPT_HEADER, 1);
     curl_setopt($ch, CURLOPT_USERAGENT, $useragent);
     $html = curl_exec($ch);
-    if ($data['token']== null) {
+    if ($data['token'] == null) {
         print_r($html);
-    //     $ch_info = curl_getinfo($ch);
-    //     $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-    //     $header = substr($html, 0, $ch_info['header_size']);
-    //     $html = substr($html, $ch_info['header_size']);
-    // }
+        //     $ch_info = curl_getinfo($ch);
+        //     $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        //     $header = substr($html, 0, $ch_info['header_size']);
+        //     $html = substr($html, $ch_info['header_size']);
+    }
     $data = json_decode($html, true);
     curl_close($ch);
 
