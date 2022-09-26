@@ -2,7 +2,7 @@ const { test, expect } = require('@playwright/test');
 
 test.setTimeout(120000)
 
-
+//сделать через массив
 
 test('проверка наличия ЕПГ на Первом канале', async ({ page, browserName }) => {
 

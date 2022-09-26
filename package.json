@@ -17,6 +17,7 @@
   "homepage": "https://github.com/RSashaQA/Playwright-Tests-3#readme",
   "devDependencies": {
     "@playwright/test": "^1.26.0",
-    "allure-commandline": "^2.18.1"
+    "allure-commandline": "^2.18.1",
+    "experimental-allure-playwright": "^0.0.3"
   }
 }

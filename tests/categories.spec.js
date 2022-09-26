@@ -49,15 +49,3 @@ test('Тест переключение между категориями кан
     await page.locator('text=Фильмы').first().click();
     await page.waitForSelector('text=Киноужас');
 });
-
-
-
-
-
-
-
-
-
-
-
-
