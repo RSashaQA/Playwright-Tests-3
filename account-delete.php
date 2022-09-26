@@ -5,7 +5,6 @@ $useragent = '{"sdk":25,"version_name":"4.4.0","version_code":647,"platform":"an
 $server = "https://pl.iptv2021.com";
 
 $accs = [
-
     [
         'email' => 'testdeletemewebkitfav@test.test',
         'password'  => 'qqqqqq',
@@ -22,22 +21,6 @@ $accs = [
         'email' => 'testdeleteme@test.test',
         'password'  => 'qqqqqq',
     ],
-    // [
-    //     'email' => 'testdeleteme90975862@test.test',
-    //     'password'  => 'wwwwww',
-    // ],
-    // [
-    //   'email' => 'testdeleteme438045974@test.test',
-    //   'password'  => 'wwwwww',
-    // ],
-    // [
-    // 'email' => '	testdeleteme695755178@test.test',
-    // 'password'  => 'wwwwww',
-    // ],
-    // [
-    // 'email' => 'testdeleteme@test.test',
-    // 'password'  => 'wwwwww',
-    // ],
 ];
 
 
@@ -51,18 +34,16 @@ foreach ($accs as $acc) {
     curl_setopt($ch, CURLOPT_HEADER, 1);
     curl_setopt($ch, CURLOPT_USERAGENT, $useragent);
     $html = curl_exec($ch);
-    $data = json_decode($html, true);
-    $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-    if ($http_code !== 200) {
-        print_r($html);
-        //     $ch_info = curl_getinfo($ch);
-        //     
-        //     $header = substr($html, 0, $ch_info['header_size']);
-        //     $html = substr($html, $ch_info['header_size']);
+    if ($html !== false) {
+        $ch_info = curl_getinfo($ch);
+        $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        $header = substr($html, 0, $ch_info['header_size']);
+        $html = substr($html, $ch_info['header_size']);
     }
+    $data = json_decode($html, true);
     curl_close($ch);
 
-    if ($http_code == 200) {
+    if ($http_code == 200 && $data['token']) {
         $ch_delete = curl_init($server . '/api/v1/account-delete');
         curl_setopt($ch_delete, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch_delete, CURLOPT_SSL_VERIFYPEER, false);
@@ -72,11 +53,10 @@ foreach ($accs as $acc) {
         $httpcode = curl_getinfo($ch_delete, CURLINFO_HTTP_CODE);
         print_r($html);
         curl_close($ch_delete);
-        sleep(0.5);
-        // if ($httpcode == 200) {
-        //     //print "Account deleting successful\n";
-        //     print_r($html);
-        //     print "\n";
+        //         if ($httpcode == 200) {
+        //         print "Account deleting successful\n";
+        //             print_r($html);
+        //             print "\n";
         // }
     }
 }
