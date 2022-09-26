@@ -13,7 +13,7 @@ pipeline {
     stage('test') {
       steps {
         sh '''
-        npx playwright login.spec.js test --workers 8 --reporter
+        npx playwright test login.spec.js --workers 8
         '''
         } 
       }
