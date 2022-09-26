@@ -6,37 +6,37 @@ $server = "https://pl.iptv2021.com";
 
 $accs = [
     [
-        'email' => 'testdeleteme289925346@limehd.tv',
-        'password'  => 'wwwwww',
+        'email' => 'testdeleteme@test.test',
+        'password'  => 'qqqqqq',
     ],
     [
-      'email' => 'testdeleteme65641245@test.test',
-      'password'  => 'wwwwww',
+      'email' => 'testdeletemewebkitfav@test.test',
+      'password'  => 'qqqqqq',
   ],
   [
-    'email' => 'testdeleteme501882162@test.test',
-    'password'  => 'wwwwww',
+    'email' => 'testdeletemechromiumfav@test.test',
+    'password'  => 'qqqqqq',
 ],
 [
-  'email' => 'testdeleteme420364037@test.test',
+  'email' => 'testdeletemefirefoxfav@test.test',
   'password'  => 'wwwwww',
 ],
-[
-    'email' => 'testdeleteme90975862@test.test',
-    'password'  => 'wwwwww',
-],
-[
-  'email' => 'testdeleteme438045974@test.test',
-  'password'  => 'wwwwww',
-],
-[
-'email' => '	testdeleteme695755178@test.test',
-'password'  => 'wwwwww',
-],
-[
-'email' => 'testdeleteme@test.test',
-'password'  => 'wwwwww',
-],
+// [
+//     'email' => 'testdeleteme90975862@test.test',
+//     'password'  => 'wwwwww',
+// ],
+// [
+//   'email' => 'testdeleteme438045974@test.test',
+//   'password'  => 'wwwwww',
+// ],
+// [
+// 'email' => '	testdeleteme695755178@test.test',
+// 'password'  => 'wwwwww',
+// ],
+// [
+// 'email' => 'testdeleteme@test.test',
+// 'password'  => 'wwwwww',
+// ],
     ];
 
 
