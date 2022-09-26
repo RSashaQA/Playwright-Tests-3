@@ -6,7 +6,7 @@ const userNameFavChromium = ('testdeletemechromiumfav@test.test')
 const userNameFavFirefox = ('testdeletemefirefoxfav@test.test')
 const passwordFav = ('qqqqqq')
 
-test.setTimeout(9000)
+test.setTimeout(19000)
 
 test('Тест добавление/удаление каналов из страницы канала c авторизацией.', async ({page, browserName}) => {
 
