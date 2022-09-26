@@ -10,34 +10,34 @@ $accs = [
         'password'  => 'qqqqqq',
     ],
     [
-      'email' => 'testdeletemewebkitfav@test.test',
-      'password'  => 'qqqqqq',
-  ],
-  [
-    'email' => 'testdeletemechromiumfav@test.test',
-    'password'  => 'qqqqqq',
-],
-[
-  'email' => 'testdeletemefirefoxfav@test.test',
-  'password'  => 'qqqqqq',
-],
-// [
-//     'email' => 'testdeleteme90975862@test.test',
-//     'password'  => 'wwwwww',
-// ],
-// [
-//   'email' => 'testdeleteme438045974@test.test',
-//   'password'  => 'wwwwww',
-// ],
-// [
-// 'email' => '	testdeleteme695755178@test.test',
-// 'password'  => 'wwwwww',
-// ],
-// [
-// 'email' => 'testdeleteme@test.test',
-// 'password'  => 'wwwwww',
-// ],
-    ];
+        'email' => 'testdeletemewebkitfav@test.test',
+        'password'  => 'qqqqqq',
+    ],
+    [
+        'email' => 'testdeletemechromiumfav@test.test',
+        'password'  => 'qqqqqq',
+    ],
+    [
+        'email' => 'testdeletemefirefoxfav@test.test',
+        'password'  => 'qqqqqq',
+    ],
+    // [
+    //     'email' => 'testdeleteme90975862@test.test',
+    //     'password'  => 'wwwwww',
+    // ],
+    // [
+    //   'email' => 'testdeleteme438045974@test.test',
+    //   'password'  => 'wwwwww',
+    // ],
+    // [
+    // 'email' => '	testdeleteme695755178@test.test',
+    // 'password'  => 'wwwwww',
+    // ],
+    // [
+    // 'email' => 'testdeleteme@test.test',
+    // 'password'  => 'wwwwww',
+    // ],
+];
 
 
 foreach ($accs as $acc) {
@@ -71,9 +71,9 @@ foreach ($accs as $acc) {
         curl_close($ch_delete);
         //sleep(0.5);
         if ($httpcode == 200) {
-        //print "Account deleting successful\n";
+            //print "Account deleting successful\n";
             print_r($html);
             print "\n";
-}
-}
+        }
+    }
 }
