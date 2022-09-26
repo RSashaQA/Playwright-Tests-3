@@ -50,8 +50,6 @@ test('Тест добавление/удаление каналов из стр�
     await page.locator('text=Войти').click();
     await page.waitForSelector('text=t');
 
-    await page.waitForSelector('text=t');
-
     await page.locator('text=ТВ-каналы').click();
 
     //добавляем НТВ в избранные, через страницу канала
