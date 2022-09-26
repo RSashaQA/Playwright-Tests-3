@@ -49,7 +49,7 @@ test('Тест смены пароля', async ({ page, browserName }) => {
         // //проверить отображающиеся ошибки
         // await page.waitForSelector('text=Старый пароль Введите пароль >> span')
         // await page.waitForSelector('text=Новый пароль Введите пароль >> span')
-        // await page.waitForSelector('text=Пароли не совпадают', { state: 'hidden', timeout: 100 })
+        // await page.waitForSelector('text=Пароли не совпадают', {state: 'hidden', timeout: 100 })
         // await page.waitForSelector('text=Введите пароль длиннее 5 символов', { state: 'hidden', timeout: 100 })
         // await page.waitForSelector('text=Старый пароль введен не верно', { state: 'hidden', timeout: 100 })
         // await page.waitForSelector('text=Необходимо заполнить «Старый пароль».', { state: 'hidden', timeout: 100 })
