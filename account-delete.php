@@ -71,7 +71,7 @@ foreach ($accs as $acc) {
         curl_close($ch_delete);
         //sleep(0.5);
         if ($httpcode == 200) {
-        print "Account deleting successful\n";
+        //print "Account deleting successful\n";
             print_r($html);
             print "\n";
 }

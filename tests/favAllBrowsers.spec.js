@@ -65,6 +65,7 @@ test('Тест добавление/удаление каналов из стр�
         if (browserName == 'firefox') {
             await page.locator('input[type="email"]').fill(userNameFavFirefox)
         }
+
         // дальше код исполняется для всех браузеров
         await page.locator('input[type="password"]').fill(passwordFav);
         await page.locator('text=Войти').click();
@@ -86,7 +87,7 @@ test('Тест добавление/удаление каналов из стр�
 //webkit, chromium, firefox
     // test('Тест добавление/удаление каналов из страницы канала c авторизацией. Часть 3 (авторизация, проверка отсутствия каналов в избранных)', async () => {
 
-        await page.locator('header >> text=s').click({clickCount:2});
+        await page.locator('header >> text=t').click({clickCount:2});
         await page.locator('text=Выйти из аккаунта').first().click();
 
         await page.goto('https://limehd.tv/login');
