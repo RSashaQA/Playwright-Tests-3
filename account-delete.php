@@ -51,7 +51,7 @@ foreach ($accs as $acc) {
         curl_setopt($ch_delete, CURLOPT_USERAGENT, $useragent);
         $html = curl_exec($ch_delete);
         $httpcode = curl_getinfo($ch_delete, CURLINFO_HTTP_CODE);
-        print_r($html. $acc['email']);
+        print_r($html. ' '. $acc['email']);
         print "\n";
         curl_close($ch_delete);
         //         if ($httpcode == 200) {
