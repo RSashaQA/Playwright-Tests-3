@@ -50,6 +50,7 @@ foreach ($accs as $acc) {
     curl_setopt($ch, CURLOPT_HEADER, 1);
     curl_setopt($ch, CURLOPT_USERAGENT, $useragent);
     $html = curl_exec($ch);
+    $data = json_decode($html, true);
     if ($data['token'] === null) {
         print_r($html);
         //     $ch_info = curl_getinfo($ch);
@@ -57,7 +58,6 @@ foreach ($accs as $acc) {
         //     $header = substr($html, 0, $ch_info['header_size']);
         //     $html = substr($html, $ch_info['header_size']);
     }
-    $data = json_decode($html, true);
     curl_close($ch);
 
     if ($http_code == 200 && $data['token']) {
