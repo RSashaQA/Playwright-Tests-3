@@ -8,9 +8,15 @@ $server = "https://pl.iptv2021.com";
 $accs = [
     [
         'email' => 'testdeleteme@test.test',
-        'password'  => 'qqqqqq',
+        'password'  => 'wwwwww',
     ],
-];
+    [
+      'email' => 'testdeleteme@test.test',
+      'password'  => 'wwwwww',
+  ],
+
+    ];
+
 
 foreach ($accs as $acc) {
       $ch = curl_init($server.'/api/v1/login');
@@ -42,10 +48,11 @@ $data = json_decode($html, true);
         $httpcode = curl_getinfo($ch_delete, CURLINFO_HTTP_CODE);
         print_r($html);
         curl_close($ch_delete);
-//         if ($httpcode == 200) {
-//         print "Account deleting successful\n";
-//             print_r($html);
-//             print "\n";
-// }
+        //sleep(0.5);
+        if ($httpcode == 200) {
+        print "Account deleting successful\n";
+            print_r($html);
+            print "\n";
+}
 }
 }
