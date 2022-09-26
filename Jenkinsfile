@@ -5,10 +5,10 @@ pipeline {
       steps {
         sh '''
           rm -rf $WORKSPACE/allure-results
-          npm i -D @playwright/test
-          npx playwright install
-          npm i -D experimental-allure-playwright
-          npm i -D allure-commandline
+          //npm i -D @playwright/test
+          //npx playwright install
+          //npm i -D experimental-allure-playwright
+          //npm i -D allure-commandline
           npm i -D fs-extra
         '''
       }
@@ -16,7 +16,7 @@ pipeline {
     stage('test') {
       steps {
         sh '''
-        npx playwright test login.spec.js --reporter=line,experimental-allure-playwright --workers 8 
+        npx playwright test --reporter=line,experimental-allure-playwright --workers 8 
         '''
         } 
       }
