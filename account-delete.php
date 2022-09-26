@@ -67,9 +67,9 @@ foreach ($accs as $acc) {
         curl_setopt($ch_delete, CURLOPT_USERAGENT, $useragent);
         $html = curl_exec($ch_delete);
         $httpcode = curl_getinfo($ch_delete, CURLINFO_HTTP_CODE);
-        print_r($html);
+        //print_r($html);
         curl_close($ch_delete);
-        //sleep(0.5);
+        sleep(0.5);
         if ($httpcode == 200) {
             //print "Account deleting successful\n";
             print_r($html);
