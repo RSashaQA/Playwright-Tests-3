@@ -6,6 +6,7 @@ pipeline {
         sh '''
           rm -rf $WORKSPACE/allure-results
           npm i -D fs-extra
+          npm i -D experimental-allure-playwright
           npm i -D allure-commandline
         '''
       }
