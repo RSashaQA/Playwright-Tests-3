@@ -49,7 +49,7 @@ test('Тест добавление/удаление каналов из стр�
     await page.locator('input[type="password"]').fill(passwordFav);
     await page.locator('text=Войти').click();
 
-    await page.locator('text=ТВ-каналы').click();
+    await page.locator('text=ТВ-каналы').first().click();
 
     //добавляем НТВ в избранные, через страницу канала
     await page.locator('text=НТВ').click();
