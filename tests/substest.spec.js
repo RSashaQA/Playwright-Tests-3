@@ -1,6 +1,6 @@
 const { test, expect } = require('@playwright/test')
 
-test.setTimeout(4000)
+test.setTimeout(14000)
 
 const start = 'https://limehd.tv/subscribes/141'
 const kinomir = 'https://limehd.tv/subscribes/134'
