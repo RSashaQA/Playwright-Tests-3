@@ -15,7 +15,7 @@ pipeline {
     stage('clear testing data') {
       steps {
         sh '''
-        php /var/lib/jenkins/workspace/limehd-test/account-delete.php
+        php /home/jenkins/workspace/limehd-test/account-delete.php
         '''
         }
     }
