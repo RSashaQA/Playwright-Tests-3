@@ -5,6 +5,7 @@ pipeline {
       steps {
         sh '''
           rm -rf $WORKSPACE/allure-results
+          npx playwright install
           npm i -D @playwright/test
           npm i -D fs-extra
           npm i -D experimental-allure-playwright
