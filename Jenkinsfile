@@ -13,20 +13,20 @@ pipeline {
         '''
       }
     }
+    stage('test') {
+      steps {
+        sh '''
+        npx playwright test --workers 8 --reporter=line,experimental-allure-playwright
+        '''
+      } 
+    }
     stage('clear testing data') {
       steps {
         sh '''
         php /home/jenkins/workspace/limehd-test/account-delete.php
         '''
-        }
-    }
-    stage('test') {
-      steps {
-        sh '''
-
-        '''
-        } 
       }
+    }
   }
     post('allure report'){
       always{
