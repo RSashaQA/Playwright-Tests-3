@@ -150,6 +150,6 @@ test('Тест окна подписки  Отключение рекламы н
   if (response.status() > 399) {
     throw new Error(`Failed with response code ${response.status()}`)
   }
-
+ 
 });
 
