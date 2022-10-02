@@ -45,6 +45,18 @@ $accs = [
         'email' => 'testdeletemepasschro@test.test',
         'password'  => 'qqqqqq',
     ],
+    [
+        'email' => 'testdeletemRegWeb@test.test',
+        'password'  => 'qqqqqq',
+    ],
+    [
+        'email' => 'testdeletemRegFire@test.test',
+        'password'  => 'qqqqqq',
+    ],
+    [
+        'email' => 'testdeletemRegChro@test.test',
+        'password'  => 'qqqqqq',
+    ],
 ];
 
 
