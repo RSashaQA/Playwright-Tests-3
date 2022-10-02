@@ -21,6 +21,30 @@ $accs = [
         'email' => 'testdeleteme@test.test',
         'password'  => 'qqqqqq',
     ],
+    [
+        'email' => 'testdeletemepassweb@test.test',
+        'password'  => 'wwwwww',
+    ],
+    [
+        'email' => 'testdeletemepassfire@test.test',
+        'password'  => 'wwwwww',
+    ],
+    [
+        'email' => 'testdeletemepasschro@test.test',
+        'password'  => 'wwwwww',
+    ],
+    [
+        'email' => 'testdeletemepassweb@test.test',
+        'password'  => 'qqqqqq',
+    ],
+    [
+        'email' => 'testdeletemepassfire@test.test',
+        'password'  => 'qqqqqq',
+    ],
+    [
+        'email' => 'testdeletemepasschro@test.test',
+        'password'  => 'qqqqqq',
+    ],
 ];
 
 

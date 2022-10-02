@@ -1,15 +1,11 @@
 const { test, webkit, chromium, firefox } = require('@playwright/test');
 
-function getRandomInt(max) {
-    return Math.floor(Math.random() * max);
-}
-
 test.setTimeout(120000)
 
-const userNameFavWebkit = ('testdeleteme' + getRandomInt(666999666) + '@test.test') //не забыть подчищать созданные аккаунты
-const userNameFavFirefox = ('testdeleteme' + getRandomInt(666999666) + '@test.test')
-const userNameFavChromium = ('testdeleteme' + getRandomInt(666999666) + '@test.test')
-const passwordFav = ('qqqqqq')
+const userNamePassWebkit = ('testdeletemepassweb@test.test')
+const userNamePassFirefox = ('testdeletemepassfire@test.test')
+const userNamePassChromium = ('testdeletemepasschro@test.test')
+const passwordPass = ('qqqqqq')
 const newPassword = ('wwwwww')
 
 test.setTimeout(100000);
@@ -20,17 +16,17 @@ test('Тест смены пароля', async ({ page, browserName }) => {
 
         //для регистрации в разных браузерах используется свой e-mail
         if (browserName == 'webkit') {
-            await page.locator('input[type="email"]').fill(userNameFavWebkit)
+            await page.locator('input[type="email"]').fill(userNamePassWebkit)
         }
         if (browserName == 'chromium') {
-            await page.locator('input[type="email"]').fill(userNameFavChromium)
+            await page.locator('input[type="email"]').fill(userNamePassChromium)
         }
         if (browserName == 'firefox') {
-            await page.locator('input[type="email"]').fill(userNameFavFirefox)
+            await page.locator('input[type="email"]').fill(userNamePassFirefox)
         }
         // дальше код исполняется для всех браузеров
-        await page.locator('input[type="password"]').first().fill(passwordFav);
-        await page.locator('text=Повторите пароль >> input[type="password"]').fill(passwordFav);
+        await page.locator('input[type="password"]').first().fill(passwordPass);
+        await page.locator('text=Повторите пароль >> input[type="password"]').fill(passwordPass);
         await page.locator('text=Зарегистрироваться').click();
         await page.locator('text=Отлично').click();
 
@@ -171,7 +167,7 @@ test('Тест смены пароля', async ({ page, browserName }) => {
 
 
         //смена пароля, хороший сценарий
-        await page.locator('text=Старый пароль >> input[type="password"]').fill(passwordFav);
+        await page.locator('text=Старый пароль >> input[type="password"]').fill(passwordPass);
         await page.locator('text=Новый пароль >> input[type="password"]').fill(newPassword);
         await page.locator('text=Повторите пароль >> input[type="password"]').fill(newPassword);
         await page.locator('h3:has-text("Информация")').click();
@@ -203,13 +199,13 @@ test('Тест смены пароля', async ({ page, browserName }) => {
         //для авторизации в разных браузерах используется свой e-mail
 
         if (browserName == 'webkit') {
-            await page.locator('input[type="email"]').fill(userNameFavWebkit)
+            await page.locator('input[type="email"]').fill(userNamePassWebkit)
         }
         if (browserName == 'chromium') {
-            await page.locator('input[type="email"]').fill(userNameFavChromium)
+            await page.locator('input[type="email"]').fill(userNamePassChromium)
         }
         if (browserName == 'firefox') {
-            await page.locator('input[type="email"]').fill(userNameFavFirefox)
+            await page.locator('input[type="email"]').fill(userNamePassFirefox)
         }
 
         await page.locator('input[type="password"]').fill(newPassword);
