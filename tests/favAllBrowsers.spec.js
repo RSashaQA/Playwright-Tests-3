@@ -1,12 +1,12 @@
 const { test, expect, webkit, chromium, firefox } = require('@playwright/test');
 //const { promises } = require('fs-extra');
 
-const userNameFavWebkit = ('testdeletemewebkitfav@test.test')
-const userNameFavChromium = ('testdeletemechromiumfav@test.test')
-const userNameFavFirefox = ('testdeletemefirefoxfav@test.test')
-const passwordFav = ('qqqqqq')
+const userNameFavWebkit = ('testdeletemewebkitfav@test.test');
+const userNameFavChromium = ('testdeletemechromiumfav@test.test');
+const userNameFavFirefox = ('testdeletemefirefoxfav@test.test');
+const passwordFav = ('qqqqqq');
 
-test.setTimeout(19000)
+test.setTimeout(19000);
 
 test('Регистрация тестовых аккаунтов.', async ({ page, browserName }) => {
 
@@ -62,10 +62,11 @@ test('Тест добавление/удаление каналов из стр�
     //добавляем ТВ ЦЕНТР в избранные, через страницу канала
     await page.locator('text=ТВ ЦЕНТР - Москва').click();
     await page.locator('.page-main > .stream__item > .stream__title-container > .stream__favorite-container > .stream__favorite').click();
-    await page.waitForTimeout(2000)
 
-    await page.locator('header >> text=t').click({ clickCount: 2 });
-    await page.locator('text=Выйти из аккаунта').first().click();
+    await page.waitForTimeout(1000)
+    await page.dblclick('div.user__avatar');
+    await page.waitForTimeout(2000)
+    await page.locator('text=Выйти из аккаунта').click();
     // };
 
     // test('Тест добавление/удаление каналов из страницы канала c авторизацией. Часть 2 (авторизация, проверка избранных удаление каналов из избранных)', async ({page, browserName}) => {
@@ -99,13 +100,10 @@ test('Тест добавление/удаление каналов из стр�
     await page.waitForSelector('.channel__wrapper > .channel__title-container > .channel__title-wrapper > .channel__favorite-container > .channel__favorite')
     await page.click('.channel__wrapper > .channel__title-container > .channel__title-wrapper > .channel__favorite-container > .channel__favorite')
 
-    // };
-
-    //webkit, chromium, firefox
-    // test('Тест добавление/удаление каналов из страницы канала c авторизацией. Часть 3 (авторизация, проверка отсутствия каналов в избранных)', async () => {
-
+    await page.waitForTimeout(2000)
     await page.locator('header >> text=t').click({ clickCount: 2 });
-    await page.locator('text=Выйти из аккаунта').first().click();
+    await page.waitForTimeout(2000)
+    await page.locator('text=Выйти из аккаунта').click();
 
     await page.goto('https://limehd.tv/login');
 
