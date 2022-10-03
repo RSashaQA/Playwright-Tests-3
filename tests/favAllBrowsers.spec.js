@@ -1,134 +1,134 @@
-const { test, expect, webkit, chromium, firefox } = require('@playwright/test');
-//const { promises } = require('fs-extra');
+// const { test, expect, webkit, chromium, firefox } = require('@playwright/test');
+// //const { promises } = require('fs-extra');
 
-const userNameFavWebkit = ('testdeletemewebkitfav@test.test');
-const userNameFavChromium = ('testdeletemechromiumfav@test.test');
-const userNameFavFirefox = ('testdeletemefirefoxfav@test.test');
-const passwordFav = ('qqqqqq');
+// const userNameFavWebkit = ('testdeletemewebkitfav@test.test');
+// const userNameFavChromium = ('testdeletemechromiumfav@test.test');
+// const userNameFavFirefox = ('testdeletemefirefoxfav@test.test');
+// const passwordFav = ('qqqqqq');
 
-test.setTimeout(19000);
+// test.setTimeout(19000);
 
-test('Регистрация тестовых аккаунтов.', async ({ page, browserName }) => {
+// test('Регистрация тестовых аккаунтов.', async ({ page, browserName }) => {
 
-    await page.goto('https://limehd.tv/signup');
+//     await page.goto('https://limehd.tv/signup');
 
-    //для регистрации в разных браузерах используется свой e-mail
-    if (browserName == 'webkit') {
-        await page.locator('input[type="email"]').fill(userNameFavWebkit)
-    }
-    if (browserName == 'chromium') {
-        await page.locator('input[type="email"]').fill(userNameFavChromium)
-    }
-    if (browserName == 'firefox') {
-        await page.locator('input[type="email"]').fill(userNameFavFirefox)
-    }
-    // дальше код исполняется для всех браузеров
-    await page.locator('input[type="password"]').first().fill(passwordFav);
-    await page.locator('text=Повторите пароль >> input[type="password"]').fill(passwordFav);
-    await page.locator('text=Зарегистрироваться').click();
-    await page.locator('text=Отлично').click();
+//     //для регистрации в разных браузерах используется свой e-mail
+//     if (browserName == 'webkit') {
+//         await page.locator('input[type="email"]').fill(userNameFavWebkit)
+//     }
+//     if (browserName == 'chromium') {
+//         await page.locator('input[type="email"]').fill(userNameFavChromium)
+//     }
+//     if (browserName == 'firefox') {
+//         await page.locator('input[type="email"]').fill(userNameFavFirefox)
+//     }
+//     // дальше код исполняется для всех браузеров
+//     await page.locator('input[type="password"]').first().fill(passwordFav);
+//     await page.locator('text=Повторите пароль >> input[type="password"]').fill(passwordFav);
+//     await page.locator('text=Зарегистрироваться').click();
+//     await page.locator('text=Отлично').click();
 
-    console.log('bug https://limehd.atlassian.net/browse/PW-347');
-});
+//     console.log('bug https://limehd.atlassian.net/browse/PW-347');
+// });
 
-test('Тест добавление/удаление каналов из страницы канала c авторизацией.', async ({ page, browserName }) => {
+// test('Тест добавление/удаление каналов из страницы канала c авторизацией.', async ({ page, browserName }) => {
 
-    await page.goto('https://limehd.tv/login');
+//     await page.goto('https://limehd.tv/login');
 
-    //авторизация в разных браузерах используется свой e-mail
-    if (browserName == 'webkit') {
-        await page.locator('input[type="email"]').fill(userNameFavWebkit)
-    }
-    if (browserName == 'chromium') {
-        await page.locator('input[type="email"]').fill(userNameFavChromium)
-    }
-    if (browserName == 'firefox') {
-        await page.locator('input[type="email"]').fill(userNameFavFirefox)
-    }
-    // дальше код исполняется для всех браузеров
-    await page.locator('input[type="password"]').fill(passwordFav);
-    await page.locator('text=Войти').click();
-    try {
-        await page.locator('text=Войти').click();       
-    } catch (error) {
-       console.log() 
-    }
+//     //авторизация в разных браузерах используется свой e-mail
+//     if (browserName == 'webkit') {
+//         await page.locator('input[type="email"]').fill(userNameFavWebkit)
+//     }
+//     if (browserName == 'chromium') {
+//         await page.locator('input[type="email"]').fill(userNameFavChromium)
+//     }
+//     if (browserName == 'firefox') {
+//         await page.locator('input[type="email"]').fill(userNameFavFirefox)
+//     }
+//     // дальше код исполняется для всех браузеров
+//     await page.locator('input[type="password"]').fill(passwordFav);
+//     await page.locator('text=Войти').click();
+//     try {
+//         await page.locator('text=Войти').click();       
+//     } catch (error) {
+//        console.log() 
+//     }
 
-    await page.locator('text=ТВ-каналы').first().click();
+//     await page.locator('text=ТВ-каналы').first().click();
 
-    //добавляем НТВ в избранные, через страницу канала
-    await page.locator('text=НТВ').click();
-    await page.waitForTimeout(2000);
-    await page.locator('.page-main > .stream__item > .stream__title-container > .stream__favorite-container > .stream__favorite').click();
-    await page.waitForTimeout(2000);
-    await page.locator('text=Все телеканалы').click();
-    await page.waitForTimeout(2000);
+//     //добавляем НТВ в избранные, через страницу канала
+//     await page.locator('text=НТВ').click();
+//     await page.waitForTimeout(2000);
+//     await page.locator('.page-main > .stream__item > .stream__title-container > .stream__favorite-container > .stream__favorite').click();
+//     await page.waitForTimeout(2000);
+//     await page.locator('text=Все телеканалы').click();
+//     await page.waitForTimeout(2000);
 
-    //добавляем ТВ ЦЕНТР в избранные, через страницу канала
-    await page.locator('text=ТВ ЦЕНТР - Москва').click();
-    await page.locator('.page-main > .stream__item > .stream__title-container > .stream__favorite-container > .stream__favorite').click();
+//     //добавляем ТВ ЦЕНТР в избранные, через страницу канала
+//     await page.locator('text=ТВ ЦЕНТР - Москва').click();
+//     await page.locator('.page-main > .stream__item > .stream__title-container > .stream__favorite-container > .stream__favorite').click();
 
-    await page.waitForTimeout(1000)
-    await page.dblclick('div.user__avatar');
-    await page.waitForTimeout(2000)
-    await page.locator('text=Выйти из аккаунта').click();
-    // };
+//     await page.waitForTimeout(1000)
+//     await page.dblclick('div.user__avatar');
+//     await page.waitForTimeout(2000)
+//     await page.locator('text=Выйти из аккаунта').click();
+//     // };
 
-    // test('Тест добавление/удаление каналов из страницы канала c авторизацией. Часть 2 (авторизация, проверка избранных удаление каналов из избранных)', async ({page, browserName}) => {
+//     // test('Тест добавление/удаление каналов из страницы канала c авторизацией. Часть 2 (авторизация, проверка избранных удаление каналов из избранных)', async ({page, browserName}) => {
 
-    await page.goto('https://limehd.tv/login');
+//     await page.goto('https://limehd.tv/login');
 
-    //авторизация в разных браузерах используется свой e-mail
-    if (browserName == 'webkit') {
-        await page.locator('input[type="email"]').fill(userNameFavWebkit)
-    }
-    if (browserName == 'chromium') {
-        await page.locator('input[type="email"]').fill(userNameFavChromium)
-    }
-    if (browserName == 'firefox') {
-        await page.locator('input[type="email"]').fill(userNameFavFirefox)
-    }
+//     //авторизация в разных браузерах используется свой e-mail
+//     if (browserName == 'webkit') {
+//         await page.locator('input[type="email"]').fill(userNameFavWebkit)
+//     }
+//     if (browserName == 'chromium') {
+//         await page.locator('input[type="email"]').fill(userNameFavChromium)
+//     }
+//     if (browserName == 'firefox') {
+//         await page.locator('input[type="email"]').fill(userNameFavFirefox)
+//     }
 
-    // дальше код исполняется для всех браузеров
-    await page.locator('input[type="password"]').fill(passwordFav);
-    await page.locator('text=Войти').click();
-    await page.waitForSelector('text=t');
+//     // дальше код исполняется для всех браузеров
+//     await page.locator('input[type="password"]').fill(passwordFav);
+//     await page.locator('text=Войти').click();
+//     await page.waitForSelector('text=t');
 
-    //проверяем, что каналы в избранном
-    await page.locator('text=Избранные').click();
-    await page.waitForSelector('text=НТВ', 'text=ТВ ЦЕНТР');
+//     //проверяем, что каналы в избранном
+//     await page.locator('text=Избранные').click();
+//     await page.waitForSelector('text=НТВ', 'text=ТВ ЦЕНТР');
 
-    //удаляем НТВ и ТВ-ЦЕНТР из избранных, через страницу канала
-    await page.waitForSelector('.channel__item-container:nth-child(2) > .channel-container > .channel__item > .channel__wrapper > .channel__title-container > .channel__title-wrapper > .channel__favorite-container > .channel__favorite')
-    await page.click('.channel__item-container:nth-child(2) > .channel-container > .channel__item > .channel__wrapper > .channel__title-container > .channel__title-wrapper > .channel__favorite-container > .channel__favorite')
+//     //удаляем НТВ и ТВ-ЦЕНТР из избранных, через страницу канала
+//     await page.waitForSelector('.channel__item-container:nth-child(2) > .channel-container > .channel__item > .channel__wrapper > .channel__title-container > .channel__title-wrapper > .channel__favorite-container > .channel__favorite')
+//     await page.click('.channel__item-container:nth-child(2) > .channel-container > .channel__item > .channel__wrapper > .channel__title-container > .channel__title-wrapper > .channel__favorite-container > .channel__favorite')
 
-    await page.waitForSelector('.channel__wrapper > .channel__title-container > .channel__title-wrapper > .channel__favorite-container > .channel__favorite')
-    await page.click('.channel__wrapper > .channel__title-container > .channel__title-wrapper > .channel__favorite-container > .channel__favorite')
+//     await page.waitForSelector('.channel__wrapper > .channel__title-container > .channel__title-wrapper > .channel__favorite-container > .channel__favorite')
+//     await page.click('.channel__wrapper > .channel__title-container > .channel__title-wrapper > .channel__favorite-container > .channel__favorite')
 
-    await page.waitForTimeout(2000)
-    await page.locator('header >> text=t').click({ clickCount: 2 });
-    await page.waitForTimeout(2000)
-    await page.locator('text=Выйти из аккаунта').click();
+//     await page.waitForTimeout(2000)
+//     await page.locator('header >> text=t').click({ clickCount: 2 });
+//     await page.waitForTimeout(2000)
+//     await page.locator('text=Выйти из аккаунта').click();
 
-    await page.goto('https://limehd.tv/login');
+//     await page.goto('https://limehd.tv/login');
 
-    //авторизация в разных браузерах используется свой e-mail
-    if (browserName == 'webkit') {
-        await page.locator('input[type="email"]').fill(userNameFavWebkit)
-    }
-    if (browserName == 'chromium') {
-        await page.locator('input[type="email"]').fill(userNameFavChromium)
-    }
-    if (browserName == 'firefox') {
-        await page.locator('input[type="email"]').fill(userNameFavFirefox)
-    }
-    // дальше код исполняется для всех браузеров
-    await page.locator('input[type="password"]').fill(passwordFav);
-    await page.locator('text=Войти').click();
-    await page.waitForSelector('text=t');
+//     //авторизация в разных браузерах используется свой e-mail
+//     if (browserName == 'webkit') {
+//         await page.locator('input[type="email"]').fill(userNameFavWebkit)
+//     }
+//     if (browserName == 'chromium') {
+//         await page.locator('input[type="email"]').fill(userNameFavChromium)
+//     }
+//     if (browserName == 'firefox') {
+//         await page.locator('input[type="email"]').fill(userNameFavFirefox)
+//     }
+//     // дальше код исполняется для всех браузеров
+//     await page.locator('input[type="password"]').fill(passwordFav);
+//     await page.locator('text=Войти').click();
+//     await page.waitForSelector('text=t');
 
-    //проверяем, что добавленные ранее каналы в избранном отсутствуют'
-    await page.locator('text=Избранные').click();
-    await page.waitForTimeout(3000)
-    await page.isHidden('text=НТВ', 'text=ТВ ЦЕНТР');
-});
+//     //проверяем, что добавленные ранее каналы в избранном отсутствуют'
+//     await page.locator('text=Избранные').click();
+//     await page.waitForTimeout(3000)
+//     await page.isHidden('text=НТВ', 'text=ТВ ЦЕНТР');
+// });
