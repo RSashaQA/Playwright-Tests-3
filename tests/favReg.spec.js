@@ -132,7 +132,7 @@ test('Тест добавление/удаление каналов из стр�
     await page.locator('text=Избранные').click();
     await page.waitForTimeout(2000);
 
-    await page.waitForSelector('text=Добавьте каналы в избранное', {timeout: 3000})
+    //await page.waitForSelector('text=Добавьте каналы в избранное', {timeout: 3000})
 
     // await page.locator('text=ТВ-каналы').first().click();
 
