@@ -61,8 +61,7 @@ test('Тест добавление/удаление каналов из стр�
 
     //добавляем ТВ ЦЕНТР в избранные, через страницу канала
     await page.locator('text=ТВ ЦЕНТР - Москва').click();
-    await page.waitForSelector('.page-main > .stream__item > .stream__title-container > .stream__favorite-container > .stream__favorite')
-    await page.click('.page-main > .stream__item > .stream__title-container > .stream__favorite-container > .stream__favorite')
+    await page.locator('.page-main > .stream__item > .stream__title-container > .stream__favorite-container > .stream__favorite').click();
     await page.waitForTimeout(2000)
 
     await page.locator('header >> text=t').click({ clickCount: 2 });
@@ -93,7 +92,7 @@ test('Тест добавление/удаление каналов из стр�
     await page.locator('text=Избранные').click();
     await page.waitForSelector('text=НТВ', 'text=ТВ ЦЕНТР');
 
-    //удаляем НТВ и ДОМАШНИЙ из избранных, через страницу канала
+    //удаляем НТВ и ТВ-ЦЕНТР из избранных, через страницу канала
     await page.waitForSelector('.channel__item-container:nth-child(2) > .channel-container > .channel__item > .channel__wrapper > .channel__title-container > .channel__title-wrapper > .channel__favorite-container > .channel__favorite')
     await page.click('.channel__item-container:nth-child(2) > .channel-container > .channel__item > .channel__wrapper > .channel__title-container > .channel__title-wrapper > .channel__favorite-container > .channel__favorite')
 
@@ -128,5 +127,5 @@ test('Тест добавление/удаление каналов из стр�
     //проверяем, что добавленные ранее каналы в избранном отсутствуют'
     await page.locator('text=Избранные').click();
     await page.waitForTimeout(3000)
-    await page.isHidden('text=НТВ', 'text=ДОМАШНИЙ');
+    await page.isHidden('text=НТВ', 'text=ТВ ЦЕНТР');
 });
