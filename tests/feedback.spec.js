@@ -8,8 +8,8 @@ test('Тест обратной связи', async ({ page }) => {
     await page.locator('text=Обратная связь').click();
 
     //проверяем, что на странице есть заголовок "Отправить запрос" и остальные элементы страницы
-    const feedbackTest = await page.innerText('#__layout > .page-info > .page-main > .feedback__container > .feedback__title');
-    expect(feedbackTest).toBe('Отправить запрос');
+    // const feedbackTest = await page.innerText('#__layout > .page-info > .page-main > .feedback__container > .feedback__title');
+    // expect(feedbackTest).toBe('Отправить запрос');
     await page.isVisible('text=Отправить запрос E-mail Введите e-mail Платформа Сайт Имя Ваше обращение Отправи')
 
     //нажимаем на отправить запрос не заполнив обязательные поля
