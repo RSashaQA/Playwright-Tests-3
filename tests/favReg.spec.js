@@ -6,7 +6,7 @@ const userNameFavChromium = ('testdeletemechromiumfav@test.test');
 const userNameFavFirefox = ('testdeletemefirefoxfav@test.test');
 const passwordFav = ('qqqqqq');
 
-test.setTimeout(60000);
+test.setTimeout(120000);
 
 test('Регистрация тестовых аккаунтов, добавление/удаление из избранных.', async ({ page, browserName }) => {
 
@@ -29,26 +29,7 @@ test('Регистрация тестовых аккаунтов, добавле
     await page.locator('text=Отлично').click();
 
     await page.locator('text=ТВ-каналы').click();
-// });
 
-// test('Тест добавление/удаление каналов из страницы канала c авторизацией.', async ({ page, browserName }) => {
-
-    // await page.goto('https://limehd.tv/login');
-    // await expect(page).toHaveTitle('Авторизация')
-
-    // //авторизация в разных браузерах используется свой e-mail
-    // if (browserName == 'webkit') {
-    //     await page.locator('input[type="email"]').fill(userNameFavWebkit)
-    // }
-    // if (browserName == 'chromium') {
-    //     await page.locator('input[type="email"]').fill(userNameFavChromium)
-    // }
-    // if (browserName == 'firefox') {
-    //     await page.locator('input[type="email"]').fill(userNameFavFirefox)
-    // }
-    // // дальше код исполняется для всех браузеров
-    // await page.locator('input[type="password"]').fill(passwordFav);
-    // await page.locator('text=Войти').click();
     // зайти на первый  канал
     await page.locator('text=Первый канал').click();
     await page.waitForURL('https://limehd.tv/channel/1kanal');
@@ -134,7 +115,7 @@ test('Регистрация тестовых аккаунтов, добавле
     await page.locator('text=Избранные').click();
     await page.waitForTimeout(2000);
 
-    //await page.waitForSelector('text=Добавьте каналы в избранное', {timeout: 3000})
+    await page.waitForSelector('text=Добавьте каналы в избранное', {timeout: 3000})
 
     // await page.locator('text=ТВ-каналы').first().click();
 
