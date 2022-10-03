@@ -39,9 +39,7 @@ const userPassword1 = "qqqqqq"
     await page.locator('header >> text=t').click({clickCount:2});
     await page.locator('text=Общая информация').click();
 
-    // try{
-    //сверяем учетную запись в профиле
     const userNameLoginCheck2 = await page.innerText('div > .default__layout > .page-main > .profile__title-container > .profile__title');
     expect(userNameLoginCheck2).toBe(userName2);
-    // } catch (err) {console.log('bug https://limehd.atlassian.net/browse/PW-302')}
+
 })
