@@ -48,6 +48,11 @@ test('Тест добавление/удаление каналов из стр�
     // дальше код исполняется для всех браузеров
     await page.locator('input[type="password"]').fill(passwordFav);
     await page.locator('text=Войти').click();
+    try {
+        await page.locator('text=Войти').click();       
+    } catch (error) {
+       console.log() 
+    }
 
     await page.locator('text=ТВ-каналы').first().click();
 
