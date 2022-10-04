@@ -1,9 +1,9 @@
 const { test, expect, webkit, chromium, firefox } = require('@playwright/test');
 //const { promises } = require('fs-extra');
 
-const userNameFavWebkit = ('testdeletemewebkitfav@test.test');
-const userNameFavChromium = ('testdeletemechromiumfav@test.test');
-const userNameFavFirefox = ('testdeletemefirefoxfav@test.test');
+const userNameFavWebkit = ('testdeletemewebkitfav1@test.test');
+const userNameFavChromium = ('testdeletemechromiumfav1@test.test');
+const userNameFavFirefox = ('testdeletemefirefoxfav1@test.test');
 const passwordFav = ('qqqqqq');
 
 test.use({ viewport: { width: 1920, height: 1080 } });
@@ -26,7 +26,7 @@ test('Регистрация тестовых аккаунтов, добавле
     await page.locator('input[type="password"]').first().fill(passwordFav);
     await page.locator('text=Повторите пароль >> input[type="password"]').fill(passwordFav);
     await page.locator('text=Зарегистрироваться').click({clickCount:2});
-    
+
     await page.waitForTimeout(3000);
     //await page.locator('text=Отлично').click();
 
