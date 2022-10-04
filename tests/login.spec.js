@@ -15,6 +15,24 @@ test('Регистрация тестового аккаунта', async ({ page
     await page.locator('text=Зарегистрироваться').click();
 })
 
+test('Авторизация, хороший сценарий', async ({ page }) => {
+
+    await page.goto('https://limehd.tv/login');
+
+    //авторизация, используя корректные данные от аккаунта testdeleteme@test.test
+    await page.locator('[placeholder="Введите e-mail"]').fill(userNameLogin);
+    await page.locator('input[type="password"]').fill('qqqqqq');
+    await page.locator('text=Войти').click();
+
+    //переходим в профиль пользователя
+    await page.locator('header >> text=t').click({ clickCount: 2 });
+    await page.locator('text=Общая информация').click();
+
+    //проверяем, что авторизация произошла в нужного нам пользователя
+    const userNameLoginCheck = await page.innerText('div > .default__layout > .page-main > .profile__title-container > .profile__title');
+    expect(userNameLoginCheck).toBe(userNameLogin);
+})
+
 
 // test('авторизаяция, плохой сценарий', async ({ page }) => {
 
@@ -44,20 +62,3 @@ test('Регистрация тестового аккаунта', async ({ page
 //     await page.waitForSelector('text=Неверный email или пароль');
 // })
 
-// test('авторизация, хороший сценарий', async ({ page }) => {
-
-//     await page.goto('https://limehd.tv/login');
-
-//     //авторизация, используя корректные данные от аккаунта testdeleteme@test.test
-//     await page.locator('[placeholder="Введите e-mail"]').fill(userNameLogin);
-//     await page.locator('input[type="password"]').fill('qqqqqq');
-//     await page.locator('text=Войти').click();
-
-//     //переходим в профиль пользователя
-//     await page.locator('header >> text=t').click({ clickCount: 2 });
-//     await page.locator('text=Общая информация').click();
-
-//     //проверяем, что авторизация произошла в нужного нам пользователя
-//     const userNameLoginCheck = await page.innerText('div > .default__layout > .page-main > .profile__title-container > .profile__title');
-//     expect(userNameLoginCheck).toBe(userNameLogin);
-// })
