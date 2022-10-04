@@ -3,7 +3,7 @@ const { test, expect } = require('@playwright/test');
 test.use({ viewport: { width: 1920, height: 1080 } });
 test.setTimeout(10000);
 
-test('Тест смена вкладок, ТВ-каналы', async ({ page, browserName }) => {
+test('Тест смена вкладок, ТВ-каналы', async ({ page }) => {
 
     const response = await page.goto('https://limehd.tv/', {waitUntil: "commit"});
     if (response.status() > 399) {
@@ -15,14 +15,14 @@ test('Тест смена вкладок, ТВ-каналы', async ({ page, bro
     await expect(page.locator('text=ПЕТЕРБУРГ - 5 КАНАЛ')).toBeVisible();
 });
 
-test('Тест смена вкладок, Кино', async ({ page }) => {
+test('Тест смена вкладок, Кино', async ({ page, browserName }) => {
 
     const response = await page.goto('https://limehd.tv/movies', {waitUntil: "commit"});
     if (response.status() > 399) {
         throw new Error(`Failed with response code ${response.status()}`)
     }
     //прорверяем, что страница VOD доступна
-    
+
     if (browserName == 'webkit') {
         await expect(page.locator('page.logo')).toBeVisible();
     }
