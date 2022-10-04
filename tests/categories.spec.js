@@ -24,7 +24,7 @@ test('Тест переключение между категориями кан
 
     await page.locator('text=Региональные').first().click();
     await expect(page.locator('text=VOSTOK')).toBeVisible();
-    await expect(page.locator('text=БТС (УФА)')).toBeVisible(); 
+    await expect(page.locator('text=БСТ (УФА)')).toBeVisible(); 
     await expect(page.locator('text=Россия 1')).toBeHidden();
     await expect(page.locator('text=Первый канал')).toBeHidden();
 
