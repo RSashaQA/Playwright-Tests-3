@@ -26,7 +26,7 @@ test('Авторизация, хороший сценарий', async ({ page, b
     await page.locator('[placeholder="Введите e-mail"]').fill(userNameLogin);
     await page.locator('input[type="password"]').fill('qqqqqq');
     await page.waitForTimeout(1000);
-    await page.locator('text=Войти').click();
+    await page.locator('text=Войти').click({clickCount:2});
 
     await page.waitForSelector('div.user__avatar').toBeVisible();
 
