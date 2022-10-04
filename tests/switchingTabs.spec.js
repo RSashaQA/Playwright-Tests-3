@@ -22,7 +22,7 @@ test('Тест смена вкладок, Кино', async ({ page }) => {
         throw new Error(`Failed with response code ${response.status()}`)
     }
     //прорверяем, что страница VOD доступна
-    await expect(page.locator('div.movies')).toBeVisible({timeout:3000});
+    await expect(page.locator('div.movies')).toBeVisible();
 });
 
 
@@ -33,11 +33,11 @@ test('Тест смена вкладок, Подписки', async ({ page }) =>
         throw new Error(`Failed with response code ${response.status()}`)
     }
     //прорверяем, что страница Подписок доступна
-    await expect(page.locator('ul.packs__list')).toBeVisible({timeout:3000});
+    await expect(page.locator('ul.packs__list')).toBeVisible();
 
-    //проверяем, что на странице есть текст "о подписках"
-    const packsPage1 = await page.innerText('div > .default__layout > .packs__container > .form__apps > p:nth-child(1)');
-    expect(packsPage1).toBe('Выберите и оплатите подписку.');
-    const packsPage2 = await page.innerText('div > .default__layout > .packs__container > .form__apps > p:nth-child(2)');
-    expect(packsPage2).toBe('Авторизуйтесь в приложении или на смарт-тв для просмотра на всех устройствах');
+    // //проверяем, что на странице есть текст "о подписках"
+    // const packsPage1 = await page.innerText('div > .default__layout > .packs__container > .form__apps > p:nth-child(1)');
+    // expect(packsPage1).toBe('Выберите и оплатите подписку.');
+    // const packsPage2 = await page.innerText('div > .default__layout > .packs__container > .form__apps > p:nth-child(2)');
+    // expect(packsPage2).toBe('Авторизуйтесь в приложении или на смарт-тв для просмотра на всех устройствах');
 });
