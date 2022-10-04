@@ -5,6 +5,8 @@ test.use({ viewport: { width: 1920, height: 1080 } });
 
 //сделать через массив
 
+
+//expect .contain.not
 test('проверка наличия ЕПГ на Первом канале', async ({ page, browserName }) => {
 
     await page.goto('https://limehd.tv/channel/1kanal');

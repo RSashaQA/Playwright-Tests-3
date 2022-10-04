@@ -3,7 +3,7 @@ test.use({ viewport: { width: 1920, height: 1080 } });
 
 test('Тест поиска в VOD с неверным/верным запросом', async ({ page }) => {
 
-    await page.goto('https://limehd.tv/movies');
+    await page.goto('https://limehd.tv/movies', { waitUntil: "commit" });
     
     //ввод в поисковую строку
     await page.locator('[placeholder="Название фильма\\, сериала\\.\\.\\."]').fill('\\\\qwe!@#$%^\\\\\\');
