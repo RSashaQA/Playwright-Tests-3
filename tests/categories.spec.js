@@ -29,11 +29,7 @@ test('Тест переключение между категориями кан
 
     await page.waitForTimeout(1000);
 
-    await page.locator('text=Развлечения').first().click();
-    await expect(page.locator('text=Пятница!')).toBeVisible();
-    await expect(page.locator('text=ТНОМЕР')).toBeVisible(); 
-    await expect(page.locator('text=Россия 1')).toBeHidden();
-    await expect(page.locator('text=Первый канал')).toBeHidden();
+
 
     await page.waitForTimeout(1000);
 
