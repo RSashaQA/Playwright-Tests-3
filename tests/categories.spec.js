@@ -7,19 +7,25 @@ test('Тест переключение между категориями кан
     await page.goto('https://limehd.tv/tv')
 
     await page.locator('text=Избранные').click();
-    await page.waitForSelector('text=Добавьте каналы в избранное');
+    await expect(page.waitForSelector('text=Добавьте каналы в избранное')).toBeVisible();
     await page.waitForTimeout(1000);
 
     await page.locator('text=Популярные').click();
-    await page.waitForSelector('text=Россия 1');
+    await expect(page.waitForSelector('text=Россия 1')).toBeVisible();
+    await expect(page.waitForSelector('text=Первый канал')).toBeVisible();
     await page.waitForTimeout(1000);
 
     await page.locator('text=Все').first().click();
-    await page.waitForSelector('text=Россия 1');
+    await expect(page.waitForSelector('text=Россия 1')).toBeVisible();
+    await expect(page.waitForSelector('text=Первый канал')).toBeVisible();
     await page.waitForTimeout(1000);
 
     await page.locator('text=Региональные').first().click();
-    await page.waitForSelector('text=360 Новости');  
+    await expect(page.waitForSelector('text=VOSTOK')).toBeVisible();
+    await expect(page.waitForSelector('text=БТС (УФА)')).toBeVisible(); 
+    await expect(page.waitForSelector('text=Россия 1')).toBeHidden();
+    await expect(page.waitForSelector('text=Первый канал')).toBeHidden();
+
     await page.waitForTimeout(1000);
 
     await page.locator('text=Развлечения').first().click();
