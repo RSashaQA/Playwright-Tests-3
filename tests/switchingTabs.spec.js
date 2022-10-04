@@ -5,11 +5,12 @@ test.setTimeout(10000);
 
 test('Тест смена вкладок, ТВ-каналы', async ({ page }) => {
 
-    const response = await page.goto('https://limehd.tv/', {waitUntil: "commit"});
+    //нажимаем на вкладку ТВ-каналы, прорверяем, что страница доступна
+    const response = await page.goto('https://limehd.tv/', { waitUntil: "commit" });
     if (response.status() > 399) {
         throw new Error(`Failed with response code ${response.status()}`)
     }
-    //нажимаем на вкладку ТВ-каналы, прорверяем, что каналы пристуствуют на странице
+    //видны каналы
     await expect(page.locator('text=Первый канал')).toBeVisible();
     await expect(page.locator('text=ТЕЛЕКОМПАНИЯ')).toBeVisible();
     await expect(page.locator('text=ПЕТЕРБУРГ - 5 КАНАЛ')).toBeVisible();
@@ -17,11 +18,12 @@ test('Тест смена вкладок, ТВ-каналы', async ({ page }) =
 
 test('Тест смена вкладок, Кино', async ({ page, browserName }) => {
 
-    const response = await page.goto('https://limehd.tv/movies', {waitUntil: "commit"});
+    //прорверяем, что страница VOD доступна
+    const response = await page.goto('https://limehd.tv/movies', { waitUntil: "commit" });
     if (response.status() > 399) {
         throw new Error(`Failed with response code ${response.status()}`)
     }
-    //прорверяем, что страница VOD доступна
+
 
     if (browserName == 'webkit') {
     }
@@ -36,12 +38,13 @@ test('Тест смена вкладок, Кино', async ({ page, browserName 
 
 
 test('Тест смена вкладок, Подписки', async ({ page }) => {
-
-    const response = await page.goto('https://limehd.tv/subscribes', {waitUntil: "commit"});
+    
+    //прорверяем, что страница Подписок доступна
+    const response = await page.goto('https://limehd.tv/subscribes', { waitUntil: "commit" });
     if (response.status() > 399) {
         throw new Error(`Failed with response code ${response.status()}`)
     }
-    //прорверяем, что страница Подписок доступна
+
     await expect(page.locator('text=Выберите и оплатите подписку.')).toBeVisible();
 
     // //проверяем, что на странице есть текст "о подписках"
