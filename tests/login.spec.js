@@ -13,8 +13,9 @@ test('Регистрация тестового аккаунта', async ({ page
     await page.locator('[placeholder="Введите e-mail"]').fill(userNameregistration);
     await page.locator('input[type="password"]').first().fill('qqqqqq');
     await page.locator('text=Повторите пароль >> input[type="password"]').fill('qqqqqq');
+    await page.waitForTimeout(1000);
     await page.locator('text=Зарегистрироваться').click();
-    await expect(page.innerText('.form__button')).toBe('Отлично');
+    await page.waitForSelector('div.user__avatar').toBeVisible();
 })
 
 test('Авторизация, хороший сценарий', async ({ page, browserName }) => {
@@ -27,32 +28,33 @@ test('Авторизация, хороший сценарий', async ({ page, b
     await page.waitForTimeout(1000);
     await page.locator('text=Войти').click();
 
+    await page.waitForSelector('div.user__avatar').toBeVisible();
 
-    if (browserName == 'webkit') {
-        await page.waitForSelector('div.user__avatar');
-    }
+    // if (browserName == 'webkit') {
+    //     await page.waitForSelector('div.user__avatar');
+    // }
 
-    if (browserName == 'chromium') {
-        await page.waitForTimeout(3000);
-        //переходим в профиль пользователя
-        await page.hover('div.user__avatar');  //чоткий переход в профиль
-        await page.waitForTimeout(500);
-        await page.locator('text=Общая информация').click();
-        //проверяем, что авторизация произошла в нужного нам пользователя
-        const userNameLoginCheck = await page.innerText('.profile__title');
-        expect(userNameLoginCheck).toBe(userNameLogin);
-    }
+    // if (browserName == 'chromium') {
+    //     await page.waitForTimeout(3000);
+    //     //переходим в профиль пользователя
+    //     await page.hover('div.user__avatar');  //чоткий переход в профиль
+    //     await page.waitForTimeout(500);
+    //     await page.locator('text=Общая информация').click();
+    //     //проверяем, что авторизация произошла в нужного нам пользователя
+    //     const userNameLoginCheck = await page.innerText('.profile__title');
+    //     expect(userNameLoginCheck).toBe(userNameLogin);
+    // }
 
-    if (browserName == 'firefox') {
-        await page.waitForTimeout(3000);
-        //переходим в профиль пользователя
-        await page.hover('div.user__avatar');  //чоткий переход в профиль
-        await page.waitForTimeout(500);
-        await page.locator('text=Общая информация').click();
-        //проверяем, что авторизация произошла в нужного нам пользователя
-        const userNameLoginCheck = await page.innerText('.profile__title');
-        expect(userNameLoginCheck).toBe(userNameLogin);
-    }
+    // if (browserName == 'firefox') {
+    //     await page.waitForTimeout(3000);
+    //     //переходим в профиль пользователя
+    //     await page.hover('div.user__avatar');  //чоткий переход в профиль
+    //     await page.waitForTimeout(500);
+    //     await page.locator('text=Общая информация').click();
+    //     //проверяем, что авторизация произошла в нужного нам пользователя
+    //     const userNameLoginCheck = await page.innerText('.profile__title');
+    //     expect(userNameLoginCheck).toBe(userNameLogin);
+    // }
 
 
 })
