@@ -37,6 +37,7 @@ const config = {
   use: {
     /*make screenshot on failure*/
     screenshot: "only-on-failure",
+    viewport: { width: 1920, height: 1080 },
     /* Maximum time each action such as `click()` can take. Defaults to 0 (no limit). */
     actionTimeout: 0,
     /* Base URL to use in actions like `await page.goto('/')`. */

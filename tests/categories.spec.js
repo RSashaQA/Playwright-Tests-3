@@ -4,6 +4,7 @@ const { promises } = require('fs-extra');
 test.setTimeout(120000)
 
 test('Тест переключение между категориями каналов', async ({ page }) => {
+
     await page.goto('https://limehd.tv/tv')
 
     await page.locator('text=Избранные').click();
