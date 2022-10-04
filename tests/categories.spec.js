@@ -7,7 +7,7 @@ test('Тест переключение между категориями кан
     await page.goto('https://limehd.tv/tv')
 
     await page.locator('text=Избранные').click();
-    await expect(page.waitForSelector('text=Добавьте каналы в избранное')).toBeVisible();
+    await expect(page.locator('text=Добавьте каналы в избранное')).toBeVisible();
     await page.waitForTimeout(1000);
 
     await page.locator('text=Популярные').click();
