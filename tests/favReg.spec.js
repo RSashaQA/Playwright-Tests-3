@@ -26,6 +26,7 @@ test('Регистрация тестовых аккаунтов, добавле
     await page.locator('input[type="password"]').first().fill(passwordFav);
     await page.locator('text=Повторите пароль >> input[type="password"]').fill(passwordFav);
     await page.locator('text=Зарегистрироваться').click({clickCount:2});
+    
     await page.waitForTimeout(3000);
     //await page.locator('text=Отлично').click();
 
