@@ -1,6 +1,7 @@
 const { test, expect } = require('@playwright/test');
 
-let userNameLogin = 'testdeleteme@test.test'
+const userNameregistration = 'testdeleteme@test.test'
+const userNameLogin = 'testdeletemelogin@test.test'
 
 test.setTimeout(10000)
 test.use({ viewport: { width: 1920, height: 1080 } });
@@ -9,7 +10,7 @@ test('Регистрация тестового аккаунта', async ({ page
 
     await page.goto('https://limehd.tv/signup');
 
-    await page.locator('[placeholder="Введите e-mail"]').fill(userNameLogin);
+    await page.locator('[placeholder="Введите e-mail"]').fill(userNameregistration);
     await page.locator('input[type="password"]').first().fill('qqqqqq');
     await page.locator('text=Повторите пароль >> input[type="password"]').fill('qqqqqq');
     await page.locator('text=Зарегистрироваться').click();
@@ -17,10 +18,10 @@ test('Регистрация тестового аккаунта', async ({ page
 
 test('Авторизация, хороший сценарий', async ({ page }) => {
 
-    await page.waitForTimeout(5000);
+
     await page.goto('https://limehd.tv/login');
 
-    //авторизация, используя корректные данные от аккаунта testdeleteme@test.test
+    //авторизация, используя корректные данные от аккаунта testdeletemeregistration@test.test
     await page.locator('[placeholder="Введите e-mail"]').fill(userNameLogin);
     await page.locator('input[type="password"]').fill('qqqqqq');
     await page.waitForTimeout(1000);
