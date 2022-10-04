@@ -17,6 +17,7 @@ test('Регистрация тестового аккаунта', async ({ page
 
 test('Авторизация, хороший сценарий', async ({ page }) => {
 
+    await page.waitForTimeout(5000);
     await page.goto('https://limehd.tv/login');
 
     //авторизация, используя корректные данные от аккаунта testdeleteme@test.test
