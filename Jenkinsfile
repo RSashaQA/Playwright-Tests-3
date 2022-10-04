@@ -23,7 +23,7 @@ pipeline {
     stage('test') {
       steps {
         sh '''
-        npx playwright test categor --workers 8 --reporter=line,experimental-allure-playwright
+        npx playwright test switchingTabs.spec.js --workers 8 --reporter=line,experimental-allure-playwright
         '''
       } 
     }
