@@ -24,7 +24,7 @@ test('Тест смена вкладок, Кино', async ({ page, browserName 
     //прорверяем, что страница VOD доступна
 
     if (browserName == 'webkit') {
-        await expect(page.locator('page.logo')).toBeVisible();
+        await expect(page.locator('text=ТВ-каналы')).toBeVisible();
     }
     if (browserName == 'chromium') {
         await expect(page.locator('text=Популярное')).toBeVisible();
