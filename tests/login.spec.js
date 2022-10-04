@@ -14,9 +14,7 @@ test('Регистрация тестового аккаунта', async ({ page
     await page.locator('input[type="password"]').first().fill('qqqqqq');
     await page.locator('text=Повторите пароль >> input[type="password"]').fill('qqqqqq');
     await page.waitForTimeout(1000);
-    await page.locator('text=Зарегистрироваться').click();
-    await expect(page.locator('div.user__avatar')).toBeVisible();
-
+    await page.locator('text=Зарегистрироваться').click({clickCount:2});
 })
 
 test('Авторизация, хороший сценарий', async ({ page, browserName }) => {
