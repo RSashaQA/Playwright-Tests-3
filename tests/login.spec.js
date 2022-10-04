@@ -25,7 +25,7 @@ test('Авторизация, хороший сценарий', async ({ page })
     await page.locator('text=Войти').click();
 
     //переходим в профиль пользователя
-    await page.locator('header >> text=t').click({ clickCount: 2 });
+    await page.hover('div.user__avatar');  //чоткий переход в профиль
     await page.locator('text=Общая информация').click();
 
     //проверяем, что авторизация произошла в нужного нам пользователя
