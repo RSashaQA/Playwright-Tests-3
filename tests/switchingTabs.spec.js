@@ -23,8 +23,6 @@ test('Тест смена вкладок, Кино', async ({ page }) => {
     }
     //прорверяем, что страница VOD доступна
     await expect(page.locator('text=Популярное')).toBeVisible();
-    await expect(page.locator('text=Фильмы')).toBeVisible();
-    await expect(page.locator('text=Сериалы')).toBeVisible();
 });
 
 
