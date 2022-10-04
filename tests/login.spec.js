@@ -23,8 +23,10 @@ test('Авторизация, хороший сценарий', async ({ page })
     //авторизация, используя корректные данные от аккаунта testdeleteme@test.test
     await page.locator('[placeholder="Введите e-mail"]').fill(userNameLogin);
     await page.locator('input[type="password"]').fill('qqqqqq');
+    await page.waitForTimeout(1000);
     await page.locator('text=Войти').click();
 
+    await page.waitForTimeout(3000);
     //переходим в профиль пользователя
     await page.hover('div.user__avatar');  //чоткий переход в профиль
     await page.locator('text=Общая информация').click();
