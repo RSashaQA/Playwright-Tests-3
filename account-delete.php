@@ -18,18 +18,6 @@ $accs = [
         'password'  => 'qqqqqq',
     ],
     [
-        'email' => 'testdeletemewebkitfav1@test.test',
-        'password'  => 'qqqqqq',
-    ],
-    [
-        'email' => 'testdeletemechromiumfav1@test.test',
-        'password'  => 'qqqqqq',
-    ],
-    [
-        'email' => 'testdeletemefirefoxfav1@test.test',
-        'password'  => 'qqqqqq',
-    ],
-    [
         'email' => 'testdeleteme@test.test',
         'password'  => 'qqqqqq',
     ],
