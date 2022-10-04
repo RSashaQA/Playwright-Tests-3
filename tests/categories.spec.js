@@ -63,7 +63,7 @@ test('Тест переключение между категориями кан
     await page.waitForTimeout(1000);
 
     await page.locator('text=Новости >> nth=0').first().click();
-    await expect(page.locator('text=RT')).toBeVisible();
+    await expect(page.locator('text=КРИК ТВ')).toBeVisible();
     await expect(page.locator('text=ИЗВЕСТИЯ')).toBeVisible(); 
     await expect(page.locator('text=МУЗСОЮЗ')).toBeHidden();
     await expect(page.locator('text=VOSTOK')).toBeHidden();
@@ -85,5 +85,4 @@ test('Тест переключение между категориями кан
     await expect(page.locator('text=VOSTOK')).toBeHidden();
     await expect(page.locator('text=Россия 1')).toBeHidden();
     await expect(page.locator('text=Первый канал')).toBeHidden();
-
 });
