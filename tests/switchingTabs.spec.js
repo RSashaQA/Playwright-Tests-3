@@ -5,7 +5,7 @@ test.setTimeout(10000);
 
 test('Тест смена вкладок, ТВ-каналы', async ({ page }) => {
 
-    const response = await page.goto('https://limehd.tv/');
+    const response = await page.goto('https://limehd.tv/', {waitUntil: "commit"});
     if (response.status() > 399) {
         throw new Error(`Failed with response code ${response.status()}`)
     }
@@ -17,7 +17,7 @@ test('Тест смена вкладок, ТВ-каналы', async ({ page }) =
 
 test('Тест смена вкладок, Кино', async ({ page }) => {
 
-    const response = await page.goto('https://limehd.tv/movies');
+    const response = await page.goto('https://limehd.tv/movies', {waitUntil: "commit"});
     if (response.status() > 399) {
         throw new Error(`Failed with response code ${response.status()}`)
     }
@@ -30,7 +30,7 @@ test('Тест смена вкладок, Кино', async ({ page }) => {
 
 test('Тест смена вкладок, Подписки', async ({ page }) => {
 
-    const response = await page.goto('https://limehd.tv/subscribes');
+    const response = await page.goto('https://limehd.tv/subscribes', {waitUntil: "commit"});
     if (response.status() > 399) {
         throw new Error(`Failed with response code ${response.status()}`)
     }
