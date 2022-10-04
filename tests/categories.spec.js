@@ -11,20 +11,20 @@ test('Тест переключение между категориями кан
     await page.waitForTimeout(1000);
 
     await page.locator('text=Популярные').click();
-    await expect(page.waitForSelector('text=Россия 1')).toBeVisible();
-    await expect(page.waitForSelector('text=Первый канал')).toBeVisible();
+    await expect(page.locator('text=Россия 1')).toBeVisible();
+    await expect(page.locator('text=Первый канал')).toBeVisible();
     await page.waitForTimeout(1000);
 
     await page.locator('text=Все').first().click();
-    await expect(page.waitForSelector('text=Россия 1')).toBeVisible();
-    await expect(page.waitForSelector('text=Первый канал')).toBeVisible();
+    await expect(page.locator('text=Россия 1')).toBeVisible();
+    await expect(page.locator('text=Первый канал')).toBeVisible();
     await page.waitForTimeout(1000);
 
     await page.locator('text=Региональные').first().click();
-    await expect(page.waitForSelector('text=VOSTOK')).toBeVisible();
-    await expect(page.waitForSelector('text=БТС (УФА)')).toBeVisible(); 
-    await expect(page.waitForSelector('text=Россия 1')).toBeHidden();
-    await expect(page.waitForSelector('text=Первый канал')).toBeHidden();
+    await expect(page.locator('text=VOSTOK')).toBeVisible();
+    await expect(page.locator('text=БТС (УФА)')).toBeVisible(); 
+    await expect(page.locator('text=Россия 1')).toBeHidden();
+    await expect(page.locator('text=Первый канал')).toBeHidden();
 
     await page.waitForTimeout(1000);
 
