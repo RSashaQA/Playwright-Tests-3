@@ -1,6 +1,5 @@
 const { test, expect } = require('@playwright/test');
 
-test.setTimeout(10000);
 test.use({ viewport: { width: 1920, height: 1080 } });
 
 test('Тест нажать на лого Lime - переход на главную сраницу', async ({ page }) => {

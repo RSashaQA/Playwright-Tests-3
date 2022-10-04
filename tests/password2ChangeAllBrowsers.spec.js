@@ -1,6 +1,5 @@
 const { test, webkit, chromium, firefox } = require('@playwright/test');
 
-test.setTimeout(120000)
 test.use({ viewport: { width: 1920, height: 1080 } });
 
 const userNamePassWebkit = ('testdeletemepassweb@test.test')

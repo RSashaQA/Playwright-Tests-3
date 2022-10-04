@@ -6,7 +6,6 @@ const userNameFavChromium = ('testdeletemechromiumfav@test.test');
 const userNameFavFirefox = ('testdeletemefirefoxfav@test.test');
 const passwordFav = ('qqqqqq');
 
-test.setTimeout(90000);
 test.use({ viewport: { width: 1920, height: 1080 } });
 
 test('Регистрация тестовых аккаунтов, добавление/удаление из избранных.', async ({ page, browserName }) => {

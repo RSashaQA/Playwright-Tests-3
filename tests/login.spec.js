@@ -3,7 +3,6 @@ const { test, expect } = require('@playwright/test');
 const userNameregistration = 'testdeleteme@test.test'
 const userNameLogin = 'testdeletemelogin@test.test'
 
-test.setTimeout(10000)
 test.use({ viewport: { width: 1920, height: 1080 } });
 
 test('Регистрация тестового аккаунта', async ({ page }) => {

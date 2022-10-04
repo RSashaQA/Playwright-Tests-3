@@ -1,7 +1,6 @@
 const { test, expect } = require('@playwright/test');
 const { promises } = require('fs-extra');
 
-test.setTimeout(120000)
 test.use({ viewport: { width: 1920, height: 1080 } });
 
 test('Тест переключение между категориями каналов', async ({ page }) => {
