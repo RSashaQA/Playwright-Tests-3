@@ -15,7 +15,8 @@ test('Регистрация тестового аккаунта', async ({ page
     await page.locator('text=Повторите пароль >> input[type="password"]').fill('qqqqqq');
     await page.waitForTimeout(1000);
     await page.locator('text=Зарегистрироваться').click();
-    await page.waitForSelector('div.user__avatar').toBeVisible();
+    await expect(page.locator('div.user__avatar')).toBeVisible();
+
 })
 
 test('Авторизация, хороший сценарий', async ({ page, browserName }) => {
@@ -28,7 +29,7 @@ test('Авторизация, хороший сценарий', async ({ page, b
     await page.waitForTimeout(1000);
     await page.locator('text=Войти').click({clickCount:2});
 
-    await page.waitForSelector('div.user__avatar').toBeVisible();
+    await expect(page.locator('div.user__avatar')).toBeVisible();
 
     // if (browserName == 'webkit') {
     //     await page.waitForSelector('div.user__avatar');
