@@ -1,6 +1,7 @@
 const { test, expect } = require('@playwright/test');
 
 test.setTimeout(120000)
+test.use({ viewport: { width: 1920, height: 1080 } });
 
 //сделать через массив
 

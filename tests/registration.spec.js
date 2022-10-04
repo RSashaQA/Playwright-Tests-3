@@ -1,6 +1,7 @@
 const { test, expect, webkit, chromium, firefox } = require('@playwright/test');
 
 test.setTimeout(120000)
+test.use({ viewport: { width: 1920, height: 1080 } });
 
 const userNameRegWebkit = ('testdeletemRegWeb@test.test') //не забыть подчищать созданные аккаунты
 const userNameRegFirefox = ('testdeletemRegFire@test.test')

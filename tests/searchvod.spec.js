@@ -1,4 +1,5 @@
 const { test, expect } = require('@playwright/test');
+test.use({ viewport: { width: 1920, height: 1080 } });
 
 test('Тест поиска в VOD с неверным/верным запросом', async ({ page }) => {
 

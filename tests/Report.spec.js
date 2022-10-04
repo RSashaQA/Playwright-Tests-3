@@ -1,6 +1,7 @@
 const { test, expect } = require('@playwright/test');
 
 const userNameReport = ('testdeleteme@test.test')
+test.use({ viewport: { width: 1920, height: 1080 } });
 
 test('Регистрация тестового аккаунта', async ({ page }) => {
 

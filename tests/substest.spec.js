@@ -1,4 +1,5 @@
 const { test, expect } = require('@playwright/test')
+test.use({ viewport: { width: 1920, height: 1080 } });
 
 test.setTimeout(14000)
 

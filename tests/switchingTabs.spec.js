@@ -38,7 +38,7 @@ test('Тест смена вкладок, Кино', async ({ page, browserName 
 
 
 test('Тест смена вкладок, Подписки', async ({ page }) => {
-    
+
     //прорверяем, что страница Подписок доступна
     const response = await page.goto('https://limehd.tv/subscribes', { waitUntil: "commit" });
     if (response.status() > 399) {
