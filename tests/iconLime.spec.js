@@ -6,7 +6,7 @@ test.setTimeout(10000);
 
 test('Тест нажать на лого Lime - переход на главную сраницу', async ({ page }) => {
 
-    const response = await page.goto('https://limehd.tv/movies');
+    const response = await page.goto('https://limehd.tv/subscribes');
     if (response.status() > 399) {
         throw new Error(`Failed with response code ${response.status()}`)
     }
