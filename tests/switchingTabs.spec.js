@@ -22,7 +22,9 @@ test('Тест смена вкладок, Кино', async ({ page }) => {
         throw new Error(`Failed with response code ${response.status()}`)
     }
     //прорверяем, что страница VOD доступна
-    await expect(page.locator('div.movies')).toBeVisible();
+    await expect(page.locator('text=Популярное')).toBeVisible();
+    await expect(page.locator('text=Фильмы')).toBeVisible();
+    await expect(page.locator('text=Сериалы')).toBeVisible();
 });
 
 
