@@ -11,7 +11,7 @@ test('Тест нажать на лого Lime - переход на главн�
         throw new Error(`Failed with response code ${response.status()}`)
     }
 
-    await page.locator('header >> page-logo').first().click();
+    await page.locator('.page-logo').first().click();
     await page.waitForURL('https://limehd.tv/tv')
 
     await expect(page.locator('text=Смотрите онлайн трансляцию федеральных телеканалов на сайте Лайм HD TV круглосуточно и бесплатно')).toBeVisible();
