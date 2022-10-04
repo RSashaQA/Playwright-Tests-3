@@ -43,7 +43,7 @@ test('Тест смена вкладок, Подписки', async ({ page }) =>
         throw new Error(`Failed with response code ${response.status()}`)
     }
     //прорверяем, что страница Подписок доступна
-    await expect(page.locator('text=Самые обсуждаемые сериалы и эксклюзивные кинопремьеры')).first().toBeVisible();
+    await expect(page.locator('text=Выберите и оплатите подписку.')).toBeVisible();
 
     // //проверяем, что на странице есть текст "о подписках"
     // const packsPage1 = await page.innerText('div > .default__layout > .packs__container > .form__apps > p:nth-child(1)');
