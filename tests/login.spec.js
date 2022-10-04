@@ -33,7 +33,7 @@ test('Авторизация, хороший сценарий', async ({ page })
     await page.locator('text=Общая информация').click();
 
     //проверяем, что авторизация произошла в нужного нам пользователя
-    const userNameLoginCheck = await page.innerText('div > .default__layout > .page-main > .profile__title-container > .profile__title');
+    const userNameLoginCheck = await page.innerText('.profile__title');
     expect(userNameLoginCheck).toBe(userNameLogin);
 })
 
