@@ -25,7 +25,7 @@ test('Регистрация тестовых аккаунтов, добавле
     // дальше код исполняется для всех браузеров
     await page.locator('input[type="password"]').first().fill(passwordFav);
     await page.locator('text=Повторите пароль >> input[type="password"]').fill(passwordFav);
-    await page.locator('text=Зарегистрироваться').click();
+    await page.locator('text=Зарегистрироваться').click({clickCount:2});
     //await page.locator('text=Отлично').click();
 
     await page.locator('text=ТВ-каналы').click();
