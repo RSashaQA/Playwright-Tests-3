@@ -22,7 +22,7 @@ test('Тест смена вкладок, Кино', async ({ page }) => {
         throw new Error(`Failed with response code ${response.status()}`)
     }
     //прорверяем, что страница VOD доступна
-    await expect(page.locator('div.movies')).toBeVisible();
+    await expect(page.locator('div.movies')).toBeVisible({timeout:3000});
 });
 
 
@@ -33,7 +33,7 @@ test('Тест смена вкладок, Подписки', async ({ page }) =>
         throw new Error(`Failed with response code ${response.status()}`)
     }
     //прорверяем, что страница Подписок доступна
-    await expect(page.locator('ul.packs__list')).toBeVisible();
+    await expect(page.locator('ul.packs__list')).toBeVisible({timeout:3000});
 
     //проверяем, что на странице есть текст "о подписках"
     const packsPage1 = await page.innerText('div > .default__layout > .packs__container > .form__apps > p:nth-child(1)');
