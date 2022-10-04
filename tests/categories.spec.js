@@ -26,32 +26,32 @@ test('Тест переключение между категориями кан
     await expect(page.locator('text=Россия 1')).toBeHidden();
     await expect(page.locator('text=Первый канал')).toBeHidden();
 
-    await page.waitForTimeout(1000);
+    // await page.waitForTimeout(1000);
 
-    await page.locator('text=Развлечения').first().click();
-    await page.waitForSelector('text=Пятница!');
-    await page.waitForTimeout(1000);
+    // await page.locator('text=Развлечения').first().click();
+    // await page.waitForSelector('text=Пятница!');
+    // await page.waitForTimeout(1000);
 
-    await page.locator('text=Спорт').first().click();
-    await page.waitForSelector('text=Матч! Боец');
-    await page.waitForTimeout(1000);
+    // await page.locator('text=Спорт').first().click();
+    // await page.waitForSelector('text=Матч! Боец');
+    // await page.waitForTimeout(1000);
 
-    await page.locator('text=Детям').first().click();
-    await page.waitForSelector('text=Карусель');
-    await page.waitForTimeout(1000);
+    // await page.locator('text=Детям').first().click();
+    // await page.waitForSelector('text=Карусель');
+    // await page.waitForTimeout(1000);
 
-    await page.locator('text=Музыка').first().click();
-    await page.waitForSelector('text=Муз-тв');
-    await page.waitForTimeout(1000);
+    // await page.locator('text=Музыка').first().click();
+    // await page.waitForSelector('text=Муз-тв');
+    // await page.waitForTimeout(1000);
 
-    await page.locator('text=Новости >> nth=0').first().click();
-    await page.waitForSelector('text=Rt');
-    await page.waitForTimeout(1000);
+    // await page.locator('text=Новости >> nth=0').first().click();
+    // await page.waitForSelector('text=Rt');
+    // await page.waitForTimeout(1000);
 
-    await page.locator('text=Познавательные').first().click();
-    await page.waitForSelector('text=Егэ');
-    await page.waitForTimeout(1000);
+    // await page.locator('text=Познавательные').first().click();
+    // await page.waitForSelector('text=Егэ');
+    // await page.waitForTimeout(1000);
 
-    await page.locator('text=Фильмы').first().click();
-    await page.waitForSelector('text=Киноужас');
+    // await page.locator('text=Фильмы').first().click();
+    // await page.waitForSelector('text=Киноужас');
 });
