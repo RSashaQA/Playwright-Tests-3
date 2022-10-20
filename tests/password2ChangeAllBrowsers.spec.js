@@ -12,7 +12,7 @@ test.setTimeout(100000);
 
 test('Тест смены пароля', async ({ page, browserName }) => {
 
-        await page.goto('https://test.limehd.tv/signup');
+        await page.goto('https://limehd.tv/signup');
 
         //для регистрации в разных браузерах используется свой e-mail
         if (browserName == 'webkit') {
@@ -194,7 +194,7 @@ test('Тест смены пароля', async ({ page, browserName }) => {
         await page.waitForTimeout(2000)
         await page.locator('text=Выйти из аккаунта').click();
 
-        await page.goto('https://test.limehd.tv/login');
+        await page.goto('https://limehd.tv/login');
 
         //для авторизации в разных браузерах используется свой e-mail
 

@@ -10,7 +10,7 @@ test.use({ viewport: { width: 1920, height: 1080 } });
 
 test('Регистрация тестовых аккаунтов, добавление/удаление из избранных.', async ({ page, browserName }) => {
 
-    await page.goto('https://test.limehd.tv/signup');
+    await page.goto('https://limehd.tv/signup');
 
     //для регистрации в разных браузерах используется свой e-mail
     if (browserName == 'webkit') {
@@ -36,7 +36,7 @@ test('Регистрация тестовых аккаунтов, добавле
 
     // зайти на первый  канал
     await page.locator('text=Первый канал').click();
-    await page.waitForURL('https://test.limehd.tv/channel/1kanal');
+    await page.waitForURL('https://limehd.tv/channel/1kanal');
 
     //добавить в избранное
 
@@ -46,7 +46,7 @@ test('Регистрация тестовых аккаунтов, добавле
 
     // зайти на матч
     await page.locator('text=Телеканал «Матч ТВ»').click();
-    await page.waitForURL('https://test.limehd.tv/channel/match');
+    await page.waitForURL('https://limehd.tv/channel/match');
 
     //добавить в избранное    
     await page.waitForTimeout(3000);
@@ -59,8 +59,8 @@ test('Регистрация тестовых аккаунтов, добавле
 
     //авторизация
     await page.waitForTimeout(1000);
-    await page.goto('https://test.limehd.tv/login');
-    await page.waitForURL('https://test.limehd.tv/login');
+    await page.goto('https://limehd.tv/login');
+    await page.waitForURL('https://limehd.tv/login');
 
     //авторизация в разных браузерах используется свой e-mail
     if (browserName == 'webkit') {
@@ -81,14 +81,14 @@ test('Регистрация тестовых аккаунтов, добавле
     await page.waitForTimeout(1000);
 
     await page.locator('text=Первый канал').click();
-    await page.waitForURL('https://test.limehd.tv/channel/1kanal');
+    await page.waitForURL('https://limehd.tv/channel/1kanal');
     
     await page.waitForTimeout(2000);
     await page.locator('img.stream__favorite').click();
     await page.waitForTimeout(2000);
 
     await page.locator('text=Телеканал «Матч ТВ»').click();
-    await page.waitForURL('https://test.limehd.tv/channel/match');
+    await page.waitForURL('https://limehd.tv/channel/match');
 
     await page.waitForTimeout(2000);
     await page.locator('img.stream__favorite').click();
@@ -99,8 +99,8 @@ test('Регистрация тестовых аккаунтов, добавле
     await page.locator('span.user__menu-logout').click();
 
     await page.waitForTimeout(1000);
-    await page.goto('https://test.limehd.tv/login');
-    await page.waitForURL('https://test.limehd.tv/login');
+    await page.goto('https://limehd.tv/login');
+    await page.waitForURL('https://limehd.tv/login');
 
     //авторизация в разных браузерах используется свой e-mail
     if (browserName == 'webkit') {
@@ -143,7 +143,7 @@ test('Регистрация тестовых аккаунтов, добавле
 
     // // test('Тест добавление/удаление каналов из страницы канала c авторизацией. Часть 2 (авторизация, проверка избранных удаление каналов из избранных)', async ({page, browserName}) => {
 
-    // await page.goto('https://test.limehd.tv/login');
+    // await page.goto('https://limehd.tv/login');
 
     // //авторизация в разных браузерах используется свой e-mail
     // if (browserName == 'webkit') {
@@ -177,7 +177,7 @@ test('Регистрация тестовых аккаунтов, добавле
     // await page.waitForTimeout(2000)
     // await page.locator('text=Выйти из аккаунта').click();
 
-    // await page.goto('https://test.limehd.tv/login');
+    // await page.goto('https://limehd.tv/login');
 
     // //авторизация в разных браузерах используется свой e-mail
     // if (browserName == 'webkit') {

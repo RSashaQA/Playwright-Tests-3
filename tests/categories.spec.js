@@ -5,7 +5,7 @@ test.use({ viewport: { width: 1920, height: 1080 } });
 
 test('Тест переключение между категориями каналов', async ({ page }) => {
 
-    await page.goto('https://test.limehd.tv/tv')
+    await page.goto('https://limehd.tv/tv')
 
     await page.locator('text=Избранные').click();
     await expect(page.locator('text=Добавьте каналы в избранное')).toBeVisible();

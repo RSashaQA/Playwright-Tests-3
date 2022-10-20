@@ -5,7 +5,7 @@ test.use({ viewport: { width: 1920, height: 1080 } });
 
 test('Регистрация тестового аккаунта', async ({ page }) => {
 
-    await page.goto('https://test.limehd.tv/signup');
+    await page.goto('https://limehd.tv/signup');
 
     await page.locator('[placeholder="Введите e-mail"]').fill(userNameReport);
     await page.locator('input[type="password"]').first().fill('qqqqqq');
@@ -15,7 +15,7 @@ test('Регистрация тестового аккаунта', async ({ page
 
 test('Сообщить о проблеме', async ({ page }) => {
 
-    await page.goto('https://test.limehd.tv/login')
+    await page.goto('https://limehd.tv/login')
 
     //авторизация, используя данные от аккаунта testdeleteme@test.test
     await page.locator('[placeholder="Введите e-mail"]').fill(userNameReport);

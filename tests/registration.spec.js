@@ -8,7 +8,7 @@ const userNameRegChromium = ('testdeletemRegChro@test.test')
 
 test('Тест регистрации, проверка текста ошибок около полей ввода. Успешная регистрация', async ({page, browserName}) => {
 
-        await page.goto('https://test.limehd.tv/signup');
+        await page.goto('https://limehd.tv/signup');
 
         // //попытка зарегистрироваться без ввода данных
         // await page.locator('text=Зарегистрироваться').click();
@@ -131,7 +131,7 @@ test('Тест регистрации, проверка текста ошибо�
             expect(userNameCheck).toBe(userNameRegFirefox);
         }
 
-        await page.goto('https://test.limehd.tv/signup');
+        await page.goto('https://limehd.tv/signup');
 
         //попытка повторной регистрации существующего аккаунта
         if (browserName == 'webkit') {
@@ -159,7 +159,7 @@ test('Тест регистрации, проверка текста ошибо�
 //         const browser = await browserType.launch();
 //         const page = await browser.newPage();
 
-//         await page.goto('https://test.limehd.tv/signup');
+//         await page.goto('https://limehd.tv/signup');
 
 //         //нажать на регистрацию не вводя данные
 //         await page.locator('text=Зарегистрироваться').click();

@@ -7,7 +7,7 @@ test.use({ viewport: { width: 1920, height: 1080 } });
 
 test('Регистрация тестового аккаунта', async ({ page }) => {
 
-    await page.goto('https://test.limehd.tv/signup');
+    await page.goto('https://limehd.tv/signup');
 
     await page.locator('[placeholder="Введите e-mail"]').fill(userNameregistration);
     await page.locator('input[type="password"]').first().fill('qqqqqq');
@@ -18,7 +18,7 @@ test('Регистрация тестового аккаунта', async ({ page
 
 test('Авторизация, хороший сценарий', async ({ page, browserName }) => {
 
-    await page.goto('https://test.limehd.tv/login');
+    await page.goto('https://limehd.tv/login');
 
     //авторизация, используя корректные данные от аккаунта testdeletemeregistration@test.test
     await page.locator('[placeholder="Введите e-mail"]').fill(userNameLogin);
@@ -60,7 +60,7 @@ test('Авторизация, хороший сценарий', async ({ page, b
 
 // test('авторизаяция, плохой сценарий', async ({ page }) => {
 
-//     await page.goto('https://test.limehd.tv/login');
+//     await page.goto('https://limehd.tv/login');
 
 //     //в поле e-mail вводим не валидное значение и нажимаем войти
 //     await page.locator('[placeholder="Введите e-mail"]').fill('testdeletemelimehd.tv');
@@ -75,7 +75,7 @@ test('Авторизация, хороший сценарий', async ({ page, b
 // })
 
 // test('авторизаяция, неверный email или пароль', async ({ page }) => {
-//     await page.goto('https://test.limehd.tv/login');
+//     await page.goto('https://limehd.tv/login');
 
 //     //вводим неправильные данные от аккаунта testdeleteme@test.test и пытаемся войти
 //     await page.locator('[placeholder="Введите e-mail"]').fill(userNameLogin);
