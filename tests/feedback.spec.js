@@ -3,7 +3,7 @@ const { test, expect } = require('@playwright/test');
 test.use({ viewport: { width: 1920, height: 1080 } });
 
 test('Тест обратной связи', async ({ page }) => {
-    await page.goto('https://limehd.tv/')
+    await page.goto('https://test.limehd.tv/')
 
     await page.locator('text=Обратная связь').click();
 

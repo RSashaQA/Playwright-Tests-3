@@ -2,21 +2,21 @@ const { test, expect } = require('@playwright/test')
 test.use({ viewport: { width: 1920, height: 1080 } });
 
 
-const start = 'https://limehd.tv/subscribes/141'
-const kinomir = 'https://limehd.tv/subscribes/134'
-const razvl = 'https://limehd.tv/subscribes/10'
-const matchprem = 'https://limehd.tv/subscribes/84'
-const nastrkino = 'https://limehd.tv/subscribes/110'
-const sport = 'https://limehd.tv/subscribes/4'
-const khl = 'https://limehd.tv/subscribes/105'
-const matchfootbol = 'https://limehd.tv/subscribes/85'
-const base = 'https://limehd.tv/subscribes/113'
-const tvsinema = 'https://limehd.tv/subscribes/51'
-const hd = 'https://limehd.tv/subscribes/25'
-const porno = 'https://limehd.tv/subscribes/83'
-const reklodin = 'https://limehd.tv/subscribes/169'
-const rekltri = 'https://limehd.tv/subscribes/190'
-const reklshest = 'https://limehd.tv/subscribes/197'
+const start = 'https://test.limehd.tv/subscribes/141'
+const kinomir = 'https://test.limehd.tv/subscribes/134'
+const razvl = 'https://test.limehd.tv/subscribes/10'
+const matchprem = 'https://test.limehd.tv/subscribes/84'
+const nastrkino = 'https://test.limehd.tv/subscribes/110'
+const sport = 'https://test.limehd.tv/subscribes/4'
+const khl = 'https://test.limehd.tv/subscribes/105'
+const matchfootbol = 'https://test.limehd.tv/subscribes/85'
+const base = 'https://test.limehd.tv/subscribes/113'
+const tvsinema = 'https://test.limehd.tv/subscribes/51'
+const hd = 'https://test.limehd.tv/subscribes/25'
+const porno = 'https://test.limehd.tv/subscribes/83'
+const reklodin = 'https://test.limehd.tv/subscribes/169'
+const rekltri = 'https://test.limehd.tv/subscribes/190'
+const reklshest = 'https://test.limehd.tv/subscribes/197'
 
 test('Тест окна подписки START', async ({ page }) => {
 

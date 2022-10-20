@@ -8,7 +8,7 @@ test('Тест добавление/удаление каналов из стр�
 
     //добавляем НТВ в избранные, через страницу канала
     await page.locator('text=Телекомпания «НТВ»').click();
-    await page.waitForURL('https://limehd.tv/tv');
+    await page.waitForURL('https://test.limehd.tv/tv');
     await page.locator('.page-main > .stream__item > .stream__title-container > .stream__favorite-container > .stream__favorite').click()
     await page.waitForTimeout(1000)
     await page.locator('text=Все телеканалы').click();
@@ -16,7 +16,7 @@ test('Тест добавление/удаление каналов из стр�
 
     //добавляем ТВ - ЦЕНТР в избранные, через страницу канала
     await page.locator('text=ТВ ЦЕНТР - Москва').click();
-    await page.waitForURL('https://limehd.tv/channel/tvc');
+    await page.waitForURL('https://test.limehd.tv/channel/tvc');
     await page.locator('.page-main > .stream__item > .stream__title-container > .stream__favorite-container > .stream__favorite').click()
     await page.waitForTimeout(1000)
     await page.locator('text=Все телеканалы').click();
@@ -28,7 +28,7 @@ test('Тест добавление/удаление каналов из стр�
 
     //удаляем НТВ из избранных, через страницу канала
     await page.locator('text=Телекомпания «НТВ»').click();
-    await page.waitForURL('https://limehd.tv/tv');
+    await page.waitForURL('https://test.limehd.tv/tv');
     await page.waitForTimeout(2000)
     await page.locator('#__layout > div > div.default__layout > div > div.stream__item > div.stream__title-container > div.stream__favorite-container > img').click()
     await page.waitForTimeout(2000)
@@ -37,7 +37,7 @@ test('Тест добавление/удаление каналов из стр�
 
     //удаляем ТВ ЦЕНТР - Москва из избранных, через страницу канала
     await page.locator('text=ТВ ЦЕНТР - Москва').click();
-    await page.waitForURL('https://limehd.tv/channel/tvc');
+    await page.waitForURL('https://test.limehd.tv/channel/tvc');
     await page.waitForTimeout(2000)
     await page.locator('#__layout > div > div.default__layout > div > div.stream__item > div.stream__title-container > div.stream__favorite-container > img').click();
     await page.waitForTimeout(2000)
@@ -59,7 +59,7 @@ test('Тест добавление/удаление каналов из стр�
 
   //добавляем НТВ в избранные, через страницу канала
   await page.locator('text=Телекомпания «НТВ»').click();
-  await page.waitForURL('https://limehd.tv/tv');
+  await page.waitForURL('https://test.limehd.tv/tv');
   await page.waitForSelector('.page-main > .stream__item > .stream__title-container > .stream__favorite-container > .stream__favorite')
   await page.click('.page-main > .stream__item > .stream__title-container > .stream__favorite-container > .stream__favorite')
   await page.waitForTimeout(1000)
@@ -68,7 +68,7 @@ test('Тест добавление/удаление каналов из стр�
 
   //добавляем ТВ ЦЕНТР - Москва в избранные, через страницу канала
   await page.locator('text=ТВ ЦЕНТР - Москва').click();
-  await page.waitForURL('https://limehd.tv/channel/tvc');
+  await page.waitForURL('https://test.limehd.tv/channel/tvc');
   await page.waitForSelector('.page-main > .stream__item > .stream__title-container > .stream__favorite-container > .stream__favorite')
   await page.click('.page-main > .stream__item > .stream__title-container > .stream__favorite-container > .stream__favorite')
   await page.waitForTimeout(1000)
