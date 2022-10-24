@@ -12,12 +12,12 @@ test('Тест переключение между категориями кан
     await page.waitForTimeout(1000);
 
     await page.locator('text=Популярные').click();
-    await expect(page.locator('text=Россия 1')).toBeVisible();
-    await expect(page.locator('text=Первый канал')).toBeVisible();
+    await expect(page.locator('text=Россия 1')).toBeVisible({timeout:10000});
+    await expect(page.locator('text=Первый канал')).toBeVisible({timeout:10000});
     await page.waitForTimeout(1000);
 
     await page.locator('text=Все').first().click();
-    await expect(page.locator('text=Россия 1')).toBeVisible();
+    await expect(page.locator('text=Россия 1')).toBeVisible({timeout:10000});
     await expect(page.locator('text=Первый канал')).toBeVisible();
     await page.waitForTimeout(1000);
 
