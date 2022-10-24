@@ -36,7 +36,7 @@ pipeline {
                     jdk: '',
                     properties: [],
                     reportBuildPolicy: 'ALWAYS',
-                    results: [[path: '$WORKSPACE/allure-results']]
+                    results: [[path: '/var/lib/jenkins/jobs/limehd-test/builds/allure-results']]
             ])
       }
     }
