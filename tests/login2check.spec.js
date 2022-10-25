@@ -1,4 +1,5 @@
 const { test, expect } = require('@playwright/test');
+const { limehdUrl } = require('./consts/constants');
 
 test.use({ viewport: { width: 1920, height: 1080 } });
 
@@ -8,7 +9,7 @@ const userName1 = "STPLIME999@gmail.com"
 const userName2 = "TEST777@gmail.com"
 const userPassword1 = "qqqqqq"
 
-    await page.goto('https://limehd.tv/login');
+    await page.goto(limehdUrl + '/login');
 
     //авторизуемся в учетную запись STPLIME999@gmail.com
     await page.locator('[placeholder="Введите e-mail"]').fill(userName1);
@@ -28,7 +29,7 @@ const userPassword1 = "qqqqqq"
     await page.locator('text=Выйти из аккаунта').first().click();
 
     //авторизаяция второй учетной записи
-    await page.goto('https://limehd.tv/login');
+    await page.goto(limehdUrl + '/login');
 
     //авторизуемся в учетную запись TEST777@gmail.com
     await page.locator('[placeholder="Введите e-mail"]').fill(userName2);

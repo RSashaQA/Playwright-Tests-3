@@ -1,11 +1,12 @@
 const { test, expect } = require('@playwright/test');
+const { limehdUrl } = require('./consts/constants');
 
 const userNameReport = ('testdeleteme@test.test')
 test.use({ viewport: { width: 1920, height: 1080 } });
 
 test('Регистрация тестового аккаунта', async ({ page }) => {
 
-    await page.goto('https://limehd.tv/signup');
+    await page.goto(limehdUrl + '/signup');
 
     await page.locator('[placeholder="Введите e-mail"]').fill(userNameReport);
     await page.locator('input[type="password"]').first().fill('qqqqqq');
@@ -15,7 +16,7 @@ test('Регистрация тестового аккаунта', async ({ page
 
 test('Сообщить о проблеме', async ({ page }) => {
 
-    await page.goto('https://limehd.tv/login')
+    await page.goto(limehdUrl + '/login')
 
     //авторизация, используя данные от аккаунта testdeleteme@test.test
     await page.locator('[placeholder="Введите e-mail"]').fill(userNameReport);

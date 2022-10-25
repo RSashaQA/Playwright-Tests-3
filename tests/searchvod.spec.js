@@ -1,9 +1,11 @@
 const { test, expect } = require('@playwright/test');
+const { limehdUrl } = require('./consts/constants');
+
 test.use({ viewport: { width: 1920, height: 1080 } });
 
 test('Тест поиска в VOD с неверным/верным запросом', async ({ page }) => {
 
-    await page.goto('https://limehd.tv/movies', { waitUntil: "commit" });
+    await page.goto(limehdUrl + '/movies', { waitUntil: "commit" });
     
     //ввод в поисковую строку
     await page.locator('[placeholder="Название фильма\\, сериала\\.\\.\\."]').fill('\\\\qwe!@#$%^\\\\\\');
@@ -18,7 +20,7 @@ test('Тест поиска в VOD с неверным/верным запрос
 
     //проверяем текст поисковой выдачи, переходим на канал
     await page.locator('text=Результаты поиска Пианистка 2022 г, Мелодрамы >> a').click();
-    await page.waitForURL('https://limehd.tv/movie/17436-3');
+    await page.waitForURL(limehdUrl + '/movie/17436-3');
 
     //сверяем название канала
     const searchVod1 = await page.innerText('h1:has-text("Пианистка")');

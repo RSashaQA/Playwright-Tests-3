@@ -1,9 +1,11 @@
 const { test, expect } = require('@playwright/test');
+const { limehdUrl } = require('./consts/constants');
+
 
 test.use({ viewport: { width: 1920, height: 1080 } });
 
 test('Тест обратной связи', async ({ page }) => {
-    await page.goto('https://limehd.tv/')
+    await page.goto(limehdUrl)
 
     await page.locator('text=Обратная связь').click();
 
@@ -59,32 +61,4 @@ test('Тест обратной связи', async ({ page }) => {
     const feedbackSucces2 = await page.innerText('.feedback__container > .modal-window > .modal-container > .modal__container > .modal__button');
     expect(feedbackSucces2).toBe('Отлично!');
     await page.locator('text=Отлично!').click();
-
-    //если захочется устроить спам тикетами
-    // let i = 1;
-    // do {
-    //     i++;
-    //     await page.locator('text=Обратная связь').click();
-
-    //     await page.type('.page-info > .page-main > .feedback__container > .feedback__label:nth-child(2) > .feedback__input', 'test@test.test')
-
-    //     await page.type('.page-info > .page-main > .feedback__container > .feedback__label > .feedback__textarea', 'TEST');
-
-    //     await page.waitForSelector('.page-info > .page-main > .feedback__container > .feedback__label > .platform__dropdown')
-    //     await page.click('.page-info > .page-main > .feedback__container > .feedback__label > .platform__dropdown')
-
-    //     await page.waitForSelector('.feedback__container > .feedback__label > .platforms__list > .platforms__item-container:nth-child(' + i + ') > .platforms__item')
-    //     await page.click('.feedback__container > .feedback__label > .platforms__list > .platforms__item-container:nth-child(' + i + ') > .platforms__item')
-
-    //     await page.waitForSelector('#__layout > .page-info > .page-main > .feedback__container > .feedback__button')
-    //     await page.click('#__layout > .page-info > .page-main > .feedback__container > .feedback__button')
-
-    //     const feedbackSucces3 = await page.innerText('.feedback__container > .modal-window > .modal-container > .modal__container > .modal__message');
-    //     expect(feedbackSucces3).toBe('Сообщение отправлено');
-
-    //     const feedbackSucces4 = await page.innerText('.feedback__container > .modal-window > .modal-container > .modal__container > .modal__button');
-    //     expect(feedbackSucces4).toBe('Отлично!');
-
-    //     await page.locator('text=Отлично!').click();
-    // } while (i < 6)
 })

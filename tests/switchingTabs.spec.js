@@ -1,11 +1,12 @@
 const { test, expect } = require('@playwright/test');
+const { limehdUrl } = require('./consts/constants');
 
 test.use({ viewport: { width: 1920, height: 1080 } });
 
 test('Тест смена вкладок, ТВ-каналы', async ({ page }) => {
 
     //нажимаем на вкладку ТВ-каналы, прорверяем, что страница доступна
-    const response = await page.goto('https://limehd.tv/', { waitUntil: "commit" });
+    const response = await page.goto(limehdUrl, { waitUntil: "commit" });
     if (response.status() > 399) {
         throw new Error(`Failed with response code ${response.status()}`)
     }
@@ -18,7 +19,7 @@ test('Тест смена вкладок, ТВ-каналы', async ({ page }) =
 test('Тест смена вкладок, Кино', async ({ page, browserName }) => {
 
     //прорверяем, что страница VOD доступна
-    const response = await page.goto('https://limehd.tv/movies', { waitUntil: "commit" });
+    const response = await page.goto(limehdUrl + '/movies', { waitUntil: "commit" });
     if (response.status() > 399) {
         throw new Error(`Failed with response code ${response.status()}`)
     }
@@ -39,7 +40,7 @@ test('Тест смена вкладок, Кино', async ({ page, browserName 
 test('Тест смена вкладок, Подписки', async ({ page }) => {
 
     //прорверяем, что страница Подписок доступна
-    const response = await page.goto('https://limehd.tv/subscribes', { waitUntil: "commit" });
+    const response = await page.goto(limehdUrl + '/subscribes', { waitUntil: "commit" });
     if (response.status() > 399) {
         throw new Error(`Failed with response code ${response.status()}`)
     }

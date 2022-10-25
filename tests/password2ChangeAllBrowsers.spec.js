@@ -1,4 +1,5 @@
 const { test, webkit, chromium, firefox } = require('@playwright/test');
+const { limehdUrl } = require('./consts/constants');
 
 test.use({ viewport: { width: 1920, height: 1080 } });
 
@@ -12,7 +13,7 @@ test.setTimeout(100000);
 
 test('Тест смены пароля', async ({ page, browserName }) => {
 
-        await page.goto('https://limehd.tv/signup');
+        await page.goto(limehdUrl + '/signup');
 
         //для регистрации в разных браузерах используется свой e-mail
         if (browserName == 'webkit') {
@@ -187,14 +188,14 @@ test('Тест смены пароля', async ({ page, browserName }) => {
         //пароль успешно изменён
         await page.locator('text=Отлично!').click();
 
-        await page.goto('https://limehd.tv');
+        await page.goto(limehdUrl);
 
         await page.waitForTimeout(2000)
         await page.locator('header >> text=t').click({ clickCount: 2 });
         await page.waitForTimeout(2000)
         await page.locator('text=Выйти из аккаунта').click();
 
-        await page.goto('https://limehd.tv/login');
+        await page.goto(limehdUrl + '/login');
 
         //для авторизации в разных браузерах используется свой e-mail
 

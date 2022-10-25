@@ -1,4 +1,5 @@
 const { test, expect, webkit, chromium, firefox } = require('@playwright/test');
+const { limehdUrl } = require('./consts/constants');
 
 test.use({ viewport: { width: 1920, height: 1080 } });
 
@@ -8,7 +9,7 @@ const userNameRegChromium = ('testdeletemRegChro@test.test')
 
 test('Тест регистрации, проверка текста ошибок около полей ввода. Успешная регистрация', async ({page, browserName}) => {
 
-        await page.goto('https://limehd.tv/signup');
+        await page.goto(limehdUrl + '/signup');
 
         // //попытка зарегистрироваться без ввода данных
         // await page.locator('text=Зарегистрироваться').click();
@@ -131,7 +132,7 @@ test('Тест регистрации, проверка текста ошибо�
             expect(userNameCheck).toBe(userNameRegFirefox);
         }
 
-        await page.goto('https://limehd.tv/signup');
+        await page.goto(limehdUrl + '/signup');
 
         //попытка повторной регистрации существующего аккаунта
         if (browserName == 'webkit') {
@@ -159,7 +160,7 @@ test('Тест регистрации, проверка текста ошибо�
 //         const browser = await browserType.launch();
 //         const page = await browser.newPage();
 
-//         await page.goto('https://limehd.tv/signup');
+//         await page.goto(limehdUrl + '/signup');
 
 //         //нажать на регистрацию не вводя данные
 //         await page.locator('text=Зарегистрироваться').click();

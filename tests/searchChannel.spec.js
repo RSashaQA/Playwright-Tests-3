@@ -1,8 +1,10 @@
 const { test, expect } = require('@playwright/test');
+const { limehdUrl } = require('./consts/constants');
+
 test.use({ viewport: { width: 1920, height: 1080 } });
 
 test('Тест поиска каналов с неверным/верным запросом', async ({ page }) => {
-    await page.goto('https://limehd.tv/');
+    await page.goto(limehdUrl);
     
     //ввод в поисковую строку
     await page.locator('[placeholder="Поиск по ТВ каналам и телепередачам"]').fill('\\\\qwe!@#$%^\\\\\\');
@@ -20,7 +22,7 @@ test('Тест поиска каналов с неверным/верным за
     //проверяем текст поисковой выдачи, переходим на канал
     await page.isVisible('p:has-text("Россия К")');
     await page.locator('p:has-text("Россия К")').click();
-    await page.waitForURL('https://limehd.tv/channel/russiak');
+    await page.waitForURL(limehdUrl + '/channel/russiak');
 
     //сверяем название канала
     const searchChannel1 = await page.innerText('text=Россия К');
