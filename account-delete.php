@@ -7,55 +7,55 @@ $server = "https://pl.iptv2021.com";
 $accs = [
     [
         'email' => 'testdeletemewebkitfav@test.test',
-        'password'  => 'qqqqqq',
+        'password' => 'qqqqqq',
     ],
     [
         'email' => 'testdeletemechromiumfav@test.test',
-        'password'  => 'qqqqqq',
+        'password' => 'qqqqqq',
     ],
     [
         'email' => 'testdeletemefirefoxfav@test.test',
-        'password'  => 'qqqqqq',
+        'password' => 'qqqqqq',
     ],
     [
         'email' => 'testdeleteme@test.test',
-        'password'  => 'qqqqqq',
+        'password' => 'qqqqqq',
     ],
     [
         'email' => 'testdeletemepassweb@test.test',
-        'password'  => 'wwwwww',
+        'password' => 'wwwwww',
     ],
     [
         'email' => 'testdeletemepassfire@test.test',
-        'password'  => 'wwwwww',
+        'password' => 'wwwwww',
     ],
     [
         'email' => 'testdeletemepasschro@test.test',
-        'password'  => 'wwwwww',
+        'password' => 'wwwwww',
     ],
     [
         'email' => 'testdeletemepassweb@test.test',
-        'password'  => 'qqqqqq',
+        'password' => 'qqqqqq',
     ],
     [
         'email' => 'testdeletemepassfire@test.test',
-        'password'  => 'qqqqqq',
+        'password' => 'qqqqqq',
     ],
     [
         'email' => 'testdeletemepasschro@test.test',
-        'password'  => 'qqqqqq',
+        'password' => 'qqqqqq',
     ],
     [
         'email' => 'testdeletemRegWeb@test.test',
-        'password'  => 'qqqqqq',
+        'password' => 'qqqqqq',
     ],
     [
         'email' => 'testdeletemRegFire@test.test',
-        'password'  => 'qqqqqq',
+        'password' => 'qqqqqq',
     ],
     [
         'email' => 'testdeletemRegChro@test.test',
-        'password'  => 'qqqqqq',
+        'password' => 'qqqqqq',
     ],
 ];
 
