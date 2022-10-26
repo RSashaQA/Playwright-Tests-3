@@ -1,7 +1,7 @@
 const { test, expect } = require('@playwright/test');
 const { limehdUrl } = require('./consts/constants');
 const programmTime = '.current-program__time';
-const noProgramName = 'text=Телепрограмма отсутствует';
+const noProgramName = 'h2:has-text("Телепрограмма отсутствует")';
 
 test.use({ viewport: { width: 1920, height: 1080 } });
 
