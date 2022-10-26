@@ -1,6 +1,6 @@
 const { test, expect } = require('@playwright/test');
 const { limehdUrl } = require('./consts/constants');
-const programmTime = '.page-main > .stream__item > .stream__current-program > .current-program__title-container > .current-program__time';
+const programmTime = '.current-program__time';
 const noProgramName = 'text=Телепрограмма отсутствует';
 
 test.use({ viewport: { width: 1920, height: 1080 } });
