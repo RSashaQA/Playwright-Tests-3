@@ -14,8 +14,8 @@ test('Тест смена вкладок, ТВ-каналы', async ({ page }) =
     //видны каналы
     await page.waitForTimeout(8000);
     await expect(page.locator('h3:has-text("Первый канал")')).toBeVisible({ timeout: 3000 });
-    await expect(page.locator('h3:has-text("ТЕЛЕКОМПАНИЯ")')).toBeVisible({ timeout: 3000 });
-    await expect(page.locator('h3:has-text("ПЕТЕРБУРГ - 5 КАНАЛ")')).toBeVisible({ timeout: 3000 });
+    await expect(page.locator('h3:has-text("Телекомпания НТВ")')).toBeVisible({ timeout: 3000 });
+    await expect(page.locator('h3:has-text("Петербург — 5 канал")')).toBeVisible({ timeout: 3000 });
 });
 
 test('Тест смена вкладок, Кино', async ({ page, browserName }) => {
