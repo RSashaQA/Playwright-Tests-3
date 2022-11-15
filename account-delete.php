@@ -90,6 +90,8 @@ foreach ($accs as $acc) {
         print_r($html. ' '. $acc['email']);
         print "\n";
         curl_close($ch_delete);
+        print "\n";
+        print_r(['X-Token: ' . $data['token']]);
         //         if ($httpcode == 200) {
         //         print "Account deleting successful\n";
         //             print_r($html);
