@@ -13,6 +13,6 @@ test('Тест нажать на лого Lime - переход на главн�
     await page.waitForTimeout(2000);
 
     //Нажимаем на лого "Лайм" - ожидаем переход на главную страницу
-    await page.locator('.page-logo').first().click();
+    await page.locator('.page-header__logo > a:nth-child(1) > img:nth-child(1)').click();
     await expect(page.locator('.channel__list-container')).toBeVisible();
 });
