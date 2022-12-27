@@ -1,4 +1,4 @@
-module.exports.limehdUrl = "https://new.limehd.tv";
+module.exports.limehdUrl = "https://limehd.tv";
 // module.exports.pervKanal = 'Первый канал';
 // module.exports.rossia1 = 'Россия-1';
 // module.exports.match = 'Матч ТВ';
